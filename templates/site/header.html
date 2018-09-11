@@ -16,7 +16,8 @@
             {% endthumbnail %}</a>
     </div>
 {% endif %}
-
+{% load cache %}
+{% cache 100000 headercache %}
 <div id="mvp-site-main" class="left relative" style="transform: none; margin-top: 1px !important;">
     <header id="mvp-main-head-wrap" class="left relative">
         <nav id="mvp-main-nav-wrap" class="left relative">
@@ -55,7 +56,7 @@
                                                 <a class="mvp-nav-logo-small" href="/"><img
                                                         src='{{ sites.logo_nav.url }}'
                                                         alt="Zox News" data-rjs="2"></a>
-                                                <h1 class="mvp-logo-title">Zox News</h1>
+                                                <h1 class="mvp-logo-title"></h1>
 
                                             </div><!--mvp-nav-top-mid-->
                                         </div><!--mvp-nav-top-left-in-->
@@ -92,6 +93,7 @@
                                                 <div class="mvp-nav-menu left">
                                                     <div class="menu-main-menu-container">
                                                         <ul id="menu-main-menu-1" class="menu">
+                                                        <li><a href="#"></a></li>
                                                             {% for menu in menus %}
                                                                 <li class="mvp-mega-dropdown menu-item menu-item-type-taxonomy menu-item-object-category menu-item-177">
                                                                     <a href="{% url "haberler:news_list" menu.slug %}">{{ menu.title }}</a>
@@ -139,3 +141,4 @@
             </div><!--mvp-main-nav-bot-->
         </nav><!--mvp-main-nav-wrap-->
     </header>
+{% endcache %}
