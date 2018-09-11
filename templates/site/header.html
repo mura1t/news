@@ -1,5 +1,6 @@
 {% load static %}
 {% load menu %}
+{% load cache %}
 {% load thumbnail %}
 {% if sites.top_banner %}
     <div id="mvp-leader-wrap">
@@ -16,7 +17,7 @@
             {% endthumbnail %}</a>
     </div>
 {% endif %}
-
+{% cache 100000 headercache %}
 <div id="mvp-site-main" class="left relative" style="transform: none; margin-top: 1px !important;">
     <header id="mvp-main-head-wrap" class="left relative">
         <nav id="mvp-main-nav-wrap" class="left relative">
@@ -139,3 +140,4 @@
             </div><!--mvp-main-nav-bot-->
         </nav><!--mvp-main-nav-wrap-->
     </header>
+    {% endcache %}
