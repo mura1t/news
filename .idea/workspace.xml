@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c89ca0ec-c058-435d-b90c-ed49a4cff489" name="Default Changelist" comment="">
+    <list default="true" id="c89ca0ec-c058-435d-b90c-ed49a4cff489" name="Default Changelist" comment="optimization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/templatetags/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/templatetags/menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/haberler/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/haberler/news_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/haberler/news_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/haberler/news_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/haberler/news_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/left_trends_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/left_trends_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/rightbar_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/rightbar_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_four.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_four.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_more_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_more_post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_one.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_one.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/right_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/right_sidebar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,29 +59,29 @@
         <counts>
           <entry key="css" value="6" />
           <entry key="dummy" value="23" />
-          <entry key="html" value="15443" />
+          <entry key="html" value="15572" />
           <entry key="js" value="14" />
-          <entry key="py" value="17835" />
+          <entry key="py" value="18056" />
           <entry key="sql" value="26" />
-          <entry key="txt" value="14" />
+          <entry key="txt" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="6" />
-          <entry key="HTML" value="15443" />
+          <entry key="HTML" value="15572" />
           <entry key="JavaScript" value="14" />
-          <entry key="PLAIN_TEXT" value="37" />
-          <entry key="Python" value="17835" />
+          <entry key="PLAIN_TEXT" value="63" />
+          <entry key="Python" value="18056" />
           <entry key="Scratch" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="html" value="218" />
+          <entry key="html" value="220" />
           <entry key="js" value="9" />
-          <entry key="py" value="221" />
+          <entry key="py" value="224" />
           <entry key="pyi" value="1" />
           <entry key="sql" value="3" />
         </counts>
@@ -99,9 +89,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="218" />
+          <entry key="HTML" value="220" />
           <entry key="JavaScript" value="9" />
-          <entry key="Python" value="221" />
+          <entry key="Python" value="224" />
           <entry key="PythonStub" value="1" />
           <entry key="Scratch" value="3" />
         </counts>
@@ -110,20 +100,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_one.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/haberler/news_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="643">
-              <caret line="150" column="130" selection-start-line="150" selection-start-column="130" selection-end-line="150" selection-end-column="130" />
+            <state relative-caret-position="533">
+              <caret line="749" column="112" selection-start-line="749" selection-start-column="112" selection-end-line="749" selection-end-column="112" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_two_video.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/haberler/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="171" selection-start-line="6" selection-start-column="171" selection-end-line="6" selection-end-column="171" />
+            <state relative-caret-position="216">
+              <caret line="68" column="131" selection-start-line="68" selection-start-column="116" selection-end-line="68" selection-end-column="131" />
+              <folding>
+                <element signature="e#0#76#0" expanded="true" />
+                <marker date="1536674486668" expanded="true" signature="4864:4869" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,20 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>contine</find>
-      <find>mvp-main-body-wrap</find>
-      <find>mvp-soc-mob-wrap</find>
-      <find>similar_news</find>
-      <find>trend</find>
-      <find>mvp-post-more-wrap</find>
-      <find>{%</find>
-      <find>rightbar</find>
-      <find>next_news</find>
-      <find>if next</find>
-      <find>json</find>
-      <find>$(window).on</find>
-      <find>video</find>
-      <find>murat</find>
       <find>sub</find>
       <find>debug</find>
       <find>secer</find>
@@ -172,12 +152,31 @@
       <find>cate</find>
       <find>category</find>
       <find>zero</find>
+      <find>_one</find>
+      <find>two</find>
+      <find>_two</find>
+      <find>{{</find>
+      <find>title</find>
+      <find>benzerler</find>
+      <find>similar_news</find>
+      <find>category.slug</find>
+      <find>similar_</find>
+      <find>.user</find>
+      <find>mvp-author-info-thumb left relative</find>
+      <find>&lt;h3 class=&quot;mvp-post-cat left relative&quot;&gt;</find>
+      <find>user__profile</find>
+      <find>similar_new</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Murat Karabacak &lt;41334565+muratenes@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -208,7 +207,6 @@
         <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/style5010.css" />
         <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js" />
         <option value="$PROJECT_DIR$/haberler/models.py" />
-        <option value="$USER_HOME$/.local/lib/python3.6/site-packages/next_prev.py" />
         <option value="$PROJECT_DIR$/templates/site/tags.html" />
         <option value="$PROJECT_DIR$/templates/site/error404.html" />
         <option value="$PROJECT_DIR$/haberler/urls.py" />
@@ -221,19 +219,20 @@
         <option value="$PROJECT_DIR$/category/admin.py" />
         <option value="$PROJECT_DIR$/templates/site/header.html" />
         <option value="$PROJECT_DIR$/news/settings.py" />
-        <option value="$PROJECT_DIR$/templates/haberler/news_detail.html" />
         <option value="$PROJECT_DIR$/templates/haberler/news_list.html" />
-        <option value="$PROJECT_DIR$/haberler/views.py" />
         <option value="$PROJECT_DIR$/templates/site/parts/right_sidebar.html" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/left_trends_index.html" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/rightbar_index.html" />
-        <option value="$PROJECT_DIR$/templates/site/parts/index/section_one.html" />
         <option value="$PROJECT_DIR$/templates/site/index.html" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_four.html" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_more_post.html" />
-        <option value="$PROJECT_DIR$/haberler/templatetags/menu.py" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" />
+        <option value="$PROJECT_DIR$/templates/site/parts/index/section_one.html" />
+        <option value="$PROJECT_DIR$/haberler/templatetags/menu.py" />
+        <option value="$USER_HOME$/.local/lib/python3.6/site-packages/next_prev.py" />
+        <option value="$PROJECT_DIR$/haberler/views.py" />
+        <option value="$PROJECT_DIR$/templates/haberler/news_detail.html" />
       </list>
     </option>
   </component>
@@ -265,33 +264,13 @@
             <path>
               <item name="haber" type="b2602c69:ProjectViewProjectNode" />
               <item name="haber" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="haber" type="b2602c69:ProjectViewProjectNode" />
+              <item name="haber" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="haberler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="haber" type="b2602c69:ProjectViewProjectNode" />
-              <item name="haber" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="haber" type="b2602c69:ProjectViewProjectNode" />
-              <item name="haber" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="haber" type="b2602c69:ProjectViewProjectNode" />
-              <item name="haber" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="parts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="haber" type="b2602c69:ProjectViewProjectNode" />
-              <item name="haber" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="parts" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -484,6 +463,14 @@
       <option name="presentableId" value="Default" />
       <updated>1535716349937</updated>
     </task>
+    <task id="LOCAL-00001" summary="optimization">
+      <created>1536673140221</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1536673140221</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -525,7 +512,7 @@
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20922747" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.20922747" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" weight="0.32897863" />
@@ -536,7 +523,7 @@
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32897863" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.26365796" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.26365796" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -554,6 +541,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -686,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/next_prev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/site/tags.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -800,13 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/haberler/news_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="60" column="84" selection-start-line="60" selection-start-column="84" selection-end-line="60" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/haberler/news_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -855,18 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/haberler/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#76#0" expanded="true" />
-            <element signature="e#1839#4339#0" />
-            <marker date="1536670573372" expanded="true" signature="4698:4703" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/site/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -895,24 +860,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/haberler/templatetags/menu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="133" column="32" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_zero.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="81" column="62" selection-start-line="81" selection-start-column="62" selection-end-line="81" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_one.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="150" column="130" selection-start-line="150" selection-start-column="130" selection-end-line="150" selection-end-column="130" />
         </state>
       </provider>
     </entry>
@@ -930,10 +881,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_one.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="108" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haberler/templatetags/menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="53" column="10" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_two_video.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="171" selection-start-line="6" selection-start-column="171" selection-end-line="6" selection-end-column="171" />
+          <caret line="6" column="74" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/next_prev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haberler/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="68" column="131" selection-start-line="68" selection-start-column="116" selection-end-line="68" selection-end-column="131" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+            <marker date="1536674486668" expanded="true" signature="4864:4869" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/haberler/news_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="749" column="112" selection-start-line="749" selection-start-column="112" selection-end-line="749" selection-end-column="112" />
         </state>
       </provider>
     </entry>

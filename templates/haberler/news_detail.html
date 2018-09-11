@@ -29,7 +29,7 @@
                     <div id="mvp-post-main" class="left relative" style="transform: none;">
                         <header id="mvp-post-head" class="left relative">
                             <h3 class="mvp-post-cat left relative"><a class="mvp-post-cat-link"
-{#                                                                      href="{% url 'haberler:news_list' news.0.category.slug %}"><span#}
+                                                                      href="{% url 'haberler:news_list' news.0.category.slug %}"><span
                                     class="mvp-post-cat left">{{ news.0.category }}</span></a></h3>
                             <h1 class="mvp-post-title left entry-title" itemprop="headline">{{ news.0.title }}</h1>
                             <span>{{ deneme.0.id }}</span>
@@ -348,7 +348,6 @@
                                                             <div class="mvp-post-tags">
                                                                 <span class="mvp-post-tags-header">İLGİLİ Konular:</span><span
                                                                     itemprop="keywords">
-                                                             benzerler : {{ simtag }}
                                                             {% if  news.0.tags_split %}
                                                                 {% for key in news.0.tags_split %}
                                                                     {% if  key != "" and key != ",," %}
@@ -648,15 +647,15 @@
                                                     <div class="mvp-post-add-head left relative">
                                                         <h3 class="mvp-post-cat left relative"><a
                                                                 class="mvp-post-cat-link"
-                                                                href="{% url 'haberler:news_list' on.category.slug %}"><span
-                                                                class="mvp-post-cat left">{{ on.category }}</span></a>
+                                                                href="{% url 'haberler:news_list' on.category__slug %}"><span
+                                                                class="mvp-post-cat left">{{ on.category__title }}</span></a>
                                                         </h3>
                                                         <h1 class="mvp-post-title left">{{ on.title }}</h1>
                                                         <span class="mvp-post-excerpt left"><p>{{ on.spot }}</p>
 </span>
                                                         <div class="mvp-author-info-wrap left relative">
                                                             <div class="mvp-author-info-thumb left relative">
-                                                                {% thumbnail on.user.profile.image "46x46" crop="center" as im %}
+                                                                {% thumbnail on.user__profile__image "46x46" crop="center" as im %}
                                                                     <img width="{{ im.width }}" height="{{ im.height }}"
                                                                          src="{{ im.url }}"
                                                                          class="avatar avatar-46 photo" height="46"
@@ -673,9 +672,9 @@
                                                                 <div class="mvp-author-info-name left relative">
                                                                     <p>By</p> <span class="author-name vcard fn author"
                                                                                     itemprop="name"><a
-                                                                        href="{% url 'author_detail' on.user.username %}"
-                                                                        title="{{ on.user }} ait gönderiler"
-                                                                        rel="author">{{ on.user }}</a></span> <a
+                                                                        href="{% url 'author_detail' on.user__username %}"
+                                                                        title="{{ on.user__username }} ait gönderiler"
+                                                                        rel="author">{{ on.user__username }}</a></span> <a
                                                                         href="{{ on.user.profile.twitter }}"
                                                                         class="mvp-twit-but" target="_blank"><span
                                                                         class="mvp-author-info-twit-but"><i
@@ -748,7 +747,7 @@
                                             </div><!--mvp-post-more-img-->
                                             <div class="mvp-post-more-text left relative">
                                                 <div class="mvp-cat-date-wrap left relative">
-                                                    <span class="mvp-cd-cat left relative">{{ td.category }}</span><span
+                                                    <span class="mvp-cd-cat left relative">{{ td.category__title }}</span><span
                                                         class="mvp-cd-date left relative">{{ td.date | timesince }} Önce</span>
                                                 </div><!--mvp-cat-date-wrap-->
                                                 <p>{{ td.title }}</p>

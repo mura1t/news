@@ -62,12 +62,11 @@ def news_detail(request, slug):
         cache_time = 60 * 10
         trends = cache.get(cache_key)
         try:
-            similar_news = News.objects.filter(sub_category=post_news.sub_category).exclude(slug=slug).order_by("-id")[
-                           :5]
+            similar_news = News.objects.filter(active=True,sub_category=post_news.sub_category).exclude(slug=slug).order_by("-id")[:5].values("title","slug","image","category__title","category__slug","user__username","spot","date","user__profile__image","detail")
         except:
             similar_news = None
-        if not trends:
-            trends = News.objects.filter(active=True).order_by("-viewed")[:4]
+        if  trends:
+            trends = News.objects.filter(active=True).order_by("-viewed")[:4].values("title","slug","date","image","category__title")
             cache.set(cache_key, trends, cache_time)
         paging_ch = int(SiteSettings.objects.all().get().post_detail)
         sayfa = int(request.GET.get("sayfa", 1))
