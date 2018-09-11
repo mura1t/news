@@ -1,0 +1,129 @@
+{% load thumbnail %}
+<div id="mvp-side-wrap" class="left relative theiaStickySidebar"
+     style="position: relative; overflow: visible; box-sizing: content-box; min-height: 1px;float: right;">
+
+    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+        <section id="mvp_tabber_widget-6" class="mvp-side-widget mvp_tabber_widget">
+            <div class="mvp-widget-tab-wrap left relative">
+                <div class="mvp-feat1-list-wrap left relative">
+                    <div class="mvp-feat1-list-head-wrap left relative">
+                        <ul class="mvp-feat1-list-buts left relative">
+                            <li class="mvp-feat-col-tab active"><a href="#mvp-tab-col1"><span
+                                    class="mvp-feat1-list-but">Latest</span></a></li>
+                            <li><a href="#mvp-tab-col2"><span class="mvp-feat1-list-but">Trending</span></a>
+                            </li>
+                            <li><a href="#mvp-tab-col3"><span class="mvp-feat1-list-but">Videos</span></a>
+                            </li>
+                        </ul>
+                    </div><!--mvp-feat1-list-head-wrap-->
+                    <div id="mvp-tab-col1" class="mvp-feat1-list left relative mvp-tab-col-cont"
+                         style="display: block;">
+                     {% if latest_news %}
+                        {% for ln in latest_news %}
+                            <a href="{% url 'haberler:news_detail' ln.slug %}" rel="bookmark" >
+                                <div class="mvp-feat1-list-cont left relative">
+                                    <div class="mvp-feat1-list-out relative">
+                                        <div class="mvp-feat1-list-img left relative">
+                                            {% thumbnail ln.image "80x80" crop="center" as im %}
+                                                <img width="{{ im.width }}" height="{{ im.height }}"
+                                                     src="{{ im.url }}"
+                                                     class="attachment- size- wp-post-image" alt=""
+                                                     srcset="{{ im.url }}"
+                                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                            {% endthumbnail %}</div>
+                                        <!--mvp-feat1-list-img-->
+                                        <div class="mvp-feat1-list-in">
+                                            <div class="mvp-feat1-list-text">
+                                                <div class="mvp-cat-date-wrap left relative">
+                                                    <span class="mvp-cd-cat left relative">{{ ln.category }}</span><span
+                                                        class="mvp-cd-date left relative">{{ ln.date | timesince }} önce</span>
+                                                </div><!--mvp-cat-date-wrap-->
+                                                <h2>{{ ln.title }}</h2>
+                                            </div><!--mvp-feat1-list-text-->
+                                        </div><!--mvp-feat1-list-in-->
+                                    </div><!--mvp-feat1-list-out-->
+                                </div><!--mvp-feat1-list-cont-->
+                            </a>
+                        {% endfor %}
+                     {% endif %}
+                    </div><!--mvp-tab-col1-->
+                    <div id="mvp-tab-col2" class="mvp-feat1-list left relative mvp-tab-col-cont" style="display: none;">
+                    {% if trend_news %}
+                      {% for ln in trend_news %}
+                           <a href="{% url 'haberler:news_detail' ln.slug %}"
+                               rel="bookmark">
+                                <div class="mvp-feat1-list-cont left relative">
+                                    <div class="mvp-feat1-list-out relative">
+                                        <div class="mvp-feat1-list-img left relative">
+                                            {% thumbnail ln.image "80x80" crop="center" as im %}
+                                                <img width="{{ im.width }}" height="{{ im.height }}"
+                                                     src="{{ im.url }}"
+                                                     class="attachment- size- wp-post-image" alt=""
+                                                     srcset="{{ im.url }}"
+                                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                            {% endthumbnail %}</div>
+                                        <!--mvp-feat1-list-img-->
+                                        <div class="mvp-feat1-list-in">
+                                            <div class="mvp-feat1-list-text">
+                                                <div class="mvp-cat-date-wrap left relative">
+                                                    <span class="mvp-cd-cat left relative">{{ ln.category }}</span><span
+                                                        class="mvp-cd-date left relative">{{ ln.date | timesince }} önce({{ ln.viewed }})</span>
+                                                </div><!--mvp-cat-date-wrap-->
+                                                <h2>{{ ln.title }}</h2>
+                                            </div><!--mvp-feat1-list-text-->
+                                        </div><!--mvp-feat1-list-in-->
+                                    </div><!--mvp-feat1-list-out-->
+                                </div><!--mvp-feat1-list-cont-->
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+
+                    </div><!--mvp-tab-col2-->
+                    <div id="mvp-tab-col3" class="mvp-feat1-list left relative mvp-tab-col-cont" style="display: none;">
+                    {% if video_news %}
+                        {% for ln in video_news %}
+                            <a href="{% url 'haberler:news_detail' ln.slug %}"
+                               rel="bookmark">
+                                <div class="mvp-feat1-list-cont left relative">
+                                    <div class="mvp-feat1-list-out relative">
+                                        <div class="mvp-feat1-list-img left relative">
+                                            {% thumbnail ln.image "80x80" crop="center" as im %}
+                                                <img width="{{ im.width }}" height="{{ im.height }}"
+                                                     src="{{ im.url }}"
+                                                     class="attachment- size- wp-post-image" alt=""
+                                                     srcset="{{ im.url }}"
+                                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                            {% endthumbnail %}</div>
+                                        <!--mvp-feat1-list-img-->
+                                        <div class="mvp-feat1-list-in">
+                                            <div class="mvp-feat1-list-text">
+                                                <div class="mvp-cat-date-wrap left relative">
+                                                    <span class="mvp-cd-cat left relative">{{ ln.category }}</span><span
+                                                        class="mvp-cd-date left relative">{{ ln.date | timesince }} önce</span>
+                                                </div><!--mvp-cat-date-wrap-->
+                                                <h2>{{ ln.title }}</h2>
+                                            </div><!--mvp-feat1-list-text-->
+                                        </div><!--mvp-feat1-list-in-->
+                                    </div><!--mvp-feat1-list-out-->
+                                </div><!--mvp-feat1-list-cont-->
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+                    </div><!--mvp-tab-col3-->
+                </div><!--mvp-feat1-list-wrap-->
+            </div><!--mvp-widget-tab-wrap-->
+
+        </section>
+        <div class="resize-sensor"
+             style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
+            <div class="resize-sensor-expand"
+                 style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
+                <div style="position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 330px; height: 517px;"></div>
+            </div>
+            <div class="resize-sensor-shrink"
+                 style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
+                <div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div>
+            </div>
+        </div>
+    </div>
+</div>

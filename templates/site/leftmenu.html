@@ -1,0 +1,45 @@
+    <div id="mvp-fly-menu-top" class="left relative">
+        <div class="mvp-fly-top-out left relative">
+            <div class="mvp-fly-top-in">
+                <div id="mvp-fly-logo" class="left relative">
+                    <a href="index.html"><img src="{{ sites.logo_nav.url }}" alt="Zox News"
+                                              data-rjs="2"></a>
+                </div><!--mvp-fly-logo-->
+            </div><!--mvp-fly-top-in-->
+            <div class="mvp-fly-but-wrap mvp-fly-but-menu mvp-fly-but-click">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div><!--mvp-fly-but-wrap-->
+        </div><!--mvp-fly-top-out-->
+    </div><!--mvp-fly-menu-top-->
+<div id="mvp-fly-menu-wrap">
+
+    <nav class="mvp-fly-nav-menu left relative">
+        <div class="menu-main-menu-container">
+            <ul id="menu-main-menu" class="menu">
+                {% for lm in leftmenu %}
+                    <li id="menu-item-{{ lm.id }}"
+                        class="mvp-mega-dropdown menu-item menu-item-type-taxonomy menu-item-object-category menu-item-{{ lm.id }}">
+                        <a href="{% url "haberler:news_list" lm.slug %}">{{ lm.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="mvp-fly-soc-wrap">
+    <span class="mvp-fly-soc-head">Connect with us</span>
+    <ul class="mvp-fly-soc-list left relative">
+        <li><a href="{{ sites.facebook }}" target="_blank" class="fa fa-facebook fa-2"></a></li>
+        <li><a href="{{ sites.twitter }}" target="_blank" class="fa fa-twitter fa-2"></a></li>
+        <li><a href="{{ sites.pinterest }}" target="_blank" class="fa fa-pinterest-p fa-2"></a></li>
+        <li><a href="{{ sites.instagram }}" target="_blank" class="fa fa-instagram fa-2"></a></li>
+        <li><a href="{{ sites.google_plus }}" target="_blank" class="fa fa-google-plus fa-2"></a></li>
+        <li><a href="{{ sites.youtube }}" target="_blank" class="fa fa-youtube-play fa-2"></a></li>
+        <li><a href="{{ sites.linkedin }}" target="_blank" class="fa fa-linkedin fa-2"></a></li>
+        <li><a href="{{ sites.tumblr }}" target="_blank" class="fa fa-tumblr fa-2"></a>
+        </li>
+    </ul>
+</div><!--mvp-fly-soc-wrap-->

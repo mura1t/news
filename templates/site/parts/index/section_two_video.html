@@ -1,0 +1,82 @@
+{% load thumbnail %}
+{% if news.count >= 5 %}
+<section class="mvp-widget-home left relative">
+    <div class="mvp-widget-dark-wrap left relative">
+        <div class="mvp-main-box">
+            <div class="mvp-widget-home-head">
+                <h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">Videos</span></h4>
+            </div><!--mvp-widget-home-head-->
+            <div class="mvp-widget-dark-main left relative">
+                {% for item in news %}
+                    {% if forloop.counter == 1 %}
+                        <div class="mvp-widget-dark-left left relative">
+                            <a href="{% url 'haberler:news_detail' item.slug %}" rel="bookmark">
+                                <div class="mvp-widget-dark-feat left relative">
+                                    <div class="mvp-widget-dark-feat-img left relative">
+                                        {% thumbnail item.image "1000x600" crop="center" as im %}
+                                            <img width="{{ im.width }}"
+                                                 height="{{ im.height }}"
+                                                 src="{{ im.url }}"
+                                                 class="mvp-reg-img lazy wp-post-image"
+                                                 alt="{{ item.title }}"
+                                                 srcset="{{ im.url }}"
+                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
+                                        {% endthumbnail %}
+                                        <div class="mvp-vid-box-wrap mvp-vid-marg">
+                                            <i class="fa fa-2 fa-play" aria-hidden="true"></i>
+                                        </div><!--mvp-vid-box-wrap-->
+                                    </div><!--mvp-widget-dark-feat-img-->
+                                    <div class="mvp-widget-dark-feat-text left relative">
+                                        <div class="mvp-cat-date-wrap left relative">
+                                            <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                                class="mvp-cd-date left relative">{{ item.date |timesince }} önce</span>
+                                        </div><!--mvp-cat-date-wrap-->
+                                        <h2>{{ item.title }}</h2>
+                                    </div><!--mvp-widget-dark-feat-text-->
+                                </div><!--mvp-widget-dark-feat-->
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+                <!--mvp-widget-dark-left-->
+                <div class="mvp-widget-dark-right left relative">
+                    {% for item in news %}
+                        {% if forloop.counter > 1 %}
+                        <a href="{% url 'haberler:news_detail' item.slug %}" rel="bookmark">
+                            <div class="mvp-widget-dark-sub left relative">
+                                <div class="mvp-widget-dark-sub-out right relative">
+                                    <div class="mvp-widget-dark-sub-img left relative">
+                                        {% thumbnail item.image "400x240" crop="center" as im %}
+                                            <img width="{{ im.width }}"
+                                                 height="{{ im.height }}"
+                                                 src="{{ im.url }}"
+                                                 class="mvp-reg-img lazy wp-post-image"
+                                                 alt="{{ item.title }}"
+                                                 srcset="{{ im.url }}"
+                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
+                                        {% endthumbnail %}
+                                        <div class="mvp-vid-box-wrap mvp-vid-box-small mvp-vid-marg-small">
+                                            <i class="fa fa-2 fa-play" aria-hidden="true"></i>
+                                        </div><!--mvp-vid-box-wrap-->
+                                    </div><!--mvp-widget-dark-sub-img-->
+                                    <div class="mvp-widget-dark-sub-in">
+                                        <div class="mvp-widget-dark-sub-text left relative">
+                                            <div class="mvp-cat-date-wrap left relative">
+                                                <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                                    class="mvp-cd-date left relative">{{ item.date |timesince }} önce</span>
+                                            </div><!--mvp-cat-date-wrap-->
+                                            <h2>{{ item.title }}</h2>
+                                        </div><!--mvp-widget-dark-sub-text-->
+                                    </div><!--mvp-widget-dark-sub-in-->
+                                </div><!--mvp-widget-dark-sub-out-->
+                            </div><!--mvp-widget-dark-sub-->
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                </div><!--mvp-widget-dark-right-->
+            </div><!--mvp-widget-dark-main-->
+        </div><!--mvp-main-box-->
+    </div><!--mvp-widget-dark-wrap-->
+</section>
+{% endif %}

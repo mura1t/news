@@ -1,0 +1,85 @@
+{% load thumbnail %}
+{% if news %}
+    {% if news.count >= 4 %}
+        <section id="mvp_home_feat1_widget-4" class="mvp-widget-home left relative mvp_home_feat1_widget">
+            <div class="mvp-main-box">
+                <div class="mvp-widget-home-head"><h4 class="mvp-widget-home-title"><span
+                        class="mvp-widget-home-title">{{ news.0.category }}</span></h4></div>
+                <div class="mvp-widget-feat1-wrap left relative">
+                    <div class="mvp-widget-feat1-cont left relative">
+                        {% for item in news %}
+                            {% if forloop.counter <= 2 %}
+                                <a href="{% url 'haberler:news_detail' item.slug %}" rel="bookmark">
+                                    <div class="mvp-widget-feat1-top-story left relative">
+                                        <div class="mvp-widget-feat1-top-img left relative">
+                                            {% thumbnail item.image "590x354" crop="center" as im %}
+                                                <img width="{{ im.width }}"
+                                                     height="{{ im.height }}"
+                                                     src="{{ im.url }}"
+                                                     class="mvp-reg-img lazy wp-post-image"
+                                                     alt="{{ item.title }}"
+                                                     srcset="{{ im.url }}"
+                                                     sizes="(max-width: 400px) 100vw, 400px">
+                                            {% endthumbnail %}
+                                            {% thumbnail item.image "400x240" crop="center" as im %}
+                                                <img width="{{ im.width }}" height="{{ im.height }}"
+                                                     src="{{ im.url }}"
+                                                     class="mvp-mob-img wp-post-image" alt="{{ t.title }}"
+                                                     srcset="{{ im.url }}"
+                                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                            {% endthumbnail %}
+                                        </div><!--mvp-widget-feat1-top-img-->
+                                        <div class="mvp-widget-feat1-top-text left relative">
+                                            <div class="mvp-cat-date-wrap left relative">
+                                                <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                                    class="mvp-cd-date left relative">{{ item.date | timesince }} önce</span>
+                                            </div><!--mvp-cat-date-wrap-->
+                                            <h2>{{ item.title }}</h2>
+                                        </div><!--mvp-widget-feat1-top-text-->
+                                    </div><!--mvp-widget-feat1-top-story-->
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div><!--mvp-widget-feat1-cont-->
+                    <div class="mvp-widget-feat1-cont left relative">
+                        {% for item in news %}
+                            {% if forloop.counter > 2 %}
+                                <a href="{% url 'haberler:news_detail' item.slug %}" rel="bookmark">
+                                    <div class="mvp-widget-feat1-bot-story left relative">
+                                        <div class="mvp-widget-feat1-bot-img left relative">
+                                            {% thumbnail item.image "400x240" crop="center" as im %}
+                                                <img width="{{ im.width }}"
+                                                     height="{{ im.height }}"
+                                                     src="{{ im.url }}"
+                                                     class="mvp-reg-img lazy wp-post-image"
+                                                     alt="{{ item.title }}"
+                                                     srcset="{{ im.url }}"
+                                                     sizes="(max-width: 400px) 100vw, 400px">
+                                            {% endthumbnail %}
+                                            {% thumbnail item.image "80x80" crop="center" as im %}
+                                                <img width="{{ im.width }}" height="{{ im.height }}"
+                                                     src="{{ im.url }}"
+                                                     class="mvp-mob-img wp-post-image" alt="{{ t.title }}"
+                                                     srcset="{{ im.url }}"
+                                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                            {% endthumbnail %}
+                                        </div><!--mvp-widget-feat1-bot-img-->
+                                        <div class="mvp-widget-feat1-bot-text left relative">
+                                            <div class="mvp-cat-date-wrap left relative">
+                                                <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                                    class="mvp-cd-date left relative">{{ item.date | timesince }} önce</span>
+                                            </div><!--mvp-cat-date-wrap-->
+                                            <h2>{{ item.title }}</h2>
+                                        </div><!--mvp-widget-feat1-bot-text-->
+                                    </div><!--mvp-widget-feat1-bot-story-->
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div><!--mvp-widget-feat1-cont-->
+                </div><!--mvp-widget-feat1-wrap-->
+
+            </div>
+        </section>
+    {% endif %}
+
+{% endif %}

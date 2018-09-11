@@ -1,0 +1,120 @@
+{% load thumbnail %}
+{% load menu %}
+{% if randoms.count > 1 %}
+    <section id="mvp-feat1-wrap" class="left relative">
+        <div class="mvp-feat1-right-out left relative">
+            <div class="mvp-feat1-right-in">
+                <div class="mvp-feat1-main left relative">
+                    <div class="mvp-feat1-left-wrap relative">
+                        <a href="{% url "haberler:news_detail" randoms.0.slug %}" rel="bookmark">
+                            <div class="mvp-feat1-feat-wrap left relative">
+                                <div class="mvp-feat1-feat-img left relative">
+                                    {% thumbnail randoms.0.image "560x600" crop="center" as im %}
+                                        <img width="{{ im.width }}" height="{{ im.height }}"
+                                             src="{{ im.url }}"
+                                             class="attachment-mvp-port-thumb size-mvp-port-thumb wp-post-image"
+                                             alt="{{ randoms.0.title }}"
+                                             srcset="{{ im.url }}"
+                                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                    {% endthumbnail %}
+                                    {% if randoms.0.video_url != "0" %}
+                                        <div class="mvp-vid-box-wrap mvp-vid-marg">
+                                            <i class="fa fa-2 fa-play" aria-hidden="true"></i>
+                                        </div>
+                                    {% endif %}
+                                    <!--mvp-vid-box-wrap-->
+                                </div><!--mvp-feat1-feat-img-->
+                                <div class="mvp-feat1-feat-text left relative">
+                                    <div class="mvp-cat-date-wrap left relative">
+                                        <span class="mvp-cd-cat left relative">{{ randoms.0.category }}</span><span
+                                            class="mvp-cd-date left relative">{{ randoms.0.date | timesince }} önce</span>
+                                    </div><!--mvp-cat-date-wrap-->
+                                    <h2>{{ randoms.0.title }}</h2>
+                                    <p>{{ randoms.0.spot }}</p>
+                                </div><!--mvp-feat1-feat-text-->
+                            </div><!--mvp-feat1-feat-wrap-->
+                        </a>
+                        <div class="mvp-feat1-sub-wrap left relative">
+                            <a href="{% url "haberler:news_detail" randoms.1.slug %}" rel="bookmark">
+                                <div class="mvp-feat1-sub-cont left relative">
+                                    <div class="mvp-feat1-sub-img left relative">
+                                        {% thumbnail randoms.1.image "590x354" crop="center" as im %}
+                                            <img width="{{ im.width }}" height="{{ im.height }}"
+                                                 src="{{ im.url }}"
+                                                 class="mvp-reg-img wp-post-image"
+                                                 alt="{{ randoms.1.title }}"
+                                                 srcset="{{ im.url }}"
+                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                        {% endthumbnail %}
+                                        {% thumbnail randoms.1.image "400x240" crop="center" as im %}
+                                            <img width="{{ im.width }}" height="{{ im.height }}"
+                                                 src="{{ im.url }}"
+                                                 class="mvp-mob-img wp-post-image" alt="{{ t.title }}"
+                                                 srcset="{{ im.url }}"
+                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                        {% endthumbnail %}
+                                        {% if randoms.1.video_url != "0" %}
+                                            <div class="mvp-vid-box-wrap mvp-vid-marg">
+                                                <i class="fa fa-2 fa-play" aria-hidden="true"></i>
+                                            </div>
+                                        {% endif %}
+                                    </div><!--mvp-feat1-sub-img-->
+                                    <div class="mvp-feat1-sub-text">
+                                        <div class="mvp-cat-date-wrap left relative">
+                                            <span class="mvp-cd-cat left relative">{{ randoms.1.category }}</span><span
+                                                class="mvp-cd-date left relative">{{ randoms.1.date | timesince }} önce</span>
+                                        </div><!--mvp-cat-date-wrap-->
+                                        <h2>{{ randoms.1.title }}</h2>
+                                    </div><!--mvp-feat1-sub-text-->
+                                </div><!--mvp-feat1-sub-cont-->
+                            </a>
+                            <a href="{% url "haberler:news_detail" randoms.2.slug %}" rel="bookmark">
+                                <div class="mvp-feat1-sub-cont left relative">
+                                    <div class="mvp-feat1-sub-img left relative">
+                                        {% thumbnail randoms.2.image "590x354" crop="center" as im %}
+                                            <img width="{{ im.width }}" height="{{ im.height }}"
+                                                 src="{{ im.url }}"
+                                                 class="mvp-reg-img wp-post-image"
+                                                 alt="{{ randoms.2.title }}"
+                                                 srcset="{{ im.url }}"
+                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                        {% endthumbnail %}
+                                        {% thumbnail randoms.2.image "400x240" crop="center" as im %}
+                                            <img width="{{ im.width }}" height="{{ im.height }}"
+                                                 src="{{ im.url }}"
+                                                 class="mvp-mob-img wp-post-image" alt="{{ t.title }}"
+                                                 srcset="{{ im.url }}"
+                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                        {% endthumbnail %}
+                                        {% if randoms.2.video_url != "0" %}
+                                            <div class="mvp-vid-box-wrap mvp-vid-marg">
+                                                <i class="fa fa-2 fa-play" aria-hidden="true"></i>
+                                            </div>
+                                        {% endif %}
+                                    </div><!--mvp-feat1-sub-img-->
+                                    <div class="mvp-feat1-sub-text">
+                                        <div class="mvp-cat-date-wrap left relative">
+                                            <span class="mvp-cd-cat left relative">{{ randoms.2.category }}</span><span
+                                                class="mvp-cd-date left relative">{{ randoms.2.date | timesince }} önce</span>
+                                        </div><!--mvp-cat-date-wrap-->
+                                        <h2>{{ randoms.2.title }}</h2>
+                                    </div><!--mvp-feat1-sub-text-->
+                                </div><!--mvp-feat1-sub-cont-->
+                            </a>
+                        </div><!--mvp-feat1-sub-wrap-->
+                    </div><!--mvp-feat1-left-wrap-->
+                    {% index_left_trends 5 %}
+                </div><!--mvp-feat1-main-->
+            </div><!--mvp-feat1-right-in-->
+            <div class="mvp-feat1-right-wrap left relative">
+                {#                <div class="mvp-feat1-list-ad left relative">#}
+                {#                    <span class="mvp-ad-label">Advertisement</span>#}
+                {#                    <a href="https://themeforest.net/item/zox-news-professional-wordpress-news-magazine-theme/20381541?ref=mvpthemes"#}
+                {#                       target="_blank"><img#}
+                {#                            src="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox300.png"></a></div>#}
+                <!--mvp-feat1-list-ad-->
+                {% index_rightbar 10 10 10 %}
+            </div><!--mvp-feat1-right-wrap-->
+        </div><!--mvp-feat1-right-out-->
+    </section>
+{% endif %}

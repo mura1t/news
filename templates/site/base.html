@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+{% load menu %}
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width, initial-scale=0.9, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <link rel="pingback" href="xmlrpc.php"/>
+
+    <link rel='dns-prefetch' href='../../fonts.googleapis.com/index.html'/>
+    <link rel='dns-prefetch' href='../../s.w.org/index.html'/>
+    <link rel="alternate" type="application/rss+xml" title="Zox News &raquo; Feed" href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="Zox News &raquo; Comments Feed"
+          href="comments/feed/index.html"/>
+    <link rel='stylesheet' id='woocommerce-layout-css'
+          href='{% static "wp-content/plugins/woocommerce/assets/css/woocommerce-layoutedb1.css" %}' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='woocommerce-smallscreen-css'
+          href='{% static "wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreenedb1.css" %}'
+          media='only screen and (max-width: 768px)'/>
+    <link rel='stylesheet' id='woocommerce-general-css'
+          href='{% static "wp-content/plugins/woocommerce/assets/css/woocommerceedb1.css" %}' type='text/css'
+          media='all'/>
+    <style id='woocommerce-inline-inline-css' type='text/css'>
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
+    </style>
+    <link rel='stylesheet' id='reviewer-photoswipe-css'
+          href='{% static "wp-content/plugins/reviewer/public/assets/css/photoswipe64e1.css" %}' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='dashicons-css' href='{% static "wp-includes/css/dashicons.min5010.css" %}'
+          type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='dashicons-css' href='{% static "wp-content/themes/zox-news/css/site.css" %}'
+          type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='reviewer-public-css'
+          href='{% static "wp-content/plugins/reviewer/public/assets/css/reviewer-public64e1.css" %}' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='mvp-custom-style-css' href='{% static "wp-content/themes/zox-news/style5010.css" %}'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='mvp-reset-css' href='{% static "wp-content/themes/zox-news/css/reset5010.css" %}'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='fontawesome-css'
+          href='{% static "wp-content/themes/zox-news/font-awesome/css/font-awesome5010.css" %}' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='mvp-fonts-css'
+          href='{% static "//fonts.googleapis.com/css?family=Advent+Pro%3A700%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese%7COpen+Sans%3A700%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese%7CAnton%3A400%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese%7COswald%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese%7COswald%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese%7COswald%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese%7CRoboto%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese%7CRoboto%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese%7COswald%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese" %}'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='mvp-media-queries-css'
+          href='{% static "wp-content/themes/zox-news/css/media-queries5010.css" %}' type='text/css' media='all'/>
+    <script type='text/javascript' src='{% static "wp-includes/js/jquery/jqueryb8ff.js" %}'></script>
+    <script type='text/javascript' src='{% static "wp-includes/js/jquery/jquery-migrate.min330a.js" %}'></script>
+    <link rel='https://api.w.org/' href='{% static "wp-json/index.html" %}'/>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml"/>
+    <meta name="generator" content="WordPress 4.9.8"/>
+    <meta name="generator" content="WooCommerce 3.4.4"/>
+
+    <link rel="alternate" type="application/json+oembed"
+          href='{% static "wp-json/oembed/1.0/embed65eb.json?url=http%3A%2F%2Fwww.mvpthemes.com%2Fzoxnews%2F" %}'/>
+    {% block meta %}
+
+    {% endblock %}
+</head>
+<body class="home page-template page-template-page-home page-template-page-home-php page page-id-5 custom-background woocommerce-js"
+      style="transform: none;">
+<div id="mvp-fly-wrap">
+    {% show_left_menu %}
+</div>
+<br>
+<div id="mvp-site" class="left relative" style="transform: none;">
+    <div id="mvp-search-wrap">
+        <div id="mvp-search-box">
+            <form method="get" id="searchform" action="/arama?q=">
+                <input type="text" name="q" id="q" placeholder="Ara">
+                <input type="hidden" id="searchsubmit" value="Search">
+            </form>
+        </div><!--mvp-search-box-->
+        <div class="mvp-search-but-wrap mvp-search-click">
+            <span></span>
+            <span></span>
+        </div><!--mvp-search-but-wrap-->
+    </div>
+    <div id="mvp-site-wall" class="left relative" style="transform: none;">
+        {% show_menu %}
+        <div id="mvp-main-body-wrap" class="left relative" style="transform: none; margin-top: 0px;">
+            <div class="mvp-main-box">
+                {% block body %}
+
+                {% endblock %}
+            </div>
+            {% show_footer %}
+        </div>
+    </div>
+</div>
+<br>
+</div>
+</div>
+</div>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/theia-sticky-sidebar/js/ResizeSensor7d4c.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/theia-sticky-sidebar/js/theia-sticky-sidebar7d4c.js" %}'></script>
+<script type='text/javascript' src='{% static "wp-content/plugins/theia-sticky-sidebar/js/main7d4c.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.minedb1.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.minedb1.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/reviewer/public/assets/js/jquery.nouislider.all.min64e1.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/reviewer/public/assets/js/photoswipe64e1.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/reviewer/public/assets/js/jquery.knob64e1.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/reviewer/public/assets/js/reviewer.public.min64e1.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/reviewer/public/assets/js/reviewer-reviews-boxes64e1.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/reviewer/public/assets/js/reviewer-widget-users-reviews64e1.js" %}'></script>
+<script type='text/javascript' src='{% static "wp-content/themes/zox-news/js/mvpcustom5010.js" %}'></script>
+<script type='text/javascript' src='{% static "wp-content/themes/zox-news/js/site.js" %}'></script>
+<script type='text/javascript' src='{% static "wp-content/themes/zox-news/js/scripts5010.js" %}'></script>
+<script type='text/javascript' src='{% static "wp-content/themes/zox-news/js/retina5010.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min653d.js" %}'></script>
+<script type='text/javascript'
+        src='{% static "wp-content/themes/zox-news/js/jquery.infinitescroll.min5010.js" %}'></script>
+<script type='text/javascript' src='{% static "wp-includes/js/comment-reply.min5010.js" %}'></script>
+<script type='text/javascript' src='{% static "wp-includes/js/wp-embed.min5010.js" %}'></script>
+<script type='text/javascript' src='{% static "wp-content/plugins/akismet/_inc/forma871.js" %}'></script>
+</body>
+</html>

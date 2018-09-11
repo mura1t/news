@@ -1,0 +1,104 @@
+<!--rightbar -->
+{% load thumbnail %}
+<div class="mvp-feat1-list-wrap left relative">
+    <div class="mvp-feat1-list-head-wrap left relative">
+        <ul class="mvp-feat1-list-buts left relative">
+            <li class="mvp-feat-col-tab active"><a href="#mvp-feat-tab-col1"><span
+                    class="mvp-feat1-list-but">Latest</span></a></li>
+            <li class=""><a href="#mvp-feat-tab-col2"><span class="mvp-feat1-list-but">Gallery</span></a></li>
+            <li class=""><a href="#mvp-feat-tab-col3"><span class="mvp-feat1-list-but">Videos</span></a></li>
+        </ul>
+    </div><!--mvp-feat1-list-head-wrap-->
+    <div id="mvp-feat-tab-col1" class="mvp-feat1-list left relative mvp-tab-col-cont" style="display: block;">
+        {% if latest_news %}
+            {% for ln in latest_news %}
+                <a href="{% url 'haberler:news_detail' ln.slug %}" rel="bookmark">
+                    <div class="mvp-feat1-list-cont left relative">
+                        <div class="mvp-feat1-list-out relative">
+                            <div class="mvp-feat1-list-img left relative">
+                                {% thumbnail ln.image "80x80" crop="center" as im %}
+                                    <img width="{{ im.width }}" height="{{ im.height }}"
+                                         src="{{ im.url }}"
+                                         class="attachment- size- wp-post-image" alt=""
+                                         srcset="{{ im.url }}"
+                                         sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                {% endthumbnail %}</div>
+                            <!--mvp-feat1-list-img-->
+                            <div class="mvp-feat1-list-in">
+                                <div class="mvp-feat1-list-text">
+                                    <div class="mvp-cat-date-wrap left relative">
+                                        <span class="mvp-cd-cat left relative">{{ ln.category }}</span><span
+                                            class="mvp-cd-date left relative">{{ ln.date | timesince }} önce</span>
+                                    </div><!--mvp-cat-date-wrap-->
+                                    <h2>{{ ln.title }}</h2>
+                                </div><!--mvp-feat1-list-text-->
+                            </div><!--mvp-feat1-list-in-->
+                        </div><!--mvp-feat1-list-out-->
+                    </div><!--mvp-feat1-list-cont-->
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div><!--mvp-feat-tab-col1-->
+    <div id="mvp-feat-tab-col2" class="mvp-feat1-list left relative mvp-tab-col-cont" style="display: none;">
+        {% if gallery_news %}
+            {% for ln in gallery_news %}
+                <a href="{% url 'haberler:news_detail' ln.slug %}"
+                   rel="bookmark">
+                    <div class="mvp-feat1-list-cont left relative">
+                        <div class="mvp-feat1-list-out relative">
+                            <div class="mvp-feat1-list-img left relative">
+                                {% thumbnail ln.image "80x80" crop="center" as im %}
+                                    <img width="{{ im.width }}" height="{{ im.height }}"
+                                         src="{{ im.url }}"
+                                         class="attachment- size- wp-post-image" alt=""
+                                         srcset="{{ im.url }}"
+                                         sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                {% endthumbnail %}</div>
+                            <!--mvp-feat1-list-img-->
+                            <div class="mvp-feat1-list-in">
+                                <div class="mvp-feat1-list-text">
+                                    <div class="mvp-cat-date-wrap left relative">
+                                        <span class="mvp-cd-cat left relative">{{ ln.category }}</span><span
+                                            class="mvp-cd-date left relative">{{ ln.date | timesince }} önce({{ ln.viewed }})</span>
+                                    </div><!--mvp-cat-date-wrap-->
+                                    <h2>{{ ln.title }}</h2>
+                                </div><!--mvp-feat1-list-text-->
+                            </div><!--mvp-feat1-list-in-->
+                        </div><!--mvp-feat1-list-out-->
+                    </div><!--mvp-feat1-list-cont-->
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div><!--mvp-feat-tab-col2-->
+    <div id="mvp-feat-tab-col3" class="mvp-feat1-list left relative mvp-tab-col-cont" style="display: none;">
+        {% if video_news %}
+            {% for ln in video_news %}
+                <a href="{% url 'haberler:news_detail' ln.slug %}"
+                   rel="bookmark">
+                    <div class="mvp-feat1-list-cont left relative">
+                        <div class="mvp-feat1-list-out relative">
+                            <div class="mvp-feat1-list-img left relative">
+                                {% thumbnail ln.image "80x80" crop="center" as im %}
+                                    <img width="{{ im.width }}" height="{{ im.height }}"
+                                         src="{{ im.url }}"
+                                         class="attachment- size- wp-post-image" alt=""
+                                         srcset="{{ im.url }}"
+                                         sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                {% endthumbnail %}</div>
+                            <!--mvp-feat1-list-img-->
+                            <div class="mvp-feat1-list-in">
+                                <div class="mvp-feat1-list-text">
+                                    <div class="mvp-cat-date-wrap left relative">
+                                        <span class="mvp-cd-cat left relative">{{ ln.category }}</span><span
+                                            class="mvp-cd-date left relative">{{ ln.date | timesince }} önce</span>
+                                    </div><!--mvp-cat-date-wrap-->
+                                    <h2>{{ ln.title }}</h2>
+                                </div><!--mvp-feat1-list-text-->
+                            </div><!--mvp-feat1-list-in-->
+                        </div><!--mvp-feat1-list-out-->
+                    </div><!--mvp-feat1-list-cont-->
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div><!--mvp-feat-tab-col3-->
+</div>

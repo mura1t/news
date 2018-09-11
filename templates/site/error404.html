@@ -1,0 +1,9 @@
+{% extends "site/base.html" %}
+{% load thumbnail %}
+{% load menu %}
+{% block body %}
+    <h1>{{ slug }}</h1>
+    {% if not news %}
+    <h1>Aradığınız sayfa bulunumadı</h1>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,141 @@
+{% load static %}
+{% load menu %}
+{% load thumbnail %}
+{% if sites.top_banner %}
+    <div id="mvp-leader-wrap">
+        <a href="#" style="height: 100%"
+           target="_blank">
+            {% thumbnail sites.top_banner "1800x400" crop="center" as im %}
+                <img width="100%" style="height: 100% !important;"
+                     height="100%"
+                     src="{{ im.url }}"
+                     class="attachment-mvp-mid-thumb size-mvp-mid-thumb wp-post-image"
+                     alt="{{ sub.title }}"
+                     srcset="{{ im.url }}"
+                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+            {% endthumbnail %}</a>
+    </div>
+{% endif %}
+
+<div id="mvp-site-main" class="left relative" style="transform: none; margin-top: 1px !important;">
+    <header id="mvp-main-head-wrap" class="left relative">
+        <nav id="mvp-main-nav-wrap" class="left relative">
+            <div id="mvp-main-nav-top" class="left relative">
+                <div class="mvp-main-box">
+                    <div id="mvp-nav-top-wrap" class="left relative">
+                        <div class="mvp-nav-top-right-out left relative">
+                            <div class="mvp-nav-top-right-in">
+                                <div class="mvp-nav-top-cont left relative">
+                                    <div class="mvp-nav-top-left-out relative">
+                                        <div class="mvp-nav-top-left">
+                                            <div class="mvp-nav-soc-wrap">
+                                                <a href="{{ sites.facebook }}" target="_blank"><span
+                                                        class="mvp-nav-soc-but fa fa-facebook fa-2"></span></a>
+                                                <a href="{{ sites.twitter }}" target="_blank"><span
+                                                        class="mvp-nav-soc-but fa fa-twitter fa-2"></span></a>
+                                                <a href="{{ sites.instagram }}" target="_blank"><span
+                                                        class="mvp-nav-soc-but fa fa-instagram fa-2"></span></a>
+                                                <a href="{{ sites.youtube }}" target="_blank"><span
+                                                        class="mvp-nav-soc-but fa fa-youtube-play fa-2"></span></a>
+                                            </div><!--mvp-nav-soc-wrap-->
+                                            <div class="mvp-fly-but-wrap mvp-fly-but-click left relative">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div><!--mvp-fly-but-wrap-->
+                                        </div><!--mvp-nav-top-left-->
+                                        <div class="mvp-nav-top-left-in">
+                                            <div class="mvp-nav-top-mid left relative" itemscope=""
+                                                 itemtype="http://schema.org/Organization">
+                                                <a class="mvp-nav-logo-reg" itemprop="url" href="/"><img
+                                                        itemprop="logo"
+                                                        src='{{ sites.logo.url }}'
+                                                        alt="{{ sites.title }}" data-rjs="2"></a>
+                                                <a class="mvp-nav-logo-small" href="/"><img
+                                                        src='{{ sites.logo_nav.url }}'
+                                                        alt="Zox News" data-rjs="2"></a>
+                                                <h1 class="mvp-logo-title">Zox News</h1>
+
+                                            </div><!--mvp-nav-top-mid-->
+                                        </div><!--mvp-nav-top-left-in-->
+                                    </div><!--mvp-nav-top-left-out-->
+                                </div><!--mvp-nav-top-cont-->
+                            </div><!--mvp-nav-top-right-in-->
+                            <div class="mvp-nav-top-right">
+                                <div class="mvp-woo-cart-wrap">
+
+                                </div><!--mvp-woo-cart-wrap-->
+                                <span class="mvp-nav-search-but fa fa-search fa-2 mvp-search-click"></span>
+                            </div><!--mvp-nav-top-right-->
+                        </div><!--mvp-nav-top-right-out-->
+                    </div><!--mvp-nav-top-wrap-->
+                </div><!--mvp-main-box-->
+            </div><!--mvp-main-nav-top-->
+            <div id="mvp-main-nav-bot" class="left relative" style="margin-top: 0px;">
+                <div id="mvp-main-nav-bot-cont" class="left">
+                    <div class="mvp-main-box">
+                        <div id="mvp-nav-bot-wrap" class="left">
+                            <div class="mvp-nav-bot-right-out left">
+                                <div class="mvp-nav-bot-right-in">
+                                    <div class="mvp-nav-bot-cont left">
+                                        <div class="mvp-nav-bot-left-out">
+                                            <div class="mvp-nav-bot-left left relative">
+                                                <div class="mvp-fly-but-wrap mvp-fly-but-click left relative">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                </div><!--mvp-fly-but-wrap-->
+                                            </div><!--mvp-nav-bot-left-->
+                                            <div class="mvp-nav-bot-left-in">
+                                                <div class="mvp-nav-menu left">
+                                                    <div class="menu-main-menu-container">
+                                                        <ul id="menu-main-menu-1" class="menu">
+                                                            {% for menu in menus %}
+                                                                <li class="mvp-mega-dropdown menu-item menu-item-type-taxonomy menu-item-object-category menu-item-177">
+                                                                    <a href="{% url "haberler:news_list" menu.slug %}">{{ menu.title }}</a>
+                                                                    <div class="mvp-mega-dropdown">
+                                                                        <div class="mvp-main-box">
+                                                                            <ul class="mvp-mega-list">
+                                                                                {% for sub in subcat|in_category:menu %}
+                                                                                    <li>
+                                                                                        <a href="{% url 'haberler:news_list' sub.slug %}">
+                                                                                            <div class="mvp-mega-img">
+                                                                                                {% thumbnail sub.image "400x240" crop="center" as im %}
+                                                                                                    <img width="{{ im.width }}"
+                                                                                                         height="{{ im.height }}"
+                                                                                                         src="{{ im.url }}"
+                                                                                                         class="attachment-mvp-mid-thumb size-mvp-mid-thumb wp-post-image"
+                                                                                                         alt="{{ sub.title }}"
+                                                                                                         srcset="{{ im.url }}"
+                                                                                                         sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                                                                                {% endthumbnail %}
+                                                                                            </div>
+                                                                                            <p>{{ sub.title }}</p></a>
+                                                                                    </li>
+                                                                                {% endfor %}
+
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            {% endfor %}
+
+                                                        </ul>
+                                                    </div>
+                                                </div><!--mvp-nav-menu-->
+                                            </div><!--mvp-nav-bot-left-in-->
+                                        </div><!--mvp-nav-bot-left-out-->
+                                    </div><!--mvp-nav-bot-cont-->
+                                </div><!--mvp-nav-bot-right-in-->
+                                <div class="mvp-nav-bot-right left relative">
+                                    <span class="mvp-nav-search-but fa fa-search fa-2 mvp-search-click"></span>
+                                </div><!--mvp-nav-bot-right-->
+                            </div><!--mvp-nav-bot-right-out-->
+                        </div><!--mvp-nav-bot-wrap-->
+                    </div><!--mvp-main-nav-bot-cont-->
+                </div><!--mvp-main-box-->
+            </div><!--mvp-main-nav-bot-->
+        </nav><!--mvp-main-nav-wrap-->
+    </header>

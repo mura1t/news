@@ -1,0 +1,43 @@
+{% load thumbnail %}
+<div class="mvp-feat1-mid-wrap left relative">
+    <h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head">Trending</span></h3>
+    <div class="mvp-feat1-pop-wrap left relative">
+        {% if trend_news %}
+            {% for t in trend_news %}
+                <a href="{% url 'haberler:news_detail' t.slug %}" rel="bookmark">
+                    <div class="mvp-feat1-pop-cont left relative">
+                        <div class="mvp-feat1-pop-img left relative">
+                            {% thumbnail t.image "400x240" crop="center" as im %}
+                                <img width="{{ im.width }}" height="{{ im.height }}"
+                                     src="{{ im.url }}"
+                                     class="mvp-reg-img wp-post-image" alt="{{ t.title }}"
+                                     srcset="{{ im.url }}"
+                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                            {% endthumbnail %}
+                            {% thumbnail t.image "80x80" crop="center" as im %}
+                                <img width="{{ im.width }}" height="{{ im.height }}"
+                                     src="{{ im.url }}"
+                                     class="mvp-mob-img wp-post-image" alt="{{ t.title }}"
+                                     srcset="{{ im.url }}"
+                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                            {% endthumbnail %}
+                            {% if t.video_url != "0" %}
+                                <div class="mvp-vid-box-wrap mvp-vid-box-mid mvp-vid-marg">
+                                    <i class="fa fa-2 fa-play" aria-hidden="true"></i>
+                                </div>
+                            {% endif %}
+                        </div><!--mvp-feat1-pop-img-->
+                        <div class="mvp-feat1-pop-text left relative">
+                            <div class="mvp-cat-date-wrap left relative">
+                                <span class="mvp-cd-cat left relative">{{ t.category }}</span><span
+                                    class="mvp-cd-date left relative">{{ t.date | timesince }}</span>
+                            </div><!--mvp-cat-date-wrap-->
+                            <h2>{{ t.title }}</h2>
+                        </div><!--mvp-feat1-pop-text-->
+                    </div><!--mvp-feat1-pop-cont-->
+                </a>
+            {% endfor %}
+        {% endif %}
+
+    </div><!--mvp-feat1-pop-wrap-->
+</div>

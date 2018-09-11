@@ -1,0 +1,46 @@
+{% load static %}
+<footer id="mvp-foot-wrap" class="left relative">
+    <div id="mvp-foot-top" class="left relative">
+        <div class="mvp-main-box">
+            <div id="mvp-foot-logo" class="left relative">
+                <a href="/"><img src="{{ sites.logo.url }}"
+                                          alt="Zox News"
+                                          data-rjs="2"></a>
+            </div><!--mvp-foot-logo-->
+            <div id="mvp-foot-soc" class="left relative">
+                <ul class="mvp-foot-soc-list left relative">
+                    <li><a href="{{ sites.facebook }}" target="_blank" class="fa fa-facebook fa-2"></a></li>
+                    <li><a href="{{ sites.twitter }}" target="_blank" class="fa fa-twitter fa-2"></a></li>
+                    <li><a href="{{ sites.pinterest }}" target="_blank" class="fa fa-pinterest-p fa-2"></a></li>
+                    <li><a href="{{ sites.instagram }}" target="_blank" class="fa fa-instagram fa-2"></a></li>
+                    <li><a href="{{ sites.google_plus }}" target="_blank" class="fa fa-google-plus fa-2"></a></li>
+                    <li><a href="{{ sites.youtube }}" target="_blank" class="fa fa-youtube-play fa-2"></a></li>
+                    <li><a href="{{ sites.linkedin }}" target="_blank" class="fa fa-linkedin fa-2"></a></li>
+                    <li><a href="{{ sites.tumblr }}" target="_blank" class="fa fa-tumblr fa-2"></a>
+                </ul>
+            </div><!--mvp-foot-soc-->
+            <div id="mvp-foot-menu-wrap" class="left relative">
+                <div id="mvp-foot-menu" class="left relative">
+                    <div class="menu-footer-menu-container">
+                        <ul id="menu-footer-menu" class="menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-283"><a href="{% url "takimimiz" %}">Takim</a></li>
+                            {% for c in category %}
+                                <li id="menu-item-283"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-283"><a
+                                        href="{% url 'haberler:news_list' c.slug %}">{{ c.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div><!--mvp-foot-menu-->
+            </div><!--mvp-foot-menu-wrap-->
+        </div><!--mvp-main-box-->
+    </div><!--mvp-foot-top-->
+    <div id="mvp-foot-bot" class="left relative">
+        <div class="mvp-main-box">
+            <div id="mvp-foot-copy" class="left relative">
+                <p>{{ sites.footer_text }}
+                </p>
+            </div><!--mvp-foot-copy-->
+        </div><!--mvp-main-box-->
+    </div><!--mvp-foot-bot-->
+</footer>
