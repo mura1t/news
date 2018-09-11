@@ -3,8 +3,8 @@
     {% if news.count >= 4 %}
         <section id="mvp_home_feat2_widget-3" class="mvp-widget-home left relative mvp_home_feat2_widget">
             <div class="mvp-main-box">
-                <div class="mvp-widget-home-head"><h4 class="mvp-widget-home-title"><span
-                        class="mvp-widget-home-title">{{ news.0.category }}</span></h4></div>
+                <div class="mvp-widget-home-head"><a href="{% url 'haberler:news_list' news.0.category__slug %}"><h4 class="mvp-widget-home-title"><span
+                        class="mvp-widget-home-title">{{ news.0.category__title }}</span></h4></a></div>
                 <div class="mvp-widget-feat2-wrap left relative">
                     <div class="mvp-widget-feat2-out left relative">
                         <div class="mvp-widget-feat2-in">
@@ -42,7 +42,7 @@
                                                     </div><!--mvp-feat1-feat-img-->
                                                     <div class="mvp-feat1-feat-text left relative">
                                                         <div class="mvp-cat-date-wrap left relative">
-                                                            <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                                            <span class="mvp-cd-cat left relative">{{ item.category__title }}</span><span
                                                                 class="mvp-cd-date left relative">{{ item.date |timesince }} önce</span>
                                                         </div><!--mvp-cat-date-wrap-->
                                                         <h2>{{ item.title }}</h2>
@@ -79,7 +79,7 @@
                                                     </div><!--mvp-widget-feat2-right-img-->
                                                     <div class="mvp-widget-feat2-right-text left relative">
                                                         <div class="mvp-cat-date-wrap left relative">
-                                                            <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                                            <span class="mvp-cd-cat left relative">{{ item.category__title }}</span><span
                                                                 class="mvp-cd-date left relative">{{ item.date |timesince }} önce</span>
                                                         </div><!--mvp-cat-date-wrap-->
                                                         <h2>{{ item.title }}</h2>
@@ -108,7 +108,7 @@
                                                     </div><!--mvp-widget-feat2-right-img-->
                                                     <div class="mvp-widget-feat2-right-text left relative">
                                                         <div class="mvp-cat-date-wrap left relative">
-                                                            <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                                            <span class="mvp-cd-cat left relative">{{ item.category__title }}</span><span
                                                                 class="mvp-cd-date left relative">{{ item.date |timesince }} önce</span>
                                                         </div><!--mvp-cat-date-wrap-->
                                                         <h2>{{ item.title }}</h2>
@@ -148,7 +148,7 @@
                                                         <div class="mvp-feat1-list-in">
                                                             <div class="mvp-feat1-list-text">
                                                                 <div class="mvp-cat-date-wrap left relative">
-                                                                    <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                                                    <span class="mvp-cd-cat left relative">{{ item.category__title }}</span><span
                                                                         class="mvp-cd-date left relative">{{ item.date |timesince }} önce</span>
                                                                 </div><!--mvp-cat-date-wrap-->
                                                                 <h2>{{ item.title }}</h2>
@@ -160,7 +160,7 @@
                                         {% endif %}
                                     {% endfor %}
                                 </div><!--mvp-feat1-list-->
-                                <a href="{% url 'haberler:news_list' news.0.category.slug %}">
+                                <a href="{% url 'haberler:news_list' news.0.category__slug %}">
                                     <div class="mvp-widget-feat2-side-more-but left relative">
                                         <span class="mvp-widget-feat2-side-more">Daha Fazla {{ c.title }}</span><i
                                             class="fa fa-long-arrow-right" aria-hidden="true"></i>

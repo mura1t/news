@@ -3,13 +3,13 @@
 {% block body %}
     {% block meta %}
         {% if news %}
-            <meta property="og:description" content="{{ news.0.category.title }}"/>
-            <meta property="og:title" content="{{ news.0.category.title }}"/>
+            <meta property="og:description" content="{{ news.0.category__title.title }}"/>
+            <meta property="og:title" content="{{ news.0.category__title.title }}"/>
             <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
-            <meta name="description" content="{{ news.0.category.title }}"/>
-            <meta itemprop="name" content="{{ news.0.category.title }}"/>
+            <meta name="description" content="{{ news.0.category__title.title }}"/>
+            <meta itemprop="name" content="{{ news.0.category__title.title }}"/>
             {% if site %}
-                <title>{{ news.0.category }} | {{ site.title }}</title>
+                <title>{{ news.0.category__title }} | {{ site.title }}</title>
                 <meta property="og:image" content="{{ site.domain }}{{ news.0.image.url }}"/>
                 <meta itemprop="image" content="{{ site.domain }}{{ news.0.image.url }}"/>
                 <link rel="canonical" href="{{ site.domain }}{{ request.path }}"/>
@@ -42,7 +42,7 @@
                             {% endthumbnail %}
                         </div><!--mvp-feat6-img-->
                         <div id="mvp-feat6-text">
-                            <h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head">{{ news.0.category }}</span>
+                            <h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head">{{ news.0.category__title }}</span>
                             </h3>
                             <h2>{{ news.0.title }}</h2>
                             <p>{{ news.0.spot }}</p>
@@ -83,7 +83,7 @@
                                                 <div class="mvp-blog-story-in">
                                                     <div class="mvp-blog-story-text left relative">
                                                         <div class="mvp-cat-date-wrap left relative">
-                                                            <span class="mvp-cd-cat left relative">{{ ns.category }}</span><span
+                                                            <span class="mvp-cd-cat left relative">{{ ns.category__title }}</span><span
                                                                 class="mvp-cd-date left relative">{{ ns.date |timesince }} Önce</span>
                                                         </div><!--mvp-cat-date-wrap-->
                                                         <h2>{{ ns.title }}</h2>

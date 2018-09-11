@@ -4,7 +4,7 @@
     <div class="mvp-widget-dark-wrap left relative">
         <div class="mvp-main-box">
             <div class="mvp-widget-home-head">
-                <h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">Videos</span></h4>
+                <a href="{% url 'haberler:news_list' news.0.category__slug %}"><h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">Videos</span></h4></a>
             </div><!--mvp-widget-home-head-->
             <div class="mvp-widget-dark-main left relative">
                 {% for item in news %}
@@ -28,7 +28,7 @@
                                     </div><!--mvp-widget-dark-feat-img-->
                                     <div class="mvp-widget-dark-feat-text left relative">
                                         <div class="mvp-cat-date-wrap left relative">
-                                            <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                            <span class="mvp-cd-cat left relative">{{ item.category__title }}</span><span
                                                 class="mvp-cd-date left relative">{{ item.date |timesince }} önce</span>
                                         </div><!--mvp-cat-date-wrap-->
                                         <h2>{{ item.title }}</h2>
@@ -63,7 +63,7 @@
                                     <div class="mvp-widget-dark-sub-in">
                                         <div class="mvp-widget-dark-sub-text left relative">
                                             <div class="mvp-cat-date-wrap left relative">
-                                                <span class="mvp-cd-cat left relative">{{ item.category }}</span><span
+                                                <span class="mvp-cd-cat left relative">{{ item.category__title }}</span><span
                                                     class="mvp-cd-date left relative">{{ item.date |timesince }} önce</span>
                                             </div><!--mvp-cat-date-wrap-->
                                             <h2>{{ item.title }}</h2>

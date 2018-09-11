@@ -11,7 +11,7 @@ def get_cache_menu():
     cache_key = 'menu_cache-1'
     cache_time = 60 * 10
     menus = cache.get(cache_key)
-    if not menus:
+    if  menus:
         menus = Category.objects.filter(active=True)
         cache.set(cache_key, menus, cache_time)
     return menus
@@ -21,7 +21,7 @@ def get_site_config():
     cache_key = 'site_config_1'
     cache_time = 60 * 10
     menus = cache.get(cache_key)
-    if not menus:
+    if not  menus:
         menus = SiteSettings.objects.last()
         cache.set(cache_key, menus, cache_time)
     return menus
@@ -32,7 +32,7 @@ def get_latest_news(adet):
     cache_time = 60 * 10
     latest = cache.get(cache_key)
     if not latest:
-        latest = News.objects.filter(active=True).order_by("-id")[:adet]
+        latest = News.objects.filter(active=True).order_by("-id")[:adet].values('title','spot','slug','image','category__title','date');
         cache.set(cache_key, latest, cache_time)
     return latest
 
@@ -42,7 +42,7 @@ def get_trends_news(adet):
     cache_time = 60 * 10
     trends = cache.get(cache_key)
     if not trends:
-        trends = News.objects.filter(active=True).order_by("-viewed")[:adet]
+        trends = News.objects.filter(active=True).order_by("-viewed")[:adet].values('title','spot','slug','image','category__title','date');
         cache.set(cache_key, trends, cache_time)
     return trends
 
@@ -52,7 +52,7 @@ def get_videos_news(adet):
     cache_time = 60 * 10
     videos = cache.get(cache_key)
     if not videos:
-        videos = News.objects.filter(active=True).exclude(video_url="0").order_by("-id")[:adet]
+        videos = News.objects.filter(active=True).exclude(video_url="0").order_by("-id")[:adet].values('title','spot','slug','image','category__title','date','category__slug');
         cache.set(cache_key, videos, cache_time)
     return videos
 
@@ -63,7 +63,7 @@ def get_gallery_news(adet):
     gallery = cache.get(cache_key)
     if not gallery:
         gallery = News.objects.filter(active=True).filter(
-            pk__in=NewsGallery.objects.filter(active=True).order_by("-id").values("parent")).order_by("-id")[:adet]
+            pk__in=NewsGallery.objects.filter(active=True).order_by("-id").values("parent")).order_by("-id")[:adet].values('title','spot','slug','image','category__title','date');
         cache.set(cache_key, gallery, cache_time)
     return gallery
 
@@ -73,7 +73,7 @@ def get_random_news(adet):
     cache_time = 60 * 10
     news = cache.get(cache_key)
     if not news:
-        news = News.objects.filter(active=True).order_by("?")[:adet]
+        news = News.objects.filter(active=True).order_by("?")[:adet].values('title','spot','slug','image','category__title','date');
         cache.set(cache_key, news, cache_time)
     return news
 
@@ -110,7 +110,7 @@ register.inclusion_tag('site/footer.html')(show_footer)
 
 @register.filter
 def in_category(subcat, category):
-    return subcat.filter(parent=category).order_by("-id")[:5]
+    return subcat.filter(parent=category).order_by("-id")[:5].values("image","title","slug")
 
 
 ## SİTE İNDEX SAYFASI
@@ -142,7 +142,7 @@ def index_section_one(cat, adet):
     cache_time = 60 * 10
     news = cache.get(cache_key)
     if not news:
-        news = News.objects.filter(category__id=cat).order_by("-id")[:adet]
+        news = News.objects.filter(category__id=cat).order_by("-id")[:adet].values('title','spot','slug','image','category__title','date','category__slug');
         cache.set(cache_key, news, cache_time)
 
     return {'news': news}
@@ -163,7 +163,7 @@ def index_section_tree(cat,adet):
     cache_time = 60 * 10
     news = cache.get(cache_key)
     if not news:
-        news = News.objects.filter(category__id=cat).order_by("-id")[:adet]
+        news = News.objects.filter(category__id=cat).order_by("-id")[:adet].values('id','title','spot','slug','image','category__title','date','category__slug');
         cache.set(cache_key, news, cache_time)
     return {'news': news}
 
@@ -176,7 +176,7 @@ def index_section_four(cat,adet):
     cache_time = 60 * 10
     news = cache.get(cache_key)
     if not news:
-        news = News.objects.filter(category__id=cat,active=True).order_by("-id")[:adet]
+        news = News.objects.filter(category__id=cat,active=True).order_by("-id")[:adet].values('id','title','spot','slug','image','category__title','date','category__slug');
         cache.set(cache_key, news, cache_time)
     return {'news': news}
 

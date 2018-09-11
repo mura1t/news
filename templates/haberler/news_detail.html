@@ -29,9 +29,10 @@
                     <div id="mvp-post-main" class="left relative" style="transform: none;">
                         <header id="mvp-post-head" class="left relative">
                             <h3 class="mvp-post-cat left relative"><a class="mvp-post-cat-link"
-                                                                      href="{% url 'haberler:news_list' news.0.category.slug %}"><span
+{#                                                                      href="{% url 'haberler:news_list' news.0.category.slug %}"><span#}
                                     class="mvp-post-cat left">{{ news.0.category }}</span></a></h3>
                             <h1 class="mvp-post-title left entry-title" itemprop="headline">{{ news.0.title }}</h1>
+                            <span>{{ deneme.0.id }}</span>
                             <span class="mvp-post-excerpt left"><p>{{ news.0.spot }}</p>
 </span>
                             <div class="mvp-author-info-wrap left relative">
@@ -57,7 +58,7 @@
                                     <div class="mvp-author-info-name left relative" itemprop="author" itemscope=""
                                          itemtype="https://schema.org/Person">
                                         <p>By</p> <span class="author-name vcard fn author" itemprop="name"><a
-                                            href="{% url 'author_detail' news.0.user.username %}"
+                                            href="{% url 'author_detail' news.0.user %}"
                                             title="Posts by Zox News Staff" rel="author">{{ news.0.user }}</a></span> <a
                                             href="{{ news.0.user.profile.twitter }}" class="mvp-twit-but"
                                             target="_blank"><span class="mvp-author-info-twit-but"><i
@@ -341,11 +342,13 @@
                                                                                     tabindex="-1">Next</a></li>
                                                                         </ul>
                                                                     </div><!--mvp-post-gallery-bot-->
+
                                                                 </section>
                                                             {% endif %}
                                                             <div class="mvp-post-tags">
                                                                 <span class="mvp-post-tags-header">İLGİLİ Konular:</span><span
                                                                     itemprop="keywords">
+                                                             benzerler : {{ simtag }}
                                                             {% if  news.0.tags_split %}
                                                                 {% for key in news.0.tags_split %}
                                                                     {% if  key != "" and key != ",," %}

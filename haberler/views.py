@@ -8,20 +8,24 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from ayarlar.models import SiteSettings
 from .templatetags.menu import get_site_config
 from next_prev import next_in_order, prev_in_order
+from functools import reduce
+from django.db.models import Q
+
 
 def news_list(request, slug):
     page = request.GET.get('sayfa', 1)
     sayfa_adet = 15
     template = "haberler/news_list.html"
     try:
-        news = News.objects.filter(active=True, category__slug=slug).order_by("-id")[:(int(page) +2) * sayfa_adet];
+        news = News.objects.filter(active=True, category__slug=slug).order_by("-id")[:(int(page) + 2) * sayfa_adet].values('id','title','spot','slug','image','category__title');
         if not news:
-            news = News.objects.filter(active=True, sub_category__slug=slug).order_by("-id")[:(int(page) + 1) * sayfa_adet];
+            news = News.objects.filter(active=True, sub_category__slug=slug).order_by("-id")[
+                   :(int(page) + 1) * sayfa_adet].values('id','title','spot','slug','image','category__title');
     except:
         news = None
-    count =0
+    count = 0
     if news:
-        news_total = News.objects.filter(active=True,category__slug=slug).count()
+        news_total = News.objects.filter(active=True, category__slug=slug).count()
         if news_total / sayfa_adet > round(news_total / sayfa_adet):
             count = round(news_total / sayfa_adet) + 1
         else:
@@ -34,11 +38,11 @@ def news_list(request, slug):
         except EmptyPage:
             news = paginator.page(paginator.num_pages)
     else:
-        raise Http404()
+        # raise Http404()
         messages.add_message(request, messages.INFO, "Aradığınız sayfa  ya da haber bulunumadı")
     context = {
         'news': news,
-        'count' :count,
+        'count': count,
         'site': get_site_config(),
     }
     return render(request, template, context)
@@ -58,7 +62,8 @@ def news_detail(request, slug):
         cache_time = 60 * 10
         trends = cache.get(cache_key)
         try:
-            similar_news = News.objects.filter(sub_category=post_news.sub_category).exclude(slug=slug).order_by("-id")[:5]
+            similar_news = News.objects.filter(sub_category=post_news.sub_category).exclude(slug=slug).order_by("-id")[
+                           :5]
         except:
             similar_news = None
         if not trends:
@@ -69,17 +74,18 @@ def news_detail(request, slug):
         baslangic = ((sayfa - 1) * paging_ch)
         next = next_in_order(post_news)
         prev = prev_in_order(post_news, loop=True)
+        # simtag = News.objects.filter(tags__icontains=post_news.tags_split()[1]). | News.objects.filter(tags__icontains=post_news.tags_split()[2]),
         context = {
             'news': news,
             'char': paging_ch,
             'next_news': next,
-            'prev_news':prev,
+            'prev_news': prev,
             'similar_news': similar_news,
             'detailtext': post_news.detail[((sayfa - 1) * paging_ch):(baslangic + paging_ch)],
             'comments': NewsComment.objects.filter(parent__in=News.objects.filter(slug=slug), active=True),
             'trends': trends,
             'gallery': NewsGallery.objects.filter(parent=post_news, active=True),
-            'site':get_site_config(),
+            'site': get_site_config(),
         }
     if request.method == "POST":
         NewsComment.objects.create(user=request.POST.get("name"), parent=post_news, content=request.POST.get("content"),
@@ -115,7 +121,7 @@ def addnews(request):
     # image = "resim4.jpg"
     # tags = "deneme ,tags ,lar"
     index = 0
-    news =  News.objects.filter(active=True).order_by("-id")
+    news = News.objects.filter(active=True).order_by("-id")
     for i in news:
         i.save()
     # while index <= 70000:
