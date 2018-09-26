@@ -16,10 +16,10 @@ class SiteAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Genel Bilgiler', {
             'fields': ['title', 'desc', 'logo', 'logo_nav', 'icon', 'keywords', 'footer_text', 'top_banner',
-                       'post_detail','domain']}),
+                       'post_detail','domain','page_size']}),
         ('Sosyal Medya', {'fields': ['instagram', 'facebook', 'twitter', 'pinterest', 'google_plus', 'tumblr']}),
+        ('İyzico Ödeme Ayarları',{'fields':['iyzi_api','iyzi_secret_key']})
     ]
-
 
 admin.site.register(Profile)
 admin.site.register(SiteSettings, SiteAdmin)

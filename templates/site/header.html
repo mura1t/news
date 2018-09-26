@@ -1,23 +1,35 @@
 {% load static %}
 {% load menu %}
 {% load thumbnail %}
-{% if sites.top_banner %}
-    <div id="mvp-leader-wrap">
-        <a href="#" style="height: 100%"
-           target="_blank">
-            {% thumbnail sites.top_banner "1800x400" crop="center" as im %}
-                <img width="100%" style="height: 100% !important;"
-                     height="100%"
-                     src="{{ im.url }}"
-                     class="attachment-mvp-mid-thumb size-mvp-mid-thumb wp-post-image"
-                     alt="{{ sub.title }}"
-                     srcset="{{ im.url }}"
-                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
-            {% endthumbnail %}</a>
-    </div>
+{% load cache %}
+<!---top reklam --->
+<div id="mvp-leader-wrap">
+{% if reklam %}
+    {% with reklam|reklam_getir:1 as rk %}
+        {% if rk.0.type == "1" %}
+            google adwords in here
+        {% elif rk.0.type == "2" %}
+
+                <a href="{{ rk.0.link }}" style="height: 100%"
+                   target="_blank">
+                    {% thumbnail rk.0.image "1800x400" crop="center" as im %}
+                        <img width="100%" style="height: 100% !important;"
+                             height="100%"
+                             src="{{ im.url }}"
+                             class="attachment-mvp-mid-thumb size-mvp-mid-thumb wp-post-image"
+                             alt="{{ sub.title }}"
+                             srcset="{{ im.url }}"
+                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                    {% endthumbnail %}</a>
+
+        {% else %}
+        {% endif %}
+    {% endwith %}
+</div>
 {% endif %}
 
-<div id="mvp-site-main" class="left relative" style="transform: none; margin-top: 1px !important;">
+{#{% cache 100000 headercache %}#}
+<div id="mvp-site-main" class="left relative" style="transform: none; margin-top: 0px !important;">
     <header id="mvp-main-head-wrap" class="left relative">
         <nav id="mvp-main-nav-wrap" class="left relative">
             <div id="mvp-main-nav-top" class="left relative">
@@ -53,9 +65,9 @@
                                                         src='{{ sites.logo.url }}'
                                                         alt="{{ sites.title }}" data-rjs="2"></a>
                                                 <a class="mvp-nav-logo-small" href="/"><img
-                                                        src='{{ sites.logo_nav.url }}'
+                                                        src='{{ sites.logo_nav.url }}{{ site }}'
                                                         alt="Zox News" data-rjs="2"></a>
-                                                <h1 class="mvp-logo-title">Zox News</h1>
+                                                <h1 class="mvp-logo-title"></h1>
 
                                             </div><!--mvp-nav-top-mid-->
                                         </div><!--mvp-nav-top-left-in-->
@@ -139,3 +151,4 @@
             </div><!--mvp-main-nav-bot-->
         </nav><!--mvp-main-nav-wrap-->
     </header>
+{#{% endcache %}#}

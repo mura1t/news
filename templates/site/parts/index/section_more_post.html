@@ -12,8 +12,9 @@
                 <div class="mvp-main-blog-in">
                     <div class="mvp-main-blog-body left relative">
                         <ul class="mvp-blog-story-list left relative infinite-content">
-                            {% if news %}
-                                {% for n in news %}
+                            {% if news|get_news_random|length >= 10 %}
+                                {% with news|get_news_random as snews %}
+                                {% for n in snews %}
                                     <li class="mvp-blog-story-wrap left relative infinite-post">
                                         <a href="{% url 'haberler:news_detail' n.slug %}"
                                            rel="bookmark">
@@ -50,6 +51,7 @@
                                         </a>
                                     </li><!--mvp-blog-story-wrap-->
                                 {% endfor %}
+                                {% endwith %}
                             {% endif %}
                         </ul>
                     </div><!--mvp-main-blog-body-->

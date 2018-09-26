@@ -2,392 +2,393 @@
 {% load static %}
 {% block body %}
     {% load thumbnail %}
-    <div class="mvp-main-blog-wrap left relative" style="transform: none;">
-        <div class="mvp-main-box" style="transform: none;">
-            <div class="mvp-main-blog-cont left relative" style="transform: none;">
-                <div id="mvp-author-page-top" class="left relative">
-                    <div class="mvp-author-top-out right relative">
-                        <div id="mvp-author-top-left" class="left relative">
-                            <img alt=""
-                                 src="../../../../0.gravatar.com/avatar/c384934c5206d74fbf3edf07645c90fe525a.jpeg?s=200&amp;d=mm&amp;r=g"
-                                 srcset="http://0.gravatar.com/avatar/c384934c5206d74fbf3edf07645c90fe?s=400&amp;d=mm&amp;r=g 2x"
-                                 class="avatar avatar-200 photo" height="200" width="200"></div>
-                        <!--mvp-author-top-left-->
-                        <div class="mvp-author-top-in">
-                            <div id="mvp-author-top-right" class="left relative">
-                                <h1 class="mvp-author-top-head left">Yazar</h1>
-                                <span class="mvp-author-page-desc left relative">{{ user.username|title }} {{ user.last_name }}</span>
-                                <ul class="mvp-author-page-list left relative">
-                                    <a href="http://www.facebook.com/envato" alt="Facebook" target="_blank">
-                                        <li class="fa fa-facebook fa-2"></li>
-                                    </a>
-                                    <a href="http://www.twitter.com/mvpthemes" alt="Twitter" target="_blank">
-                                        <li class="fa fa-twitter fa-2"></li>
-                                    </a>
-                                    <a href="http://www.pinterest.com/envato" alt="Pinterest" target="_blank">
-                                        <li class="fa fa-pinterest-p fa-2"></li>
-                                    </a>
-                                    <a href="http://www.instagram.com/envato" alt="Instagram" target="_blank">
-                                        <li class="fa fa-instagram fa-2"></li>
-                                    </a>
-                                    <a href="https://plus.google.com/u/0/117387558594263929098" alt="Google Plus"
-                                       target="_blank">
-                                        <li class="fa fa-google-plus fa-2"></li>
-                                    </a>
-                                    <a href="http://www.linkedin.com/company/envato" alt="LinkedIn" target="_blank">
-                                        <li class="fa fa-linkedin fa-2"></li>
-                                    </a>
-                                </ul>
-                            </div><!--mvp-author-top-right-->
-                        </div><!--mvp-author-top-in-->
-                    </div><!--mvp-author-top-out-->
-                </div><!--mvp-author-page-top-->
-                <div class="mvp-main-blog-out left relative" style="transform: none;">
-                    <div class="mvp-main-blog-in">
-                        <div class="mvp-main-blog-body left relative">
-                            <div class="mvp-widget-home-head">
-                                <h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">Yazar tarafından yazılan haberler</span>
-                                </h4>
-                            </div><!--mvp-widget-home-head-->
-                            <ul class="mvp-blog-story-list left relative infinite-content">
-                                {% for n in news %}
-                                    <li class="mvp-blog-story-wrap left relative infinite-post">
-                                        <a href="../../uber-and-lyft-are-finally-available-in-all-of-new-york-state/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-blog-story-out relative">
-                                                <div class="mvp-blog-story-img left relative">
-                                                    {% thumbnail n.image "400x240" crop="center" as im %}
-                                                        <img width="{{ im.width }}" height="{{ im.height }}"
-                                                             src="{{ im.url }}"
-                                                             class="mvp-reg-img lazy wp-post-image" alt="{{ n.title }}"
-                                                             srcset="{{ im.url }}"
-                                                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
-                                                    {% endthumbnail %}
-
-                                                </div><!--mvp-blog-story-img-->
-                                                <div class="mvp-blog-story-in">
-                                                    <div class="mvp-blog-story-text left relative">
-                                                        <div class="mvp-cat-date-wrap left relative">
-                                                            <span class="mvp-cd-cat left relative">{{ n.category }}</span><span
-                                                                class="mvp-cd-date left relative">{{ n.date |timesince }} önce</span>
-                                                        </div><!--mvp-cat-date-wrap-->
-                                                        <h2>{{ n.title }}</h2>
-                                                        <p>{{ n.spot }}</p>
-                                                    </div><!--mvp-blog-story-text-->
-                                                </div><!--mvp-blog-story-in-->
-                                            </div><!--mvp-blog-story-out-->
-                                        </a>
-                                    </li><!--mvp-blog-story-wrap-->
-                                {% empty %}
-                                    <li>Üzgünüm yazarın hikayesi bulunumadı</li>
-                                {% endfor %}
-                            </ul>
-                            <hr>
-                            {% if news.has_other_pages %}
-                                <ul class="pagination" style="display: inline;">
-                                    {% if news.has_previous %}
-                                        <li><a href="?sayfa={{ news.previous_page_number }}">&laquo;</a></li>
+    {% if user %}
+        <div class="mvp-main-blog-wrap left relative" style="transform: none;">
+            <div class="mvp-main-box" style="transform: none;">
+                <div class="mvp-main-blog-cont left relative" style="transform: none;">
+                    <div id="mvp-author-page-top" class="left relative">
+                        <div class="mvp-author-top-out right relative">
+                            <div id="mvp-author-top-left" class="left relative">
+                                {% if user.profile.image %}
+                                    <img alt=""
+                                         src="{{ user.profile.image.url }}"
+                                         class="avatar avatar-200 photo" height="200" width="200"></div>
                                     {% else %}
-                                        <li class="disabled"><span>&laquo;</span></li>
-                                    {% endif %}
-                                    {% for i in news.paginator.page_range %}
-                                        {% if i == 10 %}
-                                            <li class="active"><span>...<span
-                                                    class="sr-only">(current)</span></span></li>
-                                        {% endif %}
-                                        {% if i < 10 %}
-                                            {% if news.number == i %}
-                                                <li class="active"><span>{{ i }} <span
-                                                        class="sr-only">(current)</span></span></li>
-                                            {% else %}
-                                                <li><a href="?sayfa={{ i }}">{{ i }}</a></li>
-                                            {% endif %}
-                                        {% endif %}
+                                    <img alt=""
+                                         src="#"
+                                         class="avatar avatar-200 photo" height="200" width="200"></div>
+                                {% endif %}
+
+                            <!--mvp-author-top-left-->
+                            <div class="mvp-author-top-in">
+                                <div id="mvp-author-top-right" class="left relative">
+                                    <h1 class="mvp-author-top-head left">Yazar</h1>
+                                    <span class="mvp-author-page-desc left relative">{{ user.username|title }} {{ user.last_name|upper }}</span>
+                                    <ul class="mvp-author-page-list left relative">
+                                        <a href="{{ user.profile.facebook }}" alt="Facebook" target="_blank">
+                                            <li class="fa fa-facebook fa-2"></li>
+                                        </a>
+                                        <a href="{{ user.profile.twitter }}" alt="Twitter" target="_blank">
+                                            <li class="fa fa-twitter fa-2"></li>
+                                        </a>
+                                        <a href="{{ user.profile.pinterest }}" alt="Pinterest" target="_blank">
+                                            <li class="fa fa-pinterest-p fa-2"></li>
+                                        </a>
+                                        <a href="{{ user.profile.instagram }}" alt="Instagram" target="_blank">
+                                            <li class="fa fa-instagram fa-2"></li>
+                                        </a>
+                                        <a href="{{ user.profile.google_plus }}" alt="Google Plus"
+                                           target="_blank">
+                                            <li class="fa fa-google-plus fa-2"></li>
+                                        </a>
+                                        <a href="{{ user.profile.linkedin }}" alt="LinkedIn" target="_blank">
+                                            <li class="fa fa-linkedin fa-2"></li>
+                                        </a>
+                                    </ul>
+                                </div><!--mvp-author-top-right-->
+                            </div><!--mvp-author-top-in-->
+                        </div><!--mvp-author-top-out-->
+                    </div><!--mvp-author-page-top-->
+                    <div class="mvp-main-blog-out left relative" style="transform: none;">
+                        <div class="mvp-main-blog-in">
+                            <div class="mvp-main-blog-body left relative">
+                                <div class="mvp-widget-home-head">
+                                    <h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">Yazar tarafından yazılan haberler</span>
+                                    </h4>
+                                </div><!--mvp-widget-home-head-->
+                                <ul class="mvp-blog-story-list left relative infinite-content">
+                                    {% for n in news %}
+                                        <li class="mvp-blog-story-wrap left relative infinite-post">
+                                            <a href="{% url 'haberler:news_detail' n.slug %}"
+                                               rel="bookmark">
+                                                <div class="mvp-blog-story-out relative">
+                                                    <div class="mvp-blog-story-img left relative">
+                                                        {% thumbnail n.image "400x240" crop="center" as im %}
+                                                            <img width="{{ im.width }}" height="{{ im.height }}"
+                                                                 src="{{ im.url }}"
+                                                                 class="mvp-reg-img lazy wp-post-image"
+                                                                 alt="{{ n.title }}"
+                                                                 srcset="{{ im.url }}"
+                                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
+                                                        {% endthumbnail %}
+
+                                                    </div><!--mvp-blog-story-img-->
+                                                    <div class="mvp-blog-story-in">
+                                                        <div class="mvp-blog-story-text left relative">
+                                                            <div class="mvp-cat-date-wrap left relative">
+                                                                <span class="mvp-cd-cat left relative">{{ n.category }}</span><span
+                                                                    class="mvp-cd-date left relative">{{ n.date |timesince }} önce</span>
+                                                            </div><!--mvp-cat-date-wrap-->
+                                                            <h2>{{ n.title }}</h2>
+                                                            <p>{{ n.spot }}</p>
+                                                        </div><!--mvp-blog-story-text-->
+                                                    </div><!--mvp-blog-story-in-->
+                                                </div><!--mvp-blog-story-out-->
+                                            </a>
+                                        </li><!--mvp-blog-story-wrap-->
+                                    {% empty %}
+                                        <li>Üzgünüm yazarın hikayesi bulunumadı</li>
                                     {% endfor %}
-                                    {% if news.has_next %}
-                                        <li><a href="?sayfa={{ news.next_page_number }}">&raquo;</a></li>
-                                    {% else %}
-                                        <li class="disabled"><span>&raquo;</span></li>
-                                    {% endif %}
                                 </ul>
-                            {% endif %}
-                        </div><!--mvp-inf-more-wrap-->
-                    </div><!--mvp-main-blog-body-->
-                </div><!--mvp-mvp-main-blog-in-->
-                <div id="mvp-side-wrap" class="left relative theiaStickySidebar"
-                     style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
-                    <div class="theiaStickySidebar"
-                         style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; left: 191.538px; top: 0px;">
-                        <section id="mvp_ad_widget-7" class="mvp-side-widget mvp_ad_widget">
-                            <div class="mvp-widget-ad left relative">
-                                <span class="mvp-ad-label">Advertisement</span>
-                                <img src="../../wp-content/uploads/2017/07/zox300.png"></div><!--mvp-widget-ad-->
-                        </section>
-                        <section id="mvp_tabber_widget-6" class="mvp-side-widget mvp_tabber_widget">
-                            <div class="mvp-widget-tab-wrap left relative">
-                                <div class="mvp-feat1-list-wrap left relative">
-                                    <div class="mvp-feat1-list-head-wrap left relative">
-                                        <ul class="mvp-feat1-list-buts left relative">
-                                            <li class="mvp-feat-col-tab active"><a href="#mvp-tab-col1"><span
-                                                    class="mvp-feat1-list-but">Latest</span></a></li>
-                                            <li><a href="#mvp-tab-col2"><span
-                                                    class="mvp-feat1-list-but">Trending</span></a></li>
-                                            <li><a href="#mvp-tab-col3"><span
-                                                    class="mvp-feat1-list-but">Videos</span></a></li>
-                                        </ul>
-                                    </div><!--mvp-feat1-list-head-wrap-->
-                                    <div id="mvp-tab-col1" class="mvp-feat1-list left relative mvp-tab-col-cont"
-                                         style="display: block;">
-                                        <a href="../../illinois-financial-crisis-could-bring-the-state-to-a-halt/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-feat1-list-cont left relative">
-                                                <div class="mvp-feat1-list-out relative">
-                                                    <div class="mvp-feat1-list-img left relative">
-                                                        <img width="80" height="80"
-                                                             src="../../wp-content/uploads/2017/07/politics-80x80.jpg"
-                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
-                                                             alt=""
-                                                             srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-600x600.jpg 600w"
-                                                             sizes="(max-width: 80px) 100vw, 80px"></div>
-                                                    <!--mvp-feat1-list-img-->
-                                                    <div class="mvp-feat1-list-in">
-                                                        <div class="mvp-feat1-list-text">
-                                                            <div class="mvp-cat-date-wrap left relative">
-                                                                <span class="mvp-cd-cat left relative">Politics</span><span
-                                                                    class="mvp-cd-date left relative">1 year ago</span>
-                                                            </div><!--mvp-cat-date-wrap-->
-                                                            <h2>Illinois’ financial crisis could bring the state to
-                                                                a halt</h2>
-                                                        </div><!--mvp-feat1-list-text-->
-                                                    </div><!--mvp-feat1-list-in-->
-                                                </div><!--mvp-feat1-list-out-->
-                                            </div><!--mvp-feat1-list-cont-->
-                                        </a>
-                                        <a href="../../mobile-google-ceo-promises-11-daydream-compatible-phones/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-feat1-list-cont left relative">
-                                                <div class="mvp-feat1-list-out relative">
-                                                    <div class="mvp-feat1-list-img left relative">
-                                                        <img width="80" height="80"
-                                                             src="../../wp-content/uploads/2017/07/vr-headset-80x80.jpg"
-                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
-                                                             alt=""
-                                                             srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-600x600.jpg 600w"
-                                                             sizes="(max-width: 80px) 100vw, 80px"></div>
-                                                    <!--mvp-feat1-list-img-->
-                                                    <div class="mvp-feat1-list-in">
-                                                        <div class="mvp-feat1-list-text">
-                                                            <div class="mvp-cat-date-wrap left relative">
-                                                                <span class="mvp-cd-cat left relative">Tech</span><span
-                                                                    class="mvp-cd-date left relative">1 year ago</span>
-                                                            </div><!--mvp-cat-date-wrap-->
-                                                            <h2>Mobile Google CEO Promises 11 Daydream-compatible
-                                                                phones</h2>
-                                                        </div><!--mvp-feat1-list-text-->
-                                                    </div><!--mvp-feat1-list-in-->
-                                                </div><!--mvp-feat1-list-out-->
-                                            </div><!--mvp-feat1-list-cont-->
-                                        </a>
-                                        <a href="../../mayors-agree-congress-should-invest-in-affordable-housing/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-feat1-list-cont left relative">
-                                                <div class="mvp-feat1-list-out relative">
-                                                    <div class="mvp-feat1-list-img left relative">
-                                                        <img width="80" height="80"
-                                                             src="../../wp-content/uploads/2017/07/apartments-80x80.jpg"
-                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
-                                                             alt=""
-                                                             srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-600x600.jpg 600w"
-                                                             sizes="(max-width: 80px) 100vw, 80px"></div>
-                                                    <!--mvp-feat1-list-img-->
-                                                    <div class="mvp-feat1-list-in">
-                                                        <div class="mvp-feat1-list-text">
-                                                            <div class="mvp-cat-date-wrap left relative">
-                                                                <span class="mvp-cd-cat left relative">Politics</span><span
-                                                                    class="mvp-cd-date left relative">1 year ago</span>
-                                                            </div><!--mvp-cat-date-wrap-->
-                                                            <h2>Mayors agree, Congress should invest in affordable
-                                                                housing</h2>
-                                                        </div><!--mvp-feat1-list-text-->
-                                                    </div><!--mvp-feat1-list-in-->
-                                                </div><!--mvp-feat1-list-out-->
-                                            </div><!--mvp-feat1-list-cont-->
-                                        </a>
-                                    </div><!--mvp-tab-col1-->
-                                    <div id="mvp-tab-col2" class="mvp-feat1-list left relative mvp-tab-col-cont"
-                                         style="display: none;">
-                                        <a href="../../illinois-financial-crisis-could-bring-the-state-to-a-halt/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-feat1-list-cont left relative">
-                                                <div class="mvp-feat1-list-out relative">
-                                                    <div class="mvp-feat1-list-img left relative">
-                                                        <img width="80" height="80"
-                                                             src="../../wp-content/uploads/2017/07/politics-80x80.jpg"
-                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
-                                                             alt=""
-                                                             srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-600x600.jpg 600w"
-                                                             sizes="(max-width: 80px) 100vw, 80px"></div>
-                                                    <!--mvp-feat1-list-img-->
-                                                    <div class="mvp-feat1-list-in">
-                                                        <div class="mvp-feat1-list-text">
-                                                            <div class="mvp-cat-date-wrap left relative">
-                                                                <span class="mvp-cd-cat left relative">Politics</span><span
-                                                                    class="mvp-cd-date left relative">1 year ago</span>
-                                                            </div><!--mvp-cat-date-wrap-->
-                                                            <h2>Illinois’ financial crisis could bring the state to
-                                                                a halt</h2>
-                                                        </div><!--mvp-feat1-list-text-->
-                                                    </div><!--mvp-feat1-list-in-->
-                                                </div><!--mvp-feat1-list-out-->
-                                            </div><!--mvp-feat1-list-cont-->
-                                        </a>
-                                        <a href="../../the-final-6-game-of-thrones-episodes-might-feel-like-a-full-season/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-feat1-list-cont left relative">
-                                                <div class="mvp-feat1-list-out relative">
-                                                    <div class="mvp-feat1-list-img left relative">
-                                                        <img width="80" height="80"
-                                                             src="../../wp-content/uploads/2017/07/game-thrones-80x80.jpg"
-                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
-                                                             alt=""
-                                                             srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/game-thrones-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/game-thrones-150x150.jpg 150w"
-                                                             sizes="(max-width: 80px) 100vw, 80px"></div>
-                                                    <!--mvp-feat1-list-img-->
-                                                    <div class="mvp-feat1-list-in">
-                                                        <div class="mvp-feat1-list-text">
-                                                            <div class="mvp-cat-date-wrap left relative">
-                                                                <span class="mvp-cd-cat left relative">Entertainment</span><span
-                                                                    class="mvp-cd-date left relative">1 year ago</span>
-                                                            </div><!--mvp-cat-date-wrap-->
-                                                            <h2>The final 6 ‘Game of Thrones’ episodes might feel
-                                                                like a full season</h2>
-                                                        </div><!--mvp-feat1-list-text-->
-                                                    </div><!--mvp-feat1-list-in-->
-                                                </div><!--mvp-feat1-list-out-->
-                                            </div><!--mvp-feat1-list-cont-->
-                                        </a>
-                                        <a href="../../these-90s-fashion-trends-are-making-a-comeback-in-2017/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-feat1-list-cont left relative">
-                                                <div class="mvp-feat1-list-out relative">
-                                                    <div class="mvp-feat1-list-img left relative">
-                                                        <img width="80" height="80"
-                                                             src="../../wp-content/uploads/2017/07/woman-smile7-80x80.jpg"
-                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
-                                                             alt=""
-                                                             srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/woman-smile7-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/woman-smile7-150x150.jpg 150w"
-                                                             sizes="(max-width: 80px) 100vw, 80px"></div>
-                                                    <!--mvp-feat1-list-img-->
-                                                    <div class="mvp-feat1-list-in">
-                                                        <div class="mvp-feat1-list-text">
-                                                            <div class="mvp-cat-date-wrap left relative">
-                                                                <span class="mvp-cd-cat left relative">Fashion</span><span
-                                                                    class="mvp-cd-date left relative">1 year ago</span>
-                                                            </div><!--mvp-cat-date-wrap-->
-                                                            <h2>These ’90s fashion trends are making a comeback in
-                                                                2017</h2>
-                                                        </div><!--mvp-feat1-list-text-->
-                                                    </div><!--mvp-feat1-list-in-->
-                                                </div><!--mvp-feat1-list-out-->
-                                            </div><!--mvp-feat1-list-cont-->
-                                        </a>
-                                    </div><!--mvp-tab-col2-->
-                                    <div id="mvp-tab-col3" class="mvp-feat1-list left relative mvp-tab-col-cont"
-                                         style="display: none;">
-                                        <a href="../../illinois-financial-crisis-could-bring-the-state-to-a-halt/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-feat1-list-cont left relative">
-                                                <div class="mvp-feat1-list-out relative">
-                                                    <div class="mvp-feat1-list-img left relative">
-                                                        <img width="80" height="80"
-                                                             src="../../wp-content/uploads/2017/07/politics-80x80.jpg"
-                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
-                                                             alt=""
-                                                             srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-600x600.jpg 600w"
-                                                             sizes="(max-width: 80px) 100vw, 80px"></div>
-                                                    <!--mvp-feat1-list-img-->
-                                                    <div class="mvp-feat1-list-in">
-                                                        <div class="mvp-feat1-list-text">
-                                                            <div class="mvp-cat-date-wrap left relative">
-                                                                <span class="mvp-cd-cat left relative">Politics</span><span
-                                                                    class="mvp-cd-date left relative">1 year ago</span>
-                                                            </div><!--mvp-cat-date-wrap-->
-                                                            <h2>Illinois’ financial crisis could bring the state to
-                                                                a halt</h2>
-                                                        </div><!--mvp-feat1-list-text-->
-                                                    </div><!--mvp-feat1-list-in-->
-                                                </div><!--mvp-feat1-list-out-->
-                                            </div><!--mvp-feat1-list-cont-->
-                                        </a>
-                                        <a href="../../the-final-6-game-of-thrones-episodes-might-feel-like-a-full-season/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-feat1-list-cont left relative">
-                                                <div class="mvp-feat1-list-out relative">
-                                                    <div class="mvp-feat1-list-img left relative">
-                                                        <img width="80" height="80"
-                                                             src="../../wp-content/uploads/2017/07/game-thrones-80x80.jpg"
-                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
-                                                             alt=""
-                                                             srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/game-thrones-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/game-thrones-150x150.jpg 150w"
-                                                             sizes="(max-width: 80px) 100vw, 80px"></div>
-                                                    <!--mvp-feat1-list-img-->
-                                                    <div class="mvp-feat1-list-in">
-                                                        <div class="mvp-feat1-list-text">
-                                                            <div class="mvp-cat-date-wrap left relative">
-                                                                <span class="mvp-cd-cat left relative">Entertainment</span><span
-                                                                    class="mvp-cd-date left relative">1 year ago</span>
-                                                            </div><!--mvp-cat-date-wrap-->
-                                                            <h2>The final 6 ‘Game of Thrones’ episodes might feel
-                                                                like a full season</h2>
-                                                        </div><!--mvp-feat1-list-text-->
-                                                    </div><!--mvp-feat1-list-in-->
-                                                </div><!--mvp-feat1-list-out-->
-                                            </div><!--mvp-feat1-list-cont-->
-                                        </a>
-                                        <a href="../../new-season-8-walking-dead-trailer-flashes-forward-in-time/index.html"
-                                           rel="bookmark">
-                                            <div class="mvp-feat1-list-cont left relative">
-                                                <div class="mvp-feat1-list-out relative">
-                                                    <div class="mvp-feat1-list-img left relative">
-                                                        <img width="80" height="80"
-                                                             src="../../wp-content/uploads/2017/07/walking-dead-80x80.jpg"
-                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
-                                                             alt=""
-                                                             srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-600x600.jpg 600w"
-                                                             sizes="(max-width: 80px) 100vw, 80px"></div>
-                                                    <!--mvp-feat1-list-img-->
-                                                    <div class="mvp-feat1-list-in">
-                                                        <div class="mvp-feat1-list-text">
-                                                            <div class="mvp-cat-date-wrap left relative">
-                                                                <span class="mvp-cd-cat left relative">Entertainment</span><span
-                                                                    class="mvp-cd-date left relative">1 year ago</span>
-                                                            </div><!--mvp-cat-date-wrap-->
-                                                            <h2>New Season 8 Walking Dead trailer flashes forward in
-                                                                time</h2>
-                                                        </div><!--mvp-feat1-list-text-->
-                                                    </div><!--mvp-feat1-list-in-->
-                                                </div><!--mvp-feat1-list-out-->
-                                            </div><!--mvp-feat1-list-cont-->
-                                        </a>
-                                    </div><!--mvp-tab-col3-->
-                                </div><!--mvp-feat1-list-wrap-->
-                            </div><!--mvp-widget-tab-wrap-->
+                                <hr>
+                                {% if news.has_other_pages %}
+                                    <ul class="pagination" style="display: inline;">
+                                        {% if news.has_previous %}
+                                            <li><a href="?sayfa={{ news.previous_page_number }}">&laquo;</a></li>
+                                        {% else %}
+                                            <li class="disabled"><span>&laquo;</span></li>
+                                        {% endif %}
+                                        <li><a href="#">{% if request.GET.sayfa %}
+                                        {{ request.GET.sayfa }}
+                                            {% else %}
+                                            1
+                                        {% endif %}/{{ count }}</a></li>
+                                        {% if news.has_next %}
+                                            <li><a href="?sayfa={{ news.next_page_number }}">&raquo;</a></li>
+                                        {% else %}
+                                            <li class="disabled"><span>&raquo;</span></li>
+                                        {% endif %}
+                                    </ul>
+                                {% endif %}
+                            </div><!--mvp-inf-more-wrap-->
+                        </div><!--mvp-main-blog-body-->
+                    </div><!--mvp-mvp-main-blog-in-->
+                    <div id="mvp-side-wrap" class="left relative theiaStickySidebar"
+                         style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                        <div class="theiaStickySidebar"
+                             style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; left: 191.538px; top: 0px;">
+                            <section id="mvp_ad_widget-7" class="mvp-side-widget mvp_ad_widget">
+                                <div class="mvp-widget-ad left relative">
+                                    <span class="mvp-ad-label">Advertisement</span>
+                                    <img src="../../wp-content/uploads/2017/07/zox300.png"></div><!--mvp-widget-ad-->
+                            </section>
+                            <section id="mvp_tabber_widget-6" class="mvp-side-widget mvp_tabber_widget">
+                                <div class="mvp-widget-tab-wrap left relative">
+                                    <div class="mvp-feat1-list-wrap left relative">
+                                        <div class="mvp-feat1-list-head-wrap left relative">
+                                            <ul class="mvp-feat1-list-buts left relative">
+                                                <li class="mvp-feat-col-tab active"><a href="#mvp-tab-col1"><span
+                                                        class="mvp-feat1-list-but">Latest</span></a></li>
+                                                <li><a href="#mvp-tab-col2"><span
+                                                        class="mvp-feat1-list-but">Trending</span></a></li>
+                                                <li><a href="#mvp-tab-col3"><span
+                                                        class="mvp-feat1-list-but">Videos</span></a></li>
+                                            </ul>
+                                        </div><!--mvp-feat1-list-head-wrap-->
+                                        <div id="mvp-tab-col1" class="mvp-feat1-list left relative mvp-tab-col-cont"
+                                             style="display: block;">
+                                            <a href="../../illinois-financial-crisis-could-bring-the-state-to-a-halt/index.html"
+                                               rel="bookmark">
+                                                <div class="mvp-feat1-list-cont left relative">
+                                                    <div class="mvp-feat1-list-out relative">
+                                                        <div class="mvp-feat1-list-img left relative">
+                                                            <img width="80" height="80"
+                                                                 src="../../wp-content/uploads/2017/07/politics-80x80.jpg"
+                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                                                 alt=""
+                                                                 srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-600x600.jpg 600w"
+                                                                 sizes="(max-width: 80px) 100vw, 80px"></div>
+                                                        <!--mvp-feat1-list-img-->
+                                                        <div class="mvp-feat1-list-in">
+                                                            <div class="mvp-feat1-list-text">
+                                                                <div class="mvp-cat-date-wrap left relative">
+                                                                    <span class="mvp-cd-cat left relative">Politics</span><span
+                                                                        class="mvp-cd-date left relative">1 year ago</span>
+                                                                </div><!--mvp-cat-date-wrap-->
+                                                                <h2>Illinois’ financial crisis could bring the state to
+                                                                    a halt</h2>
+                                                            </div><!--mvp-feat1-list-text-->
+                                                        </div><!--mvp-feat1-list-in-->
+                                                    </div><!--mvp-feat1-list-out-->
+                                                </div><!--mvp-feat1-list-cont-->
+                                            </a>
+                                            <a href="../../mobile-google-ceo-promises-11-daydream-compatible-phones/index.html"
+                                               rel="bookmark">
+                                                <div class="mvp-feat1-list-cont left relative">
+                                                    <div class="mvp-feat1-list-out relative">
+                                                        <div class="mvp-feat1-list-img left relative">
+                                                            <img width="80" height="80"
+                                                                 src="../../wp-content/uploads/2017/07/vr-headset-80x80.jpg"
+                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                                                 alt=""
+                                                                 srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/vr-headset-600x600.jpg 600w"
+                                                                 sizes="(max-width: 80px) 100vw, 80px"></div>
+                                                        <!--mvp-feat1-list-img-->
+                                                        <div class="mvp-feat1-list-in">
+                                                            <div class="mvp-feat1-list-text">
+                                                                <div class="mvp-cat-date-wrap left relative">
+                                                                    <span class="mvp-cd-cat left relative">Tech</span><span
+                                                                        class="mvp-cd-date left relative">1 year ago</span>
+                                                                </div><!--mvp-cat-date-wrap-->
+                                                                <h2>Mobile Google CEO Promises 11 Daydream-compatible
+                                                                    phones</h2>
+                                                            </div><!--mvp-feat1-list-text-->
+                                                        </div><!--mvp-feat1-list-in-->
+                                                    </div><!--mvp-feat1-list-out-->
+                                                </div><!--mvp-feat1-list-cont-->
+                                            </a>
+                                            <a href="../../mayors-agree-congress-should-invest-in-affordable-housing/index.html"
+                                               rel="bookmark">
+                                                <div class="mvp-feat1-list-cont left relative">
+                                                    <div class="mvp-feat1-list-out relative">
+                                                        <div class="mvp-feat1-list-img left relative">
+                                                            <img width="80" height="80"
+                                                                 src="../../wp-content/uploads/2017/07/apartments-80x80.jpg"
+                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                                                 alt=""
+                                                                 srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/apartments-600x600.jpg 600w"
+                                                                 sizes="(max-width: 80px) 100vw, 80px"></div>
+                                                        <!--mvp-feat1-list-img-->
+                                                        <div class="mvp-feat1-list-in">
+                                                            <div class="mvp-feat1-list-text">
+                                                                <div class="mvp-cat-date-wrap left relative">
+                                                                    <span class="mvp-cd-cat left relative">Politics</span><span
+                                                                        class="mvp-cd-date left relative">1 year ago</span>
+                                                                </div><!--mvp-cat-date-wrap-->
+                                                                <h2>Mayors agree, Congress should invest in affordable
+                                                                    housing</h2>
+                                                            </div><!--mvp-feat1-list-text-->
+                                                        </div><!--mvp-feat1-list-in-->
+                                                    </div><!--mvp-feat1-list-out-->
+                                                </div><!--mvp-feat1-list-cont-->
+                                            </a>
+                                        </div><!--mvp-tab-col1-->
+                                        <div id="mvp-tab-col2" class="mvp-feat1-list left relative mvp-tab-col-cont"
+                                             style="display: none;">
+                                            <a href="../../illinois-financial-crisis-could-bring-the-state-to-a-halt/index.html"
+                                               rel="bookmark">
+                                                <div class="mvp-feat1-list-cont left relative">
+                                                    <div class="mvp-feat1-list-out relative">
+                                                        <div class="mvp-feat1-list-img left relative">
+                                                            <img width="80" height="80"
+                                                                 src="../../wp-content/uploads/2017/07/politics-80x80.jpg"
+                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                                                 alt=""
+                                                                 srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-600x600.jpg 600w"
+                                                                 sizes="(max-width: 80px) 100vw, 80px"></div>
+                                                        <!--mvp-feat1-list-img-->
+                                                        <div class="mvp-feat1-list-in">
+                                                            <div class="mvp-feat1-list-text">
+                                                                <div class="mvp-cat-date-wrap left relative">
+                                                                    <span class="mvp-cd-cat left relative">Politics</span><span
+                                                                        class="mvp-cd-date left relative">1 year ago</span>
+                                                                </div><!--mvp-cat-date-wrap-->
+                                                                <h2>Illinois’ financial crisis could bring the state to
+                                                                    a halt</h2>
+                                                            </div><!--mvp-feat1-list-text-->
+                                                        </div><!--mvp-feat1-list-in-->
+                                                    </div><!--mvp-feat1-list-out-->
+                                                </div><!--mvp-feat1-list-cont-->
+                                            </a>
+                                            <a href="../../the-final-6-game-of-thrones-episodes-might-feel-like-a-full-season/index.html"
+                                               rel="bookmark">
+                                                <div class="mvp-feat1-list-cont left relative">
+                                                    <div class="mvp-feat1-list-out relative">
+                                                        <div class="mvp-feat1-list-img left relative">
+                                                            <img width="80" height="80"
+                                                                 src="../../wp-content/uploads/2017/07/game-thrones-80x80.jpg"
+                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                                                 alt=""
+                                                                 srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/game-thrones-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/game-thrones-150x150.jpg 150w"
+                                                                 sizes="(max-width: 80px) 100vw, 80px"></div>
+                                                        <!--mvp-feat1-list-img-->
+                                                        <div class="mvp-feat1-list-in">
+                                                            <div class="mvp-feat1-list-text">
+                                                                <div class="mvp-cat-date-wrap left relative">
+                                                                    <span class="mvp-cd-cat left relative">Entertainment</span><span
+                                                                        class="mvp-cd-date left relative">1 year ago</span>
+                                                                </div><!--mvp-cat-date-wrap-->
+                                                                <h2>The final 6 ‘Game of Thrones’ episodes might feel
+                                                                    like a full season</h2>
+                                                            </div><!--mvp-feat1-list-text-->
+                                                        </div><!--mvp-feat1-list-in-->
+                                                    </div><!--mvp-feat1-list-out-->
+                                                </div><!--mvp-feat1-list-cont-->
+                                            </a>
+                                            <a href="../../these-90s-fashion-trends-are-making-a-comeback-in-2017/index.html"
+                                               rel="bookmark">
+                                                <div class="mvp-feat1-list-cont left relative">
+                                                    <div class="mvp-feat1-list-out relative">
+                                                        <div class="mvp-feat1-list-img left relative">
+                                                            <img width="80" height="80"
+                                                                 src="../../wp-content/uploads/2017/07/woman-smile7-80x80.jpg"
+                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                                                 alt=""
+                                                                 srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/woman-smile7-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/woman-smile7-150x150.jpg 150w"
+                                                                 sizes="(max-width: 80px) 100vw, 80px"></div>
+                                                        <!--mvp-feat1-list-img-->
+                                                        <div class="mvp-feat1-list-in">
+                                                            <div class="mvp-feat1-list-text">
+                                                                <div class="mvp-cat-date-wrap left relative">
+                                                                    <span class="mvp-cd-cat left relative">Fashion</span><span
+                                                                        class="mvp-cd-date left relative">1 year ago</span>
+                                                                </div><!--mvp-cat-date-wrap-->
+                                                                <h2>These ’90s fashion trends are making a comeback in
+                                                                    2017</h2>
+                                                            </div><!--mvp-feat1-list-text-->
+                                                        </div><!--mvp-feat1-list-in-->
+                                                    </div><!--mvp-feat1-list-out-->
+                                                </div><!--mvp-feat1-list-cont-->
+                                            </a>
+                                        </div><!--mvp-tab-col2-->
+                                        <div id="mvp-tab-col3" class="mvp-feat1-list left relative mvp-tab-col-cont"
+                                             style="display: none;">
+                                            <a href="../../illinois-financial-crisis-could-bring-the-state-to-a-halt/index.html"
+                                               rel="bookmark">
+                                                <div class="mvp-feat1-list-cont left relative">
+                                                    <div class="mvp-feat1-list-out relative">
+                                                        <div class="mvp-feat1-list-img left relative">
+                                                            <img width="80" height="80"
+                                                                 src="../../wp-content/uploads/2017/07/politics-80x80.jpg"
+                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                                                 alt=""
+                                                                 srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/politics-600x600.jpg 600w"
+                                                                 sizes="(max-width: 80px) 100vw, 80px"></div>
+                                                        <!--mvp-feat1-list-img-->
+                                                        <div class="mvp-feat1-list-in">
+                                                            <div class="mvp-feat1-list-text">
+                                                                <div class="mvp-cat-date-wrap left relative">
+                                                                    <span class="mvp-cd-cat left relative">Politics</span><span
+                                                                        class="mvp-cd-date left relative">1 year ago</span>
+                                                                </div><!--mvp-cat-date-wrap-->
+                                                                <h2>Illinois’ financial crisis could bring the state to
+                                                                    a halt</h2>
+                                                            </div><!--mvp-feat1-list-text-->
+                                                        </div><!--mvp-feat1-list-in-->
+                                                    </div><!--mvp-feat1-list-out-->
+                                                </div><!--mvp-feat1-list-cont-->
+                                            </a>
+                                            <a href="../../the-final-6-game-of-thrones-episodes-might-feel-like-a-full-season/index.html"
+                                               rel="bookmark">
+                                                <div class="mvp-feat1-list-cont left relative">
+                                                    <div class="mvp-feat1-list-out relative">
+                                                        <div class="mvp-feat1-list-img left relative">
+                                                            <img width="80" height="80"
+                                                                 src="../../wp-content/uploads/2017/07/game-thrones-80x80.jpg"
+                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                                                 alt=""
+                                                                 srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/game-thrones-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/game-thrones-150x150.jpg 150w"
+                                                                 sizes="(max-width: 80px) 100vw, 80px"></div>
+                                                        <!--mvp-feat1-list-img-->
+                                                        <div class="mvp-feat1-list-in">
+                                                            <div class="mvp-feat1-list-text">
+                                                                <div class="mvp-cat-date-wrap left relative">
+                                                                    <span class="mvp-cd-cat left relative">Entertainment</span><span
+                                                                        class="mvp-cd-date left relative">1 year ago</span>
+                                                                </div><!--mvp-cat-date-wrap-->
+                                                                <h2>The final 6 ‘Game of Thrones’ episodes might feel
+                                                                    like a full season</h2>
+                                                            </div><!--mvp-feat1-list-text-->
+                                                        </div><!--mvp-feat1-list-in-->
+                                                    </div><!--mvp-feat1-list-out-->
+                                                </div><!--mvp-feat1-list-cont-->
+                                            </a>
+                                            <a href="../../new-season-8-walking-dead-trailer-flashes-forward-in-time/index.html"
+                                               rel="bookmark">
+                                                <div class="mvp-feat1-list-cont left relative">
+                                                    <div class="mvp-feat1-list-out relative">
+                                                        <div class="mvp-feat1-list-img left relative">
+                                                            <img width="80" height="80"
+                                                                 src="../../wp-content/uploads/2017/07/walking-dead-80x80.jpg"
+                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                                                 alt=""
+                                                                 srcset="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-80x80.jpg 80w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-150x150.jpg 150w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-180x180.jpg 180w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-300x300.jpg 300w, http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/walking-dead-600x600.jpg 600w"
+                                                                 sizes="(max-width: 80px) 100vw, 80px"></div>
+                                                        <!--mvp-feat1-list-img-->
+                                                        <div class="mvp-feat1-list-in">
+                                                            <div class="mvp-feat1-list-text">
+                                                                <div class="mvp-cat-date-wrap left relative">
+                                                                    <span class="mvp-cd-cat left relative">Entertainment</span><span
+                                                                        class="mvp-cd-date left relative">1 year ago</span>
+                                                                </div><!--mvp-cat-date-wrap-->
+                                                                <h2>New Season 8 Walking Dead trailer flashes forward in
+                                                                    time</h2>
+                                                            </div><!--mvp-feat1-list-text-->
+                                                        </div><!--mvp-feat1-list-in-->
+                                                    </div><!--mvp-feat1-list-out-->
+                                                </div><!--mvp-feat1-list-cont-->
+                                            </a>
+                                        </div><!--mvp-tab-col3-->
+                                    </div><!--mvp-feat1-list-wrap-->
+                                </div><!--mvp-widget-tab-wrap-->
 
-                        </section>
-                        <div class="resize-sensor"
-                             style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
-                            <div class="resize-sensor-expand"
-                                 style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
-                                <div style="position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 330px; height: 582px;"></div>
-                            </div>
-                            <div class="resize-sensor-shrink"
-                                 style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
-                                <div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div>
+                            </section>
+                            <div class="resize-sensor"
+                                 style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
+                                <div class="resize-sensor-expand"
+                                     style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
+                                    <div style="position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 330px; height: 582px;"></div>
+                                </div>
+                                <div class="resize-sensor-shrink"
+                                     style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
+                                    <div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div><!--mvp-side-wrap-->            </div><!--mvp-mvp-main-blog-out-->
-        </div><!--mvp-main-blog-cont-->
-    </div><!--mvp-main-box-->
-    </div>
+                    </div><!--mvp-side-wrap-->            </div><!--mvp-mvp-main-blog-out-->
+            </div><!--mvp-main-blog-cont-->
+        </div><!--mvp-main-box-->
+        </div>
+    {% endif %}
+
 {% endblock %}

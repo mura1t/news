@@ -19,8 +19,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -30,17 +28,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # 3.Party Apps
     'sorl.thumbnail',
     'smart_selects',
     'ckeditor',
     'mathfilters',
+    'social_django',
+    'compressor',
     # MY Apps
     'haberler',
-    'category',
     'ayarlar',
     'comments',
+    'shop',
+    'reklam',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,7 +53,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
+MIDDLEWARE_CLASSES = (
+    'htmlmin.middleware.HtmlMinifyMiddleware',
+    'htmlmin.middleware.MarkRequestMiddleware',
+)
+KEEP_COMMENTS_ON_MINIFYING  =  True
 
 ROOT_URLCONF = 'news.urls'
 
@@ -65,6 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <--
+                'social_django.context_processors.login_redirect',  # <--
             ],
         },
     },
@@ -116,7 +127,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
 
+    'django.contrib.auth.backends.ModelBackend',
+)
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -151,5 +168,41 @@ CKEDITOR_CONFIGS = {
 ALLOWED_HOSTS = ["*"]
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+SECRET_KEY = 'djzc3i*!u$l@vd2^kle@cy#&u%iuldu&w@&i!6f3wq717bq#qi'
 DEBUG = True
+
+HTML_MINIFY = True
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home_view'
+# sosyal medya giriş
+SOCIAL_AUTH_GITHUB_KEY = '846a4f16ce064ad60f38'
+SOCIAL_AUTH_GITHUB_SECRET = '7c0aa4d57e6273e6e6b17fa6a877c864aa95a9d5'
+SOCIAL_AUTH_FACEBOOK_KEY = '1976602399053819'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ebf69d6155fad8585c9e9a9db287b2ad'  # App Secret
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/settings/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/settings/'
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+
+#minify css and js
+
+COMPRESS_ENABLED = True
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_ENABLED = True
+
+# add filters
+
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.cssmin.CSSMinFilter'
+]
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.jsmin.JSMinFilter'
+]

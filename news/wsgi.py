@@ -10,7 +10,13 @@ https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+from django.contrib.sites.models import Site
+from django.conf import settings
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "news.settings")
 
 application = get_wsgi_application()
+
+
+
+

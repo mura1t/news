@@ -1,13 +1,14 @@
 {% load thumbnail %}
-{% if news %}
-    {% if news.count >= 4 %}
+{% load menu %}
+{% if news|get_news:category.2.id|length >= 4 %}
+    {% with news|get_news:category.2.id as snews %}
         <section id="mvp_home_feat1_widget-4" class="mvp-widget-home left relative mvp_home_feat1_widget">
             <div class="mvp-main-box">
-                <div class="mvp-widget-home-head"><a href="{% url 'haberler:news_list' news.0.category__slug %}"><h4 class="mvp-widget-home-title"><span
-                        class="mvp-widget-home-title">{{ news.0.category__title }}</span></h4></a></div>
+                <div class="mvp-widget-home-head"><a href="{% url 'haberler:news_list' snews.0.category__slug %}"><h4 class="mvp-widget-home-title"><span
+                        class="mvp-widget-home-title">{{ snews.0.category__title }}</span></h4></a></div>
                 <div class="mvp-widget-feat1-wrap left relative">
                     <div class="mvp-widget-feat1-cont left relative">
-                        {% for item in news %}
+                        {% for item in snews %}
                             {% if forloop.counter <= 2 %}
                                 <a href="{% url 'haberler:news_detail' item.slug %}" rel="bookmark">
                                     <div class="mvp-widget-feat1-top-story left relative">
@@ -42,8 +43,8 @@
                         {% endfor %}
                     </div><!--mvp-widget-feat1-cont-->
                     <div class="mvp-widget-feat1-cont left relative">
-                        {% for item in news %}
-                            {% if forloop.counter > 2 %}
+                        {% for item in snews %}
+                            {% if forloop.counter > 2 and forloop.counter <= 6 %}
                                 <a href="{% url 'haberler:news_detail' item.slug %}" rel="bookmark">
                                     <div class="mvp-widget-feat1-bot-story left relative">
                                         <div class="mvp-widget-feat1-bot-img left relative">
@@ -80,6 +81,7 @@
 
             </div>
         </section>
-    {% endif %}
-
+    {% endwith %}
+    {% else %}
+    <h1>[Section4]için yeterli haber yok </h1>
 {% endif %}

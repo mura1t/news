@@ -1,7 +1,9 @@
 {% load thumbnail %}
+{% load cache %}
 <div id="mvp-side-wrap" class="left relative theiaStickySidebar"
      style="position: relative; overflow: visible; box-sizing: content-box; min-height: 1px;float: right;">
-
+    {% include 'reklam/right_300x250.html' %}
+    {% cache 10000 "right_sidebar" %}
     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
         <section id="mvp_tabber_widget-6" class="mvp-side-widget mvp_tabber_widget">
             <div class="mvp-widget-tab-wrap left relative">
@@ -98,7 +100,7 @@
                                         <div class="mvp-feat1-list-in">
                                             <div class="mvp-feat1-list-text">
                                                 <div class="mvp-cat-date-wrap left relative">
-                                                    <span class="mvp-cd-cat left relative">{{ ln.category }}</span><span
+                                                    <span class="mvp-cd-cat left relative">{{ ln.category__title }}</span><span
                                                         class="mvp-cd-date left relative">{{ ln.date | timesince }} önce</span>
                                                 </div><!--mvp-cat-date-wrap-->
                                                 <h2>{{ ln.title }}</h2>
@@ -126,4 +128,5 @@
             </div>
         </div>
     </div>
+ {% endcache %}
 </div>

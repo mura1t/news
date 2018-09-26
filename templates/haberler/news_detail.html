@@ -1,5 +1,9 @@
 {% extends "site/base.html" %}
 {% load thumbnail %}
+{% load mathfilters %}
+{% load menu %}
+{% load compress %}
+ {% load static %}
 {% block meta %}
     {% if news %}
         <meta property="og:description" content="{{ news.0.spot }}"/>
@@ -17,337 +21,339 @@
 {% endblock %}
 {% load menu %}
 {% block body %}
-    {% load mathfilters %}
     {% include "messages.html" %}
-    {% if news %}
-        <article id="mvp-article-wrap" itemscope="" itemtype="http://schema.org/NewsArticle" style="transform: none;">
-            <meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage"
-                  itemid="{{ site.domain }}{{ request.path }}">
-
-            <div id="mvp-article-cont" class="left relative" style="transform: none;">
-                <div class="mvp-main-box" style="transform: none;">
-                    <div id="mvp-post-main" class="left relative" style="transform: none;">
-                        <header id="mvp-post-head" class="left relative">
-                            <h3 class="mvp-post-cat left relative"><a class="mvp-post-cat-link"
-                                                                      href="{% url 'haberler:news_list' news.0.category.slug %}"><span
-                                    class="mvp-post-cat left">{{ news.0.category }}</span></a></h3>
-                            <h1 class="mvp-post-title left entry-title" itemprop="headline">{{ news.0.title }}</h1>
-                            <span>{{ deneme.0.id }}</span>
-                            <span class="mvp-post-excerpt left"><p>{{ news.0.spot }}</p>
+    <div class="mvp-main-box">
+        {% if news %}
+            <article id="mvp-article-wrap" itemscope="" itemtype="http://schema.org/NewsArticle"
+                     style="transform: none;">
+                <meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage"
+                      itemid="{{ request.build_absolute_uri }}">
+                <div id="mvp-article-cont" class="left relative" style="transform: none;">
+                    <div class="mvp-main-box" style="transform: none;">
+                        <div id="mvp-post-main" class="left relative" style="transform: none;">
+                            <header id="mvp-post-head" class="left relative">
+                                <h3 class="mvp-post-cat left relative"><a class="mvp-post-cat-link"
+                                                                          href="{% url 'haberler:news_list' news.0.category.slug %}"><span
+                                        class="mvp-post-cat left">{{ news.0.category }}</span></a></h3>
+                                <h1 class="mvp-post-title left entry-title" itemprop="headline">{{ news.0.title }}</h1>
+                                <span>{{ deneme.0.id }}</span>
+                                <span class="mvp-post-excerpt left"><p>{{ news.0.spot }}</p>
 </span>
-                            <div class="mvp-author-info-wrap left relative">
-                                <div class="mvp-author-info-thumb left relative">
-                                    {% thumbnail news.0.user.profile.image "46x46" crop="center" as im %}
-                                        <img width="{{ im.width }}" height="{{ im.height }}"
-                                             src="{{ im.url }}"
-                                             class="avatar avatar-46 photo"
-                                             srcset="{{ im.url }}"
-                                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
-                                    {% endthumbnail %}
-                                </div>
-                                <!--mvp-author-info-thumb-->
-                                <div class="mvp-author-info-text left relative">
-                                    <div class="mvp-author-info-date left relative">
-                                        <span class="mvp-post-date">{{ news.0.date | timesince }}</span>
-                                        <p>önce</p> <span class="mvp-post-date updated"><time class="post-date updated"
-                                                                                              itemprop="datePublished"
-                                                                                              datetime="2017-07-25">{{ news.0.date }}</time></span>
-                                        <p> &nbsp; yayınlandı</p>
-                                        <meta itemprop="dateModified" content="{{ news.0.date }}">
-                                    </div><!--mvp-author-info-date-->
-                                    <div class="mvp-author-info-name left relative" itemprop="author" itemscope=""
-                                         itemtype="https://schema.org/Person">
-                                        <p>By</p> <span class="author-name vcard fn author" itemprop="name"><a
-                                            href="{% url 'author_detail' news.0.user %}"
-                                            title="Posts by Zox News Staff" rel="author">{{ news.0.user }}</a></span> <a
-                                            href="{{ news.0.user.profile.twitter }}" class="mvp-twit-but"
-                                            target="_blank"><span class="mvp-author-info-twit-but"><i
-                                            class="fa fa-twitter fa-2"></i></span></a></div><!--mvp-author-info-name-->
-                                </div><!--mvp-author-info-text-->
-                            </div><!--mvp-author-info-wrap-->
-                        </header>
-                        <div class="mvp-post-main-out left relative" style="transform: none;">
-                            {% show_rightbar 10 10 10 %}
-                            <div class="mvp-post-main-in" style="transform: none;">
-                                <div id="mvp-post-content" class="left relative" style="transform: none;">
-                                    {% if news.0.video_url != "0" %}
-                                        <div id="mvp-video-embed-wrap" class="left relative">
-                                            <div id="mvp-video-embed-cont" class="left relative">
+                                <div class="mvp-author-info-wrap left relative">
+                                    <div class="mvp-author-info-thumb left relative">
+                                        {% thumbnail news.0.user.profile.image "46x46" crop="center" as im %}
+                                            <img width="{{ im.width }}" height="{{ im.height }}"
+                                                 src="{{ im.url }}"
+                                                 class="avatar avatar-46 photo"
+                                                 srcset="{{ im.url }}"
+                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
+                                        {% endthumbnail %}
+                                    </div>
+                                    <!--mvp-author-info-thumb-->
+                                    <div class="mvp-author-info-text left relative">
+                                        <div class="mvp-author-info-date left relative">
+                                            <span class="mvp-post-date">{{ news.0.date | timesince }}</span>
+                                            <p>önce</p> <span class="mvp-post-date updated"><time
+                                                class="post-date updated"
+                                                itemprop="datePublished"
+                                                datetime="2017-07-25">{{ news.0.date }}</time></span>
+                                            <p> &nbsp; yayınlandı</p>
+                                            <meta itemprop="dateModified" content="{{ news.0.date }}">
+                                        </div><!--mvp-author-info-date-->
+                                        <div class="mvp-author-info-name left relative" itemprop="author" itemscope=""
+                                             itemtype="https://schema.org/Person">
+                                            <p>By</p> <span class="author-name vcard fn author" itemprop="name"><a
+                                                href="{% url 'author_detail' news.0.user %}"
+                                                title="Posts by {{ news.0.user }}"
+                                                rel="author">{{ news.0.user }}</a></span> <a
+                                                href="{{ news.0.user.profile.twitter }}" class="mvp-twit-but"
+                                                target="_blank"><span class="mvp-author-info-twit-but"><i
+                                                class="fa fa-twitter fa-2"></i></span></a></div>
+                                        <!--mvp-author-info-name-->
+                                    </div><!--mvp-author-info-text-->
+                                </div><!--mvp-author-info-wrap-->
+                            </header>
+                            <div class="mvp-post-main-out left relative" style="transform: none;">
+                                <div class="mvp-post-main-in" style="transform: none;">
+                                    <div id="mvp-post-content" class="left relative" style="transform: none;">
+                                        {% if news.0.video_url != "0" %}
+                                            <div id="mvp-video-embed-wrap" class="left relative">
+                                                <div id="mvp-video-embed-cont" class="left relative">
                                             <span class="mvp-video-close fa fa-times" aria-hidden="true"
                                                   style="display: none;"></span>
-                                                <div id="mvp-video-embed" class="left relative">
-                                                    <iframe width="1280" height="720"
-                                                            src="{{ news.0.video_url }}" frameborder="0"
-                                                            allowfullscreen=""></iframe>
-                                                </div><!--mvp-video-embed-->
-                                            </div><!--mvp-video-embed-cont-->
-                                        </div>
-                                    {% else %}
-                                        <div id="mvp-post-feat-img" class="left relative mvp-post-feat-img-wide2"
-                                             itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
-                                            {% thumbnail news.0.image "1000x600" crop="center" as im %}
-                                                <img width="{{ im.width }}" height="{{ im.height }}"
-                                                     src="{{ im.url }}"
-                                                     class="attachment- size- wp-post-image" alt=""
-                                                     srcset="{{ im.url }}"
-                                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
-                                            {% endthumbnail %}
-                                            <meta itemprop="url"
-                                                  content="{{ request.get_host }}{{ news.0.image.url }}">
-                                            <meta itemprop="width" content="1000">
-                                            <meta itemprop="height" content="600">
-                                        </div><!--mvp-post-feat-img-->
-                                    {% endif %}
+                                                    <div id="mvp-video-embed" class="left relative">
+                                                        <iframe width="1280" height="720"
+                                                                src="{{ news.0.video_url }}" frameborder="0"
+                                                                allowfullscreen=""></iframe>
+                                                    </div><!--mvp-video-embed-->
+                                                </div><!--mvp-video-embed-cont-->
+                                            </div>
+                                        {% else %}
+                                            <div id="mvp-post-feat-img" class="left relative mvp-post-feat-img-wide2"
+                                                 itemprop="image" itemscope=""
+                                                 itemtype="https://schema.org/ImageObject">
+                                                {% thumbnail news.0.image "1000x600" crop="center" as im %}
+                                                    <img width="{{ im.width }}" height="{{ im.height }}"
+                                                         src="{{ im.url }}"
+                                                         class="attachment- size- wp-post-image" alt=""
+                                                         srcset="{{ im.url }}"
+                                                         sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
+                                                {% endthumbnail %}
+                                                <meta itemprop="url"
+                                                      content="{{ request.get_host }}{{ news.0.image.url }}">
+                                                <meta itemprop="width" content="1000">
+                                                <meta itemprop="height" content="600">
+                                            </div><!--mvp-post-feat-img-->
+                                        {% endif %}
+                                        <div id="mvp-content-wrap" class="left relative" style="transform: none;">
+                                            <div class="mvp-post-soc-out right relative" style="transform: none;">
+                                                <div class="mvp-post-soc-wrap left relative"
+                                                     style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 
-                                    <div id="mvp-content-wrap" class="left relative" style="transform: none;">
-                                        <div class="mvp-post-soc-out right relative" style="transform: none;">
-                                            <div class="mvp-post-soc-wrap left relative"
-                                                 style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
-
-                                                <div class="theiaStickySidebar"
-                                                     style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
-                                                    <ul class="mvp-post-soc-list left relative">
-                                                        <a href="#"
-                                                           onclick="window.open('http://www.facebook.com/sharer.php?u={{ request.build_absolute_uri }}/&amp;t={{ news.0.title }}', 'facebookShare', 'width=626,height=436'); return false;"
-                                                           title="Facebook'da Paylaş">
-                                                            <li class="mvp-post-soc-fb">
-                                                                <i class="fa fa-2 fa-facebook" aria-hidden="true"></i>
-                                                            </li>
-                                                        </a>
-                                                        <a href="#"
-                                                           onclick="window.open('http://twitter.com/share?text={{ news.0.title }} -&amp;url={{ request.build_absolute_uri }}', 'twitterShare', 'width=626,height=436'); return false;"
-                                                           title="Twitter'da paylaş">
-                                                            <li class="mvp-post-soc-twit">
-                                                                <i class="fa fa-2 fa-twitter" aria-hidden="true"></i>
-                                                            </li>
-                                                        </a>
-                                                        <a href="#"
-                                                           onclick="window.open('http://pinterest.com/pin/create/button/?url={{ request.build_absolute_uri }}/&amp;media=
-                                                                   {{ request.META.HTTP_HOST }}{{ news.0.image.url }}&amp;description={{ news.0.image.url }}', 'pinterestShare', 'width=750,height=350'); return false;"
-                                                           title="Pinterest'te paylaş">
-                                                            <li class="mvp-post-soc-pin">
-                                                                <i class="fa fa-2 fa-pinterest-p"
-                                                                   aria-hidden="true"></i>
-                                                            </li>
-                                                        </a>
-                                                        <a href="mailto:?subject={{ news.0.title }} style&amp;BODY=Bu makaleyi ilginç buldum ve sizinle paylaşmak istedim : {{ request.build_absolute_uri }}">
-                                                            <li class="mvp-post-soc-email">
-                                                                <i class="fa fa-2 fa-envelope" aria-hidden="true"></i>
-                                                            </li>
-                                                        </a>
-                                                        <a href="#comments">
-                                                            <li class="mvp-post-soc-com mvp-com-click">
-                                                                <i class="fa fa-2 fa-commenting" aria-hidden="true"></i>
-                                                            </li>
-                                                        </a>
-                                                    </ul>
-                                                    <div class="resize-sensor"
-                                                         style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
-                                                        <div class="resize-sensor-expand"
-                                                             style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
-                                                            <div style="position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 52px; height: 253px;"></div>
-                                                        </div>
-                                                        <div class="resize-sensor-shrink"
-                                                             style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
-                                                            <div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div>
+                                                    <div class="theiaStickySidebar"
+                                                         style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+                                                        <ul class="mvp-post-soc-list left relative">
+                                                            <a href="#"
+                                                               onclick="window.open('http://www.facebook.com/sharer.php?u={{ request.build_absolute_uri }}/&amp;t={{ news.0.title }}', 'facebookShare', 'width=626,height=436'); return false;"
+                                                               title="Facebook'da Paylaş">
+                                                                <li class="mvp-post-soc-fb">
+                                                                    <i class="fa fa-2 fa-facebook"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                            <a href="#"
+                                                               onclick="window.open('http://twitter.com/share?text={{ news.0.title }} -&amp;url={{ request.build_absolute_uri }}', 'twitterShare', 'width=626,height=436'); return false;"
+                                                               title="Twitter'da paylaş">
+                                                                <li class="mvp-post-soc-twit">
+                                                                    <i class="fa fa-2 fa-twitter"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                            <a href="#"
+                                                               onclick="window.open('http://pinterest.com/pin/create/button/?url={{ request.build_absolute_uri }}/&amp;media=
+                                                                       {{ request.META.HTTP_HOST }}{{ news.0.image.url }}&amp;description={{ news.0.image.url }}', 'pinterestShare', 'width=750,height=350'); return false;"
+                                                               title="Pinterest'te paylaş">
+                                                                <li class="mvp-post-soc-pin">
+                                                                    <i class="fa fa-2 fa-pinterest-p"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                            <a href="mailto:?subject={{ news.0.title }} style&amp;BODY=Bu makaleyi ilginç buldum ve sizinle paylaşmak istedim : {{ request.build_absolute_uri }}">
+                                                                <li class="mvp-post-soc-email">
+                                                                    <i class="fa fa-2 fa-envelope"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                            <a href="#comments">
+                                                                <li class="mvp-post-soc-com mvp-com-click">
+                                                                    <i class="fa fa-2 fa-commenting"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                        </ul>
+                                                        <div class="resize-sensor"
+                                                             style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
+                                                            <div class="resize-sensor-expand"
+                                                                 style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
+                                                                <div style="position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 52px; height: 253px;"></div>
+                                                            </div>
+                                                            <div class="resize-sensor-shrink"
+                                                                 style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
+                                                                <div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div><!--mvp-post-soc-wrap-->
-                                            <div id="mvp-soc-mob-wrap">
-                                                <div class="mvp-soc-mob-out left relative">
-                                                    <div class="mvp-soc-mob-in">
-                                                        <div class="mvp-soc-mob-left left relative">
-                                                            <ul class="mvp-soc-mob-list left relative">
-                                                                <a href="#"
-                                                                   onclick="window.open('http://www.facebook.com/sharer.php?u=http://www.mvpthemes.com/zoxnews/emily-ratajkowski-channels-back-to-school-style/&amp;t=Emily Ratajkowski channels back-to-school style', 'facebookShare', 'width=626,height=436'); return false;"
-                                                                   title="Share on Facebook">
-                                                                    <li class="mvp-soc-mob-fb">
-                                                                        <i class="fa fa-facebook"
-                                                                           aria-hidden="true"></i><span
-                                                                            class="mvp-soc-mob-fb">Share</span>
-                                                                    </li>
-                                                                </a>
-                                                                <a href="#"
-                                                                   onclick="window.open('http://twitter.com/share?text=Emily Ratajkowski channels back-to-school style -&amp;url=http://www.mvpthemes.com/zoxnews/emily-ratajkowski-channels-back-to-school-style/', 'twitterShare', 'width=626,height=436'); return false;"
-                                                                   title="Tweet This Post">
-                                                                    <li class="mvp-soc-mob-twit">
-                                                                        <i class="fa fa-twitter"
-                                                                           aria-hidden="true"></i><span
-                                                                            class="mvp-soc-mob-fb">Tweet</span>
-                                                                    </li>
-                                                                </a>
-                                                                <a href="#"
-                                                                   onclick="window.open('http://pinterest.com/pin/create/button/?url=http://www.mvpthemes.com/zoxnews/emily-ratajkowski-channels-back-to-school-style/&amp;media=http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/woman-brunette2.jpg&amp;description=Emily Ratajkowski channels back-to-school style', 'pinterestShare', 'width=750,height=350'); return false;"
-                                                                   title="Pin This Post">
-                                                                    <li class="mvp-soc-mob-pin">
-                                                                        <i class="fa fa-pinterest-p"
-                                                                           aria-hidden="true"></i>
-                                                                    </li>
-                                                                </a>
-                                                                <a href="whatsapp://send?text=Emily Ratajkowski channels back-to-school style http://www.mvpthemes.com/zoxnews/emily-ratajkowski-channels-back-to-school-style/"></a>
-                                                                <div class="whatsapp-share"><a
-                                                                        href="whatsapp://send?text=Emily Ratajkowski channels back-to-school style http://www.mvpthemes.com/zoxnews/emily-ratajkowski-channels-back-to-school-style/"><span
-                                                                        class="whatsapp-but1">
+                                                </div><!--mvp-post-soc-wrap-->
+                                                <div id="mvp-soc-mob-wrap" class="" style="">
+                                                    <div class="mvp-soc-mob-out left relative">
+                                                        <div class="mvp-soc-mob-in">
+                                                            <div class="mvp-soc-mob-left left relative">
+                                                                <ul class="mvp-soc-mob-list left relative">
+                                                                    <a href="#"
+                                                                       onclick="window.open('http://www.facebook.com/sharer.php?u=http://www.mvpthemes.com/zoxnews/these-90s-fashion-trends-are-making-a-comeback-in-2017/&amp;t=These ’90s fashion trends are making a comeback in 2017', 'facebookShare', 'width=626,height=436'); return false;"
+                                                                       title="Share on Facebook">
+                                                                        <li class="mvp-soc-mob-fb">
+                                                                            <i class="fa fa-facebook"
+                                                                               aria-hidden="true"></i><span
+                                                                                class="mvp-soc-mob-fb">Share</span>
+                                                                        </li>
+                                                                    </a>
+                                                                    <a href="#"
+                                                                       onclick="window.open('http://twitter.com/share?text=These ’90s fashion trends are making a comeback in 2017 -&amp;url=http://www.mvpthemes.com/zoxnews/these-90s-fashion-trends-are-making-a-comeback-in-2017/', 'twitterShare', 'width=626,height=436'); return false;"
+                                                                       title="Tweet This Post">
+                                                                        <li class="mvp-soc-mob-twit">
+                                                                            <i class="fa fa-twitter"
+                                                                               aria-hidden="true"></i><span
+                                                                                class="mvp-soc-mob-fb">Tweet</span>
+                                                                        </li>
+                                                                    </a>
+                                                                    <a href="#"
+                                                                       onclick="window.open('http://pinterest.com/pin/create/button/?url=http://www.mvpthemes.com/zoxnews/these-90s-fashion-trends-are-making-a-comeback-in-2017/&amp;media=http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/woman-smile7.jpg&amp;description=These ’90s fashion trends are making a comeback in 2017', 'pinterestShare', 'width=750,height=350'); return false;"
+                                                                       title="Pin This Post">
+                                                                        <li class="mvp-soc-mob-pin">
+                                                                            <i class="fa fa-pinterest-p"
+                                                                               aria-hidden="true"></i>
+                                                                        </li>
+                                                                    </a>
+                                                                    <a href="whatsapp://send?text=These ’90s fashion trends are making a comeback in 2017 http://www.mvpthemes.com/zoxnews/these-90s-fashion-trends-are-making-a-comeback-in-2017/"></a>
+                                                                    <div class="whatsapp-share"><a
+                                                                            href="whatsapp://send?text=These ’90s fashion trends are making a comeback in 2017 http://www.mvpthemes.com/zoxnews/these-90s-fashion-trends-are-making-a-comeback-in-2017/"><span
+                                                                            class="whatsapp-but1">
 						<li class="mvp-soc-mob-what">
 							<i class="fa fa-whatsapp" aria-hidden="true"></i>
 						</li>
 						</span></a>
-                                                                    <a href="mailto:?subject=Emily Ratajkowski channels back-to-school style&amp;BODY=I found this article interesting and thought of sharing it with you. Check it out: http://www.mvpthemes.com/zoxnews/emily-ratajkowski-channels-back-to-school-style/">
-                                                                        <li class="mvp-soc-mob-email">
-                                                                            <i class="fa fa-envelope-o"
-                                                                               aria-hidden="true"></i>
-                                                                        </li>
-                                                                    </a>
-                                                                    <a href="http://www.mvpthemes.com/zoxnews/emily-ratajkowski-channels-back-to-school-style/#respond">
-                                                                        <li class="mvp-soc-mob-com mvp-com-click">
-                                                                            <i class="fa fa-comment-o"
-                                                                               aria-hidden="true"></i>
-                                                                        </li>
-                                                                    </a>
-                                                                </div>
-                                                            </ul>
-                                                        </div><!--mvp-soc-mob-left-->
-                                                    </div><!--mvp-soc-mob-in-->
-                                                    <div class="mvp-soc-mob-right left relative">
-                                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                                    </div><!--mvp-soc-mob-right-->
-                                                </div><!--mvp-soc-mob-out-->
-                                            </div><!--mvp-soc-mob-wrap-->
-                                            <div class="mvp-post-soc-in">
-                                                <div id="mvp-content-body" class="left relative">
-                                                    <div id="mvp-content-body-top" class="left relative">
-                                                        <div id="mvp-content-main" class="left relative">
-                                                            {% if request.GET.sayfa != "1" and request.GET.sayfa %}
-                                                                -
-                                                            {% endif %}
-                                                            {{ detailtext | safe }}
-                                                            {% if news.0.detail|length > char %}
-                                                                {% if not news.0.detail|length|intdiv:char|stringformat:"i" == request.GET.sayfa %}
-                                                                    ...
-                                                                {% endif %}
-                                                            {% endif %}
-                                                        </div><!--mvp-content-main-->
-                                                        {% if news.0.detail|length > char %}
-                                                            <ul class="pagination" style="display: inline;">
+                                                                        <a href="mailto:?subject=These ’90s fashion trends are making a comeback in 2017&amp;BODY=I found this article interesting and thought of sharing it with you. Check it out: http://www.mvpthemes.com/zoxnews/these-90s-fashion-trends-are-making-a-comeback-in-2017/">
+                                                                            <li class="mvp-soc-mob-email">
+                                                                                <i class="fa fa-envelope-o"
+                                                                                   aria-hidden="true"></i>
+                                                                            </li>
+                                                                        </a>
+                                                                        <a href="http://www.mvpthemes.com/zoxnews/these-90s-fashion-trends-are-making-a-comeback-in-2017/#comments">
+                                                                            <li class="mvp-soc-mob-com mvp-com-click">
+                                                                                <i class="fa fa-comment-o"
+                                                                                   aria-hidden="true"></i>
+                                                                            </li>
+                                                                        </a>
+                                                                    </div>
+                                                                </ul>
+                                                            </div><!--mvp-soc-mob-left-->
+                                                        </div><!--mvp-soc-mob-in-->
+                                                        <div class="mvp-soc-mob-right left relative">
+                                                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                                        </div><!--mvp-soc-mob-right-->
+                                                    </div><!--mvp-soc-mob-out-->
+                                                </div><!--mvp-soc-mob-wrap-->
+                                                <div class="mvp-post-soc-in">
+                                                    <div id="mvp-content-body" class="left relative">
+                                                        <div id="mvp-content-body-top" class="left relative">
+                                                            <div id="mvp-content-main" class="left relative">
                                                                 {% if request.GET.sayfa != "1" and request.GET.sayfa %}
-                                                                    <li><a href="?sayfa={{ request.GET.sayfa|sub:1 }}">Önceki
-                                                                        Sayfa</a></li>
-                                                                {% else %}
-                                                                    <li class="disabled"><span>Önceki Sayfa</span></li>
+                                                                    -
                                                                 {% endif %}
-                                                                <li>
-                                                                    <a href="#">
-                                                                        sayfa {{ request.GET.sayfa }}
-                                                                        {% if request.GET.sayfa %}
-                                                                            /
-                                                                            {% if news.0.detail|length|news_page:request.GET.sayfa %}
-                                                                                {{ news.0.detail|length|intdiv:char }}
-                                                                            {% else %}
-                                                                                {{ request.GET.sayfa }}
-                                                                            {% endif %}
-                                                                        {% else %}1/
-                                                                            {% if  news.0.detail|length|intdiv:char|stringformat:"i" == "1" %}
-                                                                                {{ news.0.detail|length|intdiv:char|add:1 }}
-                                                                            {% else %}
-                                                                                {{ news.0.detail|length|intdiv:char }}
-                                                                            {% endif %}
-                                                                        {% endif %}</a></li>
-                                                                {% if request.GET.sayfa %}
-                                                                    {% if news.0.detail|length|news_page:request.GET.sayfa %}
+                                                                {{ detailtext | safe }}
+                                                                {% if news.0.detail|length > char %}
+                                                                    {% if not news.0.detail|length|intdiv:char|stringformat:"i" == request.GET.sayfa %}
+                                                                        ...
+                                                                    {% endif %}
+                                                                {% endif %}
+                                                            </div><!--mvp-content-main-->
+                                                            {% if news.0.detail|length > char %}
+                                                                <ul class="pagination" style="display: inline;">
+                                                                    {% if request.GET.sayfa != "1" and request.GET.sayfa %}
                                                                         <li>
-                                                                            {% if request.GET.sayfa %}
-                                                                                <a href="?sayfa={{ request.GET.sayfa|addition:1 }}">Sonraki
-                                                                                    Sayfa</a></li>
-                                                                            {% else %}
-                                                                                <a href="?sayfa=2">Sonraki
-                                                                                    Sayfa</a></li>
-                                                                            {% endif %}
+                                                                            <a href="?sayfa={{ request.GET.sayfa|sub:1 }}#mvp-content-body-top">Önceki
+                                                                                Sayfa</a></li>
                                                                     {% else %}
-                                                                        <li class="disabled"><span>Sonraki Sayfa</span>
+                                                                        <li class="disabled"><span>Önceki Sayfa</span>
                                                                         </li>
                                                                     {% endif %}
-                                                                {% else %}
-                                                                    <li><a href="?sayfa=2">Sonraki
-                                                                        Sayfa</a></li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            {% if request.GET.sayfa %}
+                                                                                sayfa {{ request.GET.sayfa }}
+                                                                            {% else %}
+                                                                                sayfa 1
+                                                                            {% endif %}
+                                                                            /{{ news.0.detail|length|news_pagec }}</a>
                                                                     </li>
-                                                                {% endif %}
-
-                                                            </ul>
-                                                        {% endif %}
-                                                        <div id="mvp-content-bot" class="left">
-                                                            {% if gallery %}
-                                                                <section class="mvp-post-gallery-wrap left relative">
-                                                                    <div class="mvp-post-gallery-top left relative flexslider">
-                                                                        <ul class="mvp-post-gallery-top-list slides">
-                                                                            {% for gl in gallery %}
-                                                                                <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: {{ gl.id }};"
-                                                                                    class="flex-active-slide">
-                                                                                    {% thumbnail gl.image "1000x600" crop="center" as im %}
-                                                                                        <img width="{{ im.width }}"
-                                                                                             height="{{ im.height }}"
-                                                                                             src="{{ im.url }}"
-                                                                                             class="attachment-mvp-post-thumb size-mvp-post-thumb"
-                                                                                             alt=""
-                                                                                             srcset="{{ im.url }}"
-                                                                                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}"
-                                                                                             ,draggable="false">
-                                                                                    {% endthumbnail %}
-                                                                                    <div class="mvp-post-gallery-text">
-                                                                                        <p>{{ gl.title }}</p>
-                                                                                    </div>
-                                                                                </li>
-                                                                            {% endfor %}
-                                                                        </ul>
-                                                                        <ul class="flex-direction-nav">
-                                                                            <li class="flex-nav-prev"><a
-                                                                                    class="flex-prev"
-                                                                                    href="#">&lt;</a>
+                                                                    {% if request.GET.sayfa %}
+                                                                        {% if news.0.detail|length|news_page:request.GET.sayfa %}
+                                                                            <li>
+                                                                                {% if request.GET.sayfa %}
+                                                                                    <a href="?sayfa={{ request.GET.sayfa|addition:1 }}#mvp-content-body-top">Sonraki
+                                                                                        Sayfa</a></li>
+                                                                                {% else %}
+                                                                                    <a href="?sayfa=2#mvp-content-body-top">Sonraki
+                                                                                        Sayfa</a></li>
+                                                                                {% endif %}
+                                                                        {% else %}
+                                                                            <li class="disabled">
+                                                                                <span>Sonraki Sayfa</span>
                                                                             </li>
-                                                                            <li class="flex-nav-next"><a
-                                                                                    class="flex-next"
-                                                                                    href="#">&gt;</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div><!--mvp-post-gallery-top-->
-                                                                    <div class="mvp-post-gallery-bot left relative flexslider">
+                                                                        {% endif %}
+                                                                    {% else %}
+                                                                        <li><a href="?sayfa=2#mvp-content-body-top">Sonraki
+                                                                            Sayfa</a></li>
+                                                                        </li>
+                                                                    {% endif %}
 
-                                                                        <div class="flex-viewport"
-                                                                             style="overflow: hidden; position: relative;">
-                                                                            <ul class="mvp-post-gallery-bot-list slides"
-                                                                                style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                                                                </ul>
+                                                            {% endif %}
+                                                            <div id="mvp-content-bot" class="left">
+                                                                {% if gallery %}
+                                                                    <section
+                                                                            class="mvp-post-gallery-wrap left relative">
+                                                                        <div class="mvp-post-gallery-top left relative flexslider">
+                                                                            <ul class="mvp-post-gallery-top-list slides">
                                                                                 {% for gl in gallery %}
-                                                                                    <li class="flex-active-slide"
-                                                                                        style="width: 80px; margin-right: 0px; float: left; display: block;">
-                                                                                    {% thumbnail gl.image "80x80" crop="center" as im %}
-                                                                                        <img width="{{ im.width }}"
-                                                                                             height="{{ im.height }}"
-                                                                                             src="{{ im.url }}"
-                                                                                             class="attachment-mvp-small-thumb size-mvp-small-thumb"
-                                                                                             alt=""
-                                                                                             srcset="{{ im.url }}"
-                                                                                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
-                                                                                    {% endthumbnail %}
+                                                                                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: {{ gl.id }};"
+                                                                                        class="flex-active-slide">
+                                                                                        {% thumbnail gl.image "1000x600" crop="center" as im %}
+                                                                                            <img width="{{ im.width }}"
+                                                                                                 height="{{ im.height }}"
+                                                                                                 src="{{ im.url }}"
+                                                                                                 class="attachment-mvp-post-thumb size-mvp-post-thumb"
+                                                                                                 alt=""
+                                                                                                 srcset="{{ im.url }}"
+                                                                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}"
+                                                                                                 ,draggable="false">
+                                                                                        {% endthumbnail %}
+                                                                                        <div class="mvp-post-gallery-text">
+                                                                                            <p>{{ gl.title }}</p>
+                                                                                        </div>
+                                                                                    </li>
                                                                                 {% endfor %}
                                                                             </ul>
-                                                                        </div>
-                                                                        <ul class="flex-direction-nav">
-                                                                            <li class="flex-nav-prev"><a
-                                                                                    class="flex-prev flex-disabled"
-                                                                                    href="#"
-                                                                                    tabindex="-1">Previous</a></li>
-                                                                            <li class="flex-nav-next"><a
-                                                                                    class="flex-next flex-disabled"
-                                                                                    href="#"
-                                                                                    tabindex="-1">Next</a></li>
-                                                                        </ul>
-                                                                    </div><!--mvp-post-gallery-bot-->
+                                                                            <ul class="flex-direction-nav">
+                                                                                <li class="flex-nav-prev"><a
+                                                                                        class="flex-prev"
+                                                                                        href="#">&lt;</a>
+                                                                                </li>
+                                                                                <li class="flex-nav-next"><a
+                                                                                        class="flex-next"
+                                                                                        href="#">&gt;</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div><!--mvp-post-gallery-top-->
+                                                                        <div class="mvp-post-gallery-bot left relative flexslider">
 
-                                                                </section>
-                                                            {% endif %}
-                                                            <div class="mvp-post-tags">
-                                                                <span class="mvp-post-tags-header">İLGİLİ Konular:</span><span
-                                                                    itemprop="keywords">
+                                                                            <div class="flex-viewport"
+                                                                                 style="overflow: hidden; position: relative;">
+                                                                                <ul class="mvp-post-gallery-bot-list slides"
+                                                                                    style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                                                                                    {% for gl in gallery %}
+                                                                                        <li class="flex-active-slide"
+                                                                                            style="width: 80px; margin-right: 0px; float: left; display: block;">
+                                                                                        {% thumbnail gl.image "80x80" crop="center" as im %}
+                                                                                            <img width="{{ im.width }}"
+                                                                                                 height="{{ im.height }}"
+                                                                                                 src="{{ im.url }}"
+                                                                                                 class="attachment-mvp-small-thumb size-mvp-small-thumb"
+                                                                                                 alt=""
+                                                                                                 srcset="{{ im.url }}"
+                                                                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                                                                        {% endthumbnail %}
+                                                                                    {% endfor %}
+                                                                                </ul>
+                                                                            </div>
+                                                                            <ul class="flex-direction-nav">
+                                                                                <li class="flex-nav-prev"><a
+                                                                                        class="flex-prev flex-disabled"
+                                                                                        href="#"
+                                                                                        tabindex="-1">Previous</a></li>
+                                                                                <li class="flex-nav-next"><a
+                                                                                        class="flex-next flex-disabled"
+                                                                                        href="#"
+                                                                                        tabindex="-1">Next</a></li>
+                                                                            </ul>
+                                                                        </div><!--mvp-post-gallery-bot-->
+
+                                                                    </section>
+                                                                {% endif %}
+                                                                <div class="mvp-post-tags">
+                                                                    <span class="mvp-post-tags-header">İLGİLİ Konular:</span><span
+                                                                        itemprop="keywords">
                                                             {% if  news.0.tags_split %}
                                                                 {% for key in news.0.tags_split %}
                                                                     {% if  key != "" and key != ",," %}
@@ -358,407 +364,719 @@
                                                             {% endif %}
 
                                                            </span>
-                                                            </div><!--mvp-post-tags-->
-                                                            <div class="posts-nav-link">
-                                                            </div><!--posts-nav-link-->
-                                                            {% if next_news %}
-                                                                <div id="mvp-prev-next-wrap" class="left relative">
-                                                                <div class="mvp-next-post-wrap right relative">
-                                                                    <a href="{% url 'haberler:news_detail' next_news.slug %}"
-                                                                       rel="bookmark">
-                                                                        <div class="mvp-prev-next-cont left relative">
-                                                                            <div class="mvp-next-cont-out left relative">
-                                                                                <div class="mvp-next-cont-in">
-                                                                                    <div class="mvp-prev-next-text left relative">
-                                                                                        <span class="mvp-prev-next-label left relative">Sonraki</span>
-                                                                                        <p>{{ next_news.title }}</p>
-                                                                                    </div><!--mvp-prev-next-text-->
-                                                                                </div><!--mvp-next-cont-in-->
-                                                                                <span class="mvp-next-arr fa fa-chevron-right right"></span>
-                                                                            </div><!--mvp-prev-next-out-->
-                                                                        </div><!--mvp-prev-next-cont-->
-                                                                    </a>
-                                                                </div><!--mvp-next-post-wrap-->
-                                                            {% endif %}
-                                                            {% if prev_news %}
-                                                                <div class="mvp-prev-post-wrap left relative">
-                                                                    <a href="{% url 'haberler:news_detail' prev_news.slug %}"
-                                                                       rel="bookmark">
-                                                                        <div class="mvp-prev-next-cont left relative">
-                                                                            <div class="mvp-prev-cont-out right relative">
-                                                                                <span class="mvp-prev-arr fa fa-chevron-left left"></span>
-                                                                                <div class="mvp-prev-cont-in">
-                                                                                    <div class="mvp-prev-next-text left relative">
-                                                                                        <span class="mvp-prev-next-label left relative">Önceki</span>
-                                                                                        <p>{{ prev_news.title }}</p>
-                                                                                    </div><!--mvp-prev-next-text-->
-                                                                                </div><!--mvp-prev-cont-in-->
-                                                                            </div><!--mvp-prev-cont-out-->
-                                                                        </div><!--mvp-prev-next-cont-->
-                                                                    </a>
-                                                                </div><!--mvp-prev-post-wrap-->
-                                                                </div>
-                                                            {% endif %}
+                                                                </div><!--mvp-post-tags-->
+                                                                <div class="posts-nav-link">
+                                                                </div><!--posts-nav-link-->
+                                                                {% if next_news %}
+                                                                    <div id="mvp-prev-next-wrap" class="left relative">
+                                                                    <div class="mvp-next-post-wrap right relative">
+                                                                        <a href="{% url 'haberler:news_detail' next_news.slug %}"
+                                                                           rel="bookmark">
+                                                                            <div class="mvp-prev-next-cont left relative">
+                                                                                <div class="mvp-next-cont-out left relative">
+                                                                                    <div class="mvp-next-cont-in">
+                                                                                        <div class="mvp-prev-next-text left relative">
+                                                                                            <span class="mvp-prev-next-label left relative">Sonraki</span>
+                                                                                            <p>{{ next_news.title }}</p>
+                                                                                        </div><!--mvp-prev-next-text-->
+                                                                                    </div><!--mvp-next-cont-in-->
+                                                                                    <span class="mvp-next-arr fa fa-chevron-right right"></span>
+                                                                                </div><!--mvp-prev-next-out-->
+                                                                            </div><!--mvp-prev-next-cont-->
+                                                                        </a>
+                                                                    </div><!--mvp-next-post-wrap-->
+                                                                {% endif %}
+                                                                {% if prev_news %}
+                                                                    <div class="mvp-prev-post-wrap left relative">
+                                                                        <a href="{% url 'haberler:news_detail' prev_news.slug %}"
+                                                                           rel="bookmark">
+                                                                            <div class="mvp-prev-next-cont left relative">
+                                                                                <div class="mvp-prev-cont-out right relative">
+                                                                                    <span class="mvp-prev-arr fa fa-chevron-left left"></span>
+                                                                                    <div class="mvp-prev-cont-in">
+                                                                                        <div class="mvp-prev-next-text left relative">
+                                                                                            <span class="mvp-prev-next-label left relative">Önceki</span>
+                                                                                            <p>{{ prev_news.title }}</p>
+                                                                                        </div><!--mvp-prev-next-text-->
+                                                                                    </div><!--mvp-prev-cont-in-->
+                                                                                </div><!--mvp-prev-cont-out-->
+                                                                            </div><!--mvp-prev-next-cont-->
+                                                                        </a>
+                                                                    </div><!--mvp-prev-post-wrap-->
+                                                                    </div>
+                                                                {% endif %}
 
-                                                            <div id="mvp-author-box-wrap" class="left relative">
-                                                                <div class="mvp-author-box-out right relative">
-                                                                    <div id="mvp-author-box-img" class="left relative">
-                                                                        {% thumbnail news.0.user.profile.image "60x60" crop="center" as im %}
-                                                                            <img width="{{ im.width }}"
-                                                                                 height="{{ im.height }}"
-                                                                                 src="{{ im.url }}"
-                                                                                 class="avatar avatar-60 photo"
-                                                                                 height="60"
-                                                                                 alt=""
-                                                                                 srcset="{{ im.url }}"
-                                                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
-                                                                        {% endthumbnail %}</div>
-                                                                    <!--mvp-author-box-img-->
-                                                                    <div class="mvp-author-box-in">
-                                                                        <div id="mvp-author-box-head"
+                                                                <div id="mvp-author-box-wrap" class="left relative">
+                                                                    <div class="mvp-author-box-out right relative">
+                                                                        <div id="mvp-author-box-img"
                                                                              class="left relative">
+                                                                            {% thumbnail news.0.user.profile.image "60x60" crop="center" as im %}
+                                                                                <img width="{{ im.width }}"
+                                                                                     height="{{ im.height }}"
+                                                                                     src="{{ im.url }}"
+                                                                                     class="avatar avatar-60 photo"
+                                                                                     height="60"
+                                                                                     alt=""
+                                                                                     srcset="{{ im.url }}"
+                                                                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
+                                                                            {% endthumbnail %}</div>
+                                                                        <!--mvp-author-box-img-->
+                                                                        <div class="mvp-author-box-in">
+                                                                            <div id="mvp-author-box-head"
+                                                                                 class="left relative">
                                                                         <span class="mvp-author-box-name left relative"><a
                                                                                 href="{% url 'author_detail' news.0.user %}"
                                                                                 title="{{ news.0.user|title }} ait gönderiler"
                                                                                 rel="author">{{ news.0.user|title }}</a></span>
-                                                                            <div id="mvp-author-box-soc-wrap"
-                                                                                 class="left relative">
-                                                                                <a href="{{ news.0.user.profile.facebook }}"
-                                                                                   alt="Facebook" target="_blank"><span
-                                                                                        class="mvp-author-box-soc fa fa-facebook-square fa-2"></span></a>
-                                                                                <a href="{{ news.0.user.profile.twitter }}"
-                                                                                   alt="Twitter" target="_blank"><span
-                                                                                        class="mvp-author-box-soc fa fa-twitter-square fa-2"></span></a>
-                                                                                <a href="{{ news.0.user.profile.pinterest }}"
-                                                                                   alt="Pinterest" target="_blank"><span
-                                                                                        class="mvp-author-box-soc fa fa-pinterest-square fa-2"></span></a>
-                                                                                <a href="{{ news.0.user.profile.google_plus }}"
-                                                                                   alt="Google Plus"
-                                                                                   target="_blank"><span
-                                                                                        class="mvp-author-box-soc fa fa-google-plus-square fa-2"></span></a>
-                                                                                <a href="{{ news.0.user.profile.instagram }}"
-                                                                                   alt="Instagram" target="_blank"><span
-                                                                                        class="mvp-author-box-soc fa fa-instagram fa-2"></span></a>
-                                                                                <a href="{{ news.0.user.profile.linkedin }}"
-                                                                                   alt="LinkedIn" target="_blank"><span
-                                                                                        class="mvp-author-box-soc fa fa-linkedin-square fa-2"></span></a>
-                                                                            </div><!--mvp-author-box-soc-wrap-->
-                                                                        </div><!--mvp-author-box-head-->
-                                                                    </div><!--mvp-author-box-in-->
-                                                                </div><!--mvp-author-box-out-->
-                                                                <div id="mvp-author-box-text" class="left relative">
-                                                                    <p>{{ news.0.user.profile.bio }}</p>
-                                                                </div><!--mvp-author-box-text-->
-                                                            </div><!--mvp-author-box-wrap-->
-                                                            <div class="mvp-org-wrap" itemprop="publisher" itemscope=""
-                                                                 itemtype="https://schema.org/Organization">
-                                                                <div class="mvp-org-logo" itemprop="logo" itemscope=""
-                                                                     itemtype="https://schema.org/ImageObject">
-                                                                    <img src="http://www.mvpthemes.com/zoxnews/wp-content/themes/zox-news/images/logos/logo-nav.png"
-                                                                         alt="Zox News">
-                                                                    <meta itemprop="url"
-                                                                          content="http://www.mvpthemes.com/zoxnews/wp-content/themes/zox-news/images/logos/logo-nav.png">
-                                                                </div><!--mvp-org-logo-->
-                                                                <meta itemprop="name" content="Zox News">
-                                                            </div><!--mvp-org-wrap-->
-                                                        </div><!--mvp-content-bot-->
-                                                    </div><!--mvp-content-body-top-->
-                                                    <div class="mvp-cont-read-wrap">
-                                                        <div class="mvp-cont-read-but-wrap left relative">
-                                                            <span class="mvp-cont-read-but">Continue Reading</span>
-                                                        </div><!--mvp-cont-read-but-wrap-->
-                                                        {#                                                        <div id="mvp-post-bot-ad" class="left relative">#}
-                                                        {#                                                            <span class="mvp-ad-label">Advertisement</span>#}
-                                                        {#                                                            <a href="https://themeforest.net/item/zox-news-professional-wordpress-news-magazine-theme/20381541?ref=mvpthemes"#}
-                                                        {#                                                               target="_blank"><img class="mvp-leader4"#}
-                                                        {#                                                                                    src="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox728.png"><img#}
-                                                        {#                                                                    class="mvp-leader3"#}
-                                                        {#                                                                    src="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox300.png"></a>#}
-                                                        {#                                                        </div><!--mvp-post-bot-ad-->#}
-                                                        {% if similar_news %}
-                                                            <div id="mvp-related-posts" class="left relative">
-                                                                <h4 class="mvp-widget-home-title">
-                                                                    <span class="mvp-widget-home-title">Benzer Haberler</span>
-                                                                </h4>
-                                                                <ul class="mvp-related-posts-list left related">
-                                                                    {% for sn in similar_news %}
-                                                                        {{ sn.News }}
-                                                                        <a href="{% url 'haberler:news_detail' sn.slug %}"
-                                                                           rel="bookmark">
-                                                                            {#                                                                    <a href="#" rel="bookmark">#}
-                                                                            <li>
-                                                                                <div class="mvp-related-img left relative">
-                                                                                    {% thumbnail sn.image "400x240" crop="center" as im %}
+                                                                                <div id="mvp-author-box-soc-wrap"
+                                                                                     class="left relative">
+                                                                                    <a href="{{ news.0.user.profile.facebook }}"
+                                                                                       alt="Facebook"
+                                                                                       target="_blank"><span
+                                                                                            class="mvp-author-box-soc fa fa-facebook-square fa-2"></span></a>
+                                                                                    <a href="{{ news.0.user.profile.twitter }}"
+                                                                                       alt="Twitter"
+                                                                                       target="_blank"><span
+                                                                                            class="mvp-author-box-soc fa fa-twitter-square fa-2"></span></a>
+                                                                                    <a href="{{ news.0.user.profile.pinterest }}"
+                                                                                       alt="Pinterest"
+                                                                                       target="_blank"><span
+                                                                                            class="mvp-author-box-soc fa fa-pinterest-square fa-2"></span></a>
+                                                                                    <a href="{{ news.0.user.profile.google_plus }}"
+                                                                                       alt="Google Plus"
+                                                                                       target="_blank"><span
+                                                                                            class="mvp-author-box-soc fa fa-google-plus-square fa-2"></span></a>
+                                                                                    <a href="{{ news.0.user.profile.instagram }}"
+                                                                                       alt="Instagram"
+                                                                                       target="_blank"><span
+                                                                                            class="mvp-author-box-soc fa fa-instagram fa-2"></span></a>
+                                                                                    <a href="{{ news.0.user.profile.linkedin }}"
+                                                                                       alt="LinkedIn"
+                                                                                       target="_blank"><span
+                                                                                            class="mvp-author-box-soc fa fa-linkedin-square fa-2"></span></a>
+                                                                                </div><!--mvp-author-box-soc-wrap-->
+                                                                            </div><!--mvp-author-box-head-->
+                                                                        </div><!--mvp-author-box-in-->
+                                                                    </div><!--mvp-author-box-out-->
+                                                                    <div id="mvp-author-box-text" class="left relative">
+                                                                        <p>{{ news.0.user.profile.bio }}</p>
+                                                                    </div><!--mvp-author-box-text-->
+                                                                </div><!--mvp-author-box-wrap-->
+                                                                <div class="mvp-org-wrap" itemprop="publisher"
+                                                                     itemscope=""
+                                                                     itemtype="https://schema.org/Organization">
+                                                                    <div class="mvp-org-logo" itemprop="logo"
+                                                                         itemscope=""
+                                                                         itemtype="https://schema.org/ImageObject">
+                                                                        <img src="{{ site.domain }}{{ site.logo.url }}"
+                                                                             alt="{{ site.title }}">
+                                                                        <meta itemprop="url"
+                                                                              content="{{ site.domain }}{{ site.logo.url }}">
+                                                                    </div><!--mvp-org-logo-->
+                                                                    <meta itemprop="name" content="{{ site.title }}">
+                                                                </div><!--mvp-org-wrap-->
+                                                            </div><!--mvp-content-bot-->
+                                                        </div><!--mvp-content-body-top-->
+                                                        <div class="mvp-cont-read-wrap">
+                                                            <div class="mvp-cont-read-but-wrap left relative">
+                                                                <span class="mvp-cont-read-but">Devamını oku</span>
+                                                            </div><!--mvp-cont-read-but-wrap-->
+                                                            {% if reklam %}
+                                                                {% with reklam|reklam_getir:3 as rk %}
+                                                                    {% if rk.0.type == "1" %}
+                                                                        google adwords in here
+                                                                    {% else %}
+                                                                        <div class="mvp-post-bot-ad">
+                                                                            <span class="mvp-ad-label"></span>
+                                                                            <a href="{{ rk.0.link }}"
+                                                                               target="_blank">
+                                                                                {% if rk.0.image %}
+                                                                                    {% thumbnail rk.0.image "720x180" crop="center" as im %}
                                                                                         <img width="{{ im.width }}"
-                                                                                             height="{{ im.height }}"
-                                                                                             src="{{ im.url }}"
-                                                                                             class="mvp-reg-img lazy wp-post-image"
-                                                                                             alt="{{ sn.title }}"
-                                                                                             srcset="{{ im.url }}"
-                                                                                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                                                                             src="{{ im.url }}">
                                                                                     {% endthumbnail %}
-                                                                                    {% thumbnail sn.image "80x80" crop="center" as im %}
-                                                                                        <img width="{{ im.width }}"
-                                                                                             height="{{ im.height }}"
-                                                                                             src="{{ im.url }}"
-                                                                                             class="mvp-mob-img lazy wp-post-image"
-                                                                                             alt="{{ sn.title }}"
-                                                                                             srcset="{{ im.url }}"
-                                                                                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
-                                                                                    {% endthumbnail %}
-                                                                                    {% if sn.video_url != "0" %}
-                                                                                        <div class="mvp-vid-box-wrap mvp-vid-box-mid mvp-vid-marg">
-                                                                                            <i class="fa fa-2 fa-play"
-                                                                                               aria-hidden="true"></i>
-                                                                                        </div>
-                                                                                    {% endif %}
+                                                                                {% endif %}
+                                                                            </a>
+                                                                        </div>
+                                                                    {% endif %}
 
-                                                                                </div><!--mvp-related-img-->
-                                                                                <div class="mvp-related-text left relative">
-                                                                                    <p>{{ sn.title }}</p>
-                                                                                </div><!--mvp-related-text-->
-                                                                            </li>
-                                                                        </a>
-                                                                    {% endfor %}
-                                                                </ul>
-                                                            </div><!--mvp-related-posts-->
-                                                        {% endif %}
-                                                        <div id="mvp-comments-button"
-                                                             class="left relative mvp-com-click">
-                                                            <span class="mvp-comment-but-text">Yorum ekle</span>
-                                                        </div><!--mvp-comments-button-->
-                                                        <div id="comments">
-                                                            <h4 class="mvp-widget-home-title"><span
-                                                                    class="mvp-widget-home-title">
+                                                                {% endwith %}
+                                                            {% endif %}
+                                                            {% if similar_news %}
+                                                                <div id="mvp-related-posts" class="left relative">
+                                                                    <h4 class="mvp-widget-home-title">
+                                                                        <span class="mvp-widget-home-title">Benzer Haberler</span>
+                                                                    </h4>
+                                                                    <ul class="mvp-related-posts-list left related">
+                                                                        {% for sn in similar_news %}
+                                                                            {{ sn.News }}
+                                                                            <a href="{% url 'haberler:news_detail' sn.slug %}"
+                                                                               rel="bookmark">
+                                                                                {#                                                                    <a href="#" rel="bookmark">#}
+                                                                                <li>
+                                                                                    <div class="mvp-related-img left relative">
+                                                                                        {% thumbnail sn.image "400x240" crop="center" as im %}
+                                                                                            <img width="{{ im.width }}"
+                                                                                                 height="{{ im.height }}"
+                                                                                                 src="{{ im.url }}"
+                                                                                                 class="mvp-reg-img lazy wp-post-image"
+                                                                                                 alt="{{ sn.title }}"
+                                                                                                 srcset="{{ im.url }}"
+                                                                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                                                                        {% endthumbnail %}
+                                                                                        {% thumbnail sn.image "80x80" crop="center" as im %}
+                                                                                            <img width="{{ im.width }}"
+                                                                                                 height="{{ im.height }}"
+                                                                                                 src="{{ im.url }}"
+                                                                                                 class="mvp-mob-img lazy wp-post-image"
+                                                                                                 alt="{{ sn.title }}"
+                                                                                                 srcset="{{ im.url }}"
+                                                                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                                                                        {% endthumbnail %}
+                                                                                        {% if sn.video_url != "0" %}
+                                                                                            <div class="mvp-vid-box-wrap mvp-vid-box-mid mvp-vid-marg">
+                                                                                                <i class="fa fa-2 fa-play"
+                                                                                                   aria-hidden="true"></i>
+                                                                                            </div>
+                                                                                        {% endif %}
+
+                                                                                    </div><!--mvp-related-img-->
+                                                                                    <div class="mvp-related-text left relative">
+                                                                                        <p>{{ sn.title }}</p>
+                                                                                    </div><!--mvp-related-text-->
+                                                                                </li>
+                                                                            </a>
+                                                                        {% endfor %}
+                                                                    </ul>
+                                                                </div><!--mvp-related-posts-->
+                                                            {% endif %}
+                                                            <div id="mvp-comments-button"
+                                                                 class="left relative mvp-com-click">
+                                                                <span class="mvp-comment-but-text">Yorum ekle</span>
+                                                            </div><!--mvp-comments-button-->
+                                                            <div id="comments">
+                                                                <div id="fb-root"></div>
+                                                                <script>(function (d, s, id) {
+                                                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                                                    if (d.getElementById(id)) return;
+                                                                    js = d.createElement(s);
+                                                                    js.id = id;
+                                                                    js.src = 'https://connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v3.1';
+                                                                    fjs.parentNode.insertBefore(js, fjs);
+                                                                }(document, 'script', 'facebook-jssdk'));</script>
+                                                                <div class="fb-comments"
+                                                                     data-href="{{ site.domain }}{{ request.path }}"
+                                                                     data-width="1000" data-numposts="2"></div>
+                                                                <h4 class="mvp-widget-home-title"><span
+                                                                        class="mvp-widget-home-title">
                                                                    {{ comments|length }} Yorum</span></h4>
-                                                            <ol class="commentlist">
-                                                                {% for cm in comments %}
-                                                                    <li class="comment even thread-even depth-1"
-                                                                        id="li-comment-{{ cm.id }}">
-                                                                        <div class="comment-wrapper" id="comment-184">
-                                                                            <div class="comment-inner">
-                                                                                <div class="comment-avatar">
-                                                                                    <img alt=""
-                                                                                         src="http://2.gravatar.com/avatar/2e410b0b34f8c8e87ad19e079ac734a8?s=46&amp;d=mm&amp;r=g"
-                                                                                         srcset="http://2.gravatar.com/avatar/2e410b0b34f8c8e87ad19e079ac734a8?s=92&amp;d=mm&amp;r=g 2x"
-                                                                                         class="avatar avatar-46 photo"
-                                                                                         height="46" width="46"></div>
-                                                                                <div class="commentmeta">
-                                                                                    <p class="comment-meta-1">
-                                                                                        <cite class="fn"><a
-                                                                                                href="http://www.rrhbhbchbch.com"
-                                                                                                rel="external nofollow"
-                                                                                                class="url">{{ cm.user }}</a></cite>
-                                                                                    </p>
-                                                                                    <p class="comment-meta-2">
-                                                                                        {{ cm.date }} </p>
-                                                                                </div>
-                                                                                <div class="text">
-                                                                                    <div class="c">
-                                                                                        <p>{{ cm.content }}</p>
+                                                                <ol class="commentlist">
+                                                                    {% for cm in comments %}
+                                                                        <li class="comment even thread-even depth-1"
+                                                                            id="li-comment-{{ cm.id }}">
+                                                                            <div class="comment-wrapper"
+                                                                                 id="comment-184">
+                                                                                <div class="comment-inner">
+                                                                                    <div class="comment-avatar">
+                                                                                        <img alt=""
+                                                                                             src="http://2.gravatar.com/avatar/2e410b0b34f8c8e87ad19e079ac734a8?s=46&amp;d=mm&amp;r=g"
+                                                                                             srcset="http://2.gravatar.com/avatar/2e410b0b34f8c8e87ad19e079ac734a8?s=92&amp;d=mm&amp;r=g 2x"
+                                                                                             class="avatar avatar-46 photo"
+                                                                                             height="46" width="46">
                                                                                     </div>
-                                                                                </div><!-- .text  -->
-                                                                                <div class="clear"></div>
-                                                                                <div class="comment-reply"><span
-                                                                                        class="reply"><a rel="nofollow"
-                                                                                                         class="comment-reply-link"
-                                                                                                         href="http://www.mvpthemes.com/zoxnews/mayors-agree-congress-should-invest-in-affordable-housing/?replytocom=184#respond"
-                                                                                                         onclick="return addComment.moveForm( &quot;comment-184&quot;, &quot;184&quot;, &quot;respond&quot;, &quot;374&quot; )"
-                                                                                                         aria-label="Reply to vtrvt5">Reply</a></span>
+                                                                                    <div class="commentmeta">
+                                                                                        <p class="comment-meta-1">
+                                                                                            <cite class="fn"><a
+                                                                                                    href="http://www.rrhbhbchbch.com"
+                                                                                                    rel="external nofollow"
+                                                                                                    class="url">{{ cm.user }}</a></cite>
+                                                                                        </p>
+                                                                                        <p class="comment-meta-2">
+                                                                                            {{ cm.date }} </p>
+                                                                                    </div>
+                                                                                    <div class="text">
+                                                                                        <div class="c">
+                                                                                            <p>{{ cm.content }}</p>
+                                                                                        </div>
+                                                                                    </div><!-- .text  -->
+                                                                                    <div class="clear"></div>
+
+                                                                                </div><!-- comment-inner  -->
+                                                                            </div><!-- comment-wrapper  -->
+                                                                        </li>
+                                                                    {% endfor %}
+
+                                                                    <!-- #comment-## -->
+                                                                </ol>
+
+                                                                <div id="respond" class="comment-respond">
+                                                                    <h3 id="reply-title"
+                                                                        class="comment-reply-title"></h3>
+                                                                    <h4
+                                                                            class="mvp-widget-home-title"><span
+                                                                            class="mvp-widget-home-title">Yorum Bırakın</span>
+                                                                    </h4>
+                                                                    <small><a rel="nofollow"
+                                                                              id="cancel-comment-reply-link"
+                                                                              href="/zoxnews/emily-ratajkowski-channels-back-to-school-style/#respond"
+                                                                              style="display:none;">Cancel reply</a>
+                                                                    </small>
+                                                                    <form method="post" id="commentform"
+                                                                          class="comment-form">
+                                                                        {% csrf_token %}
+                                                                        <p class="comment-notes"><span id="email-notes">E-mail adresin herkesle paylaşılmayacak</span>
+                                                                            </p>
+                                                                        <p class="comment-form-comment"><label
+                                                                                for="comment">Yorum</label> <textarea
+                                                                                id="content" name="content" cols="45"
+                                                                                rows="8" maxlength="65525"
+                                                                                required="required"></textarea></p>
+                                                                        {% if not request.user.is_authenticated %}
+                                                                            <p class="comment-form-author"><label
+                                                                                    for="author">Adınız
+                                                                                <span class="required">*</span></label>
+                                                                                <input
+                                                                                        id="name" name="name" type="text"
+                                                                                        value="" size="30" maxlength="245"
+                                                                                        required="required"></p>
+                                                                            <p class="comment-form-email"><label
+                                                                                    for="email">Email
+                                                                                <span class="required">*</span></label>
+                                                                                <input
+                                                                                        id="email" name="email" type="text"
+                                                                                        value=""
+                                                                                        size="30" maxlength="100"
+                                                                                        aria-describedby="email-notes"
+                                                                                        required="required">
+                                                                            </p>
+                                                                        {% endif %}
+
+                                                                        <p class="comment-form-url"><label
+                                                                                for="url">Website</label> <input
+                                                                                id="url"
+                                                                                name="url"
+                                                                                type="text"
+                                                                                value=""
+                                                                                size="30"
+                                                                                maxlength="200">
+                                                                        </p>
+                                                                        <p class="form-submit">
+                                                                            <input name="submit" type="submit" id="submit" class="submit"
+                                                                                                      value="Yorum ekle">
+                                                                            <input type="hidden" name="comment_post_ID"
+                                                                                   value="374" id="comment_post_ID">
+                                                                            <input type="hidden" name="comment_parent"
+                                                                                   id="comment_parent" value="0">
+                                                                        </p>
+                                                                        <p style="display: none;"><input type="hidden"
+                                                                                                         id="akismet_comment_nonce"
+                                                                                                         name="akismet_comment_nonce"
+                                                                                                         value="8425817bde">
+                                                                        </p>
+                                                                        <p style="display: none;"></p>            <input
+                                                                            type="hidden" id="ak_js" name="ak_js"
+                                                                            value="1535976228094"></form>
+                                                                </div><!-- #respond -->
+
+                                                            </div><!--comments-->
+                                                        </div><!--mvp-cont-read-wrap-->
+                                                    </div><!--mvp-content-body-->
+                                                </div>
+                                            </div><!--mvp-post-soc-out-->
+                                        </div><!--mvp-content-wrap-->
+
+                                        <div id="mvp-post-add-box">
+                                            <div id="mvp-post-add-wrap" class="left relative">
+                                                <!--page load infinity -->
+                                                <div class="infinite-container">
+                                                    {% for n in numbers %}
+                                                        <div class="infinite-item">
+                                                            <header id="mvp-post-head" class="left relative">
+                                                                <h3 class="mvp-post-cat left relative">
+                                                                    <a class="mvp-post-cat-link"
+                                                                       href="{% url 'haberler:news_list' n.category.slug %}"><span
+                                                                            class="mvp-post-cat left">{{ n.category }}</span>
+                                                                    </a>
+                                                                </h3>
+                                                                <h1 class="mvp-post-title left entry-title"
+                                                                    itemprop="headline"><a
+                                                                        href="{% url 'haberler:news_detail' n.slug %}"
+                                                                        style="color: #000000;">{{ n.title }}</a></h1>
+                                                                <span class="mvp-post-excerpt left"><p>{{ n.spot }}</p></span>
+                                                                <div class="mvp-author-info-wrap left relative">
+                                                                    <div class="mvp-author-info-thumb left relative">
+                                                                        {% thumbnail n.user.profile.image "46x46" crop="center" as im %}
+                                                                            <img width="{{ im.width }}"
+                                                                                 height="{{ im.height }}"
+                                                                                 src="{{ im.url }}"
+                                                                                 class="avatar avatar-46 photo"
+                                                                                 srcset="{{ im.url }}"
+                                                                                 sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
+                                                                        {% endthumbnail %}
+                                                                    </div>
+                                                                    <!--mvp-author-info-thumb-->
+                                                                    <div class="mvp-author-info-text left relative">
+                                                                        <div class="mvp-author-info-date left relative">
+                                                                            <span class="mvp-post-date">{{ n.date | timesince }} </span>
+                                                                            <p>önce</p> <span
+                                                                                class="mvp-post-date updated"><time
+                                                                                class="post-date updated"
+                                                                                itemprop="datePublished"
+                                                                                datetime="{{ n.date }}">{{ n.date }}</time></span>
+                                                                            <p> &nbsp; yayınlandı</p>
+                                                                            <meta itemprop="dateModified"
+                                                                                  content="{{ n.date }}">
+                                                                        </div><!--mvp-author-info-date-->
+                                                                        <div class="mvp-author-info-name left relative"
+                                                                             itemprop="author" itemscope=""
+                                                                             itemtype="https://schema.org/Person">
+                                                                            <p>By</p> <span
+                                                                                class="author-name vcard fn author"
+                                                                                itemprop="name"><a
+                                                                                href="{% url 'author_detail' n.user %}"
+                                                                                title="Posts by Zox n Staff"
+                                                                                rel="author">{{ n.user }}</a></span>
+                                                                            <a
+                                                                                    href="{{ n.user.profile.twitter }}"
+                                                                                    class="mvp-twit-but"
+                                                                                    target="_blank"><span
+                                                                                    class="mvp-author-info-twit-but"><i
+                                                                                    class="fa fa-twitter fa-2"></i></span></a>
+                                                                        </div>
+                                                                        <!--mvp-author-info-name-->
+                                                                    </div><!--mvp-author-info-text-->
+                                                                </div><!--mvp-author-info-wrap-->
+                                                            </header>
+                                                            <div class="mvp-post-main-out left relative"
+                                                                 style="transform: none;">
+                                                                <div id="mvp-post-content" class="left relative"
+                                                                     style="transform: none;">
+                                                                    {% if n.video_url != "0" %}
+                                                                        <div id="mvp-video-embed-wrap"
+                                                                             class="left relative">
+                                                                            <div id="mvp-video-embed-cont"
+                                                                                 class="left relative">
+                                                                                <span class="mvp-video-close fa fa-times"
+                                                                                      aria-hidden="true"
+                                                                                      style="display: none;"></span>
+                                                                                <div id="mvp-video-embed"
+                                                                                     class="left relative">
+                                                                                    <iframe width="1280"
+                                                                                            height="720"
+                                                                                            src="{{ n.video_url }}"
+                                                                                            frameborder="0"
+                                                                                            allowfullscreen=""></iframe>
+                                                                                </div><!--mvp-video-embed-->
+                                                                            </div><!--mvp-video-embed-cont-->
+                                                                        </div>
+                                                                    {% else %}
+                                                                        <div id="mvp-post-feat-img"
+                                                                             class="left relative mvp-post-feat-img-wide2"
+                                                                             itemprop="image" itemscope=""
+                                                                             itemtype="https://schema.org/ImageObject">
+                                                                            {% thumbnail n.image "1000x600" crop="center" as im %}
+                                                                                <img width="{{ im.width }}"
+                                                                                     height="{{ im.height }}"
+                                                                                     src="{{ im.url }}"
+                                                                                     class="attachment- size- wp-post-image"
+                                                                                     alt="{{ n.title }}"
+                                                                                     srcset="{{ im.url }}"
+                                                                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
+                                                                            {% endthumbnail %}
+                                                                            <meta itemprop="url" content="
+
+                                                                                    {{ request.get_host }}{{ n.image.url }}">
+                                                                            <meta itemprop="width" content="1000">
+                                                                            <meta itemprop="height" content="600">
+                                                                        </div><!--mvp-post-feat-img-->
+                                                                    {% endif %}
+                                                                    <div id="mvp-content-wrap" class="left relative"
+                                                                         style="transform: none;">
+                                                                        <div class="mvp-post-soc-out right relative"
+                                                                             style="transform: none;">
+                                                                            <div class="mvp-post-soc-wrap left relative"
+                                                                                 style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                                                                                <div class="theiaStickySidebar"
+                                                                                     style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+                                                                                    <ul class="mvp-post-soc-list left relative">
+                                                                                        <a href="#"
+                                                                                           onclick="window.open('http://www.facebook.com/sharer.php?u={{ request.build_absolute_uri }}/&amp;t={{ n.title }}', 'facebookShare', 'width=626,height=436'); return false;"
+                                                                                           title="Facebook'da Paylaş">
+                                                                                            <li class="mvp-post-soc-fb">
+                                                                                                <i class="fa fa-2 fa-facebook"
+                                                                                                   aria-hidden="true"></i>
+                                                                                            </li>
+                                                                                        </a>
+                                                                                        <a href="#"
+                                                                                           onclick="window.open('http://twitter.com/share?text={{ n.title }} -&amp;url={{ request.build_absolute_uri }}', 'twitterShare', 'width=626,height=436'); return false;"
+                                                                                           title="Twitter'da paylaş">
+                                                                                            <li class="mvp-post-soc-twit">
+                                                                                                <i class="fa fa-2 fa-twitter"
+                                                                                                   aria-hidden="true"></i>
+                                                                                            </li>
+                                                                                        </a>
+                                                                                        <a href="#"
+                                                                                           onclick="window.open('http://pinterest.com/pin/create/button/?url={{ request.build_absolute_uri }}/&amp;media=
+                                                                                                   {{ request.META.HTTP_HOST }}{{ n.image.url }}&amp;description={{ n.image.url }}', 'pinterestShare', 'width=750,height=350'); return false;"
+                                                                                           title="Pinterest'te paylaş">
+                                                                                            <li class="mvp-post-soc-pin">
+                                                                                                <i class="fa fa-2 fa-pinterest-p"
+                                                                                                   aria-hidden="true"></i>
+                                                                                            </li>
+                                                                                        </a>
+                                                                                        <a href="mailto:?subject={{ n.title }} style&amp;BODY=Bu makaleyi ilginç buldum ve sizinle paylaşmak istedim : {{ request.build_absolute_uri }}">
+                                                                                            <li class="mvp-post-soc-email">
+                                                                                                <i class="fa fa-2 fa-envelope"
+                                                                                                   aria-hidden="true"></i>
+                                                                                            </li>
+                                                                                        </a>
+                                                                                    </ul>
+                                                                                    <div class="resize-sensor"
+                                                                                         style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
+                                                                                        <div class="resize-sensor-expand"
+                                                                                             style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
+                                                                                            <div style="position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 52px; height: 253px;"></div>
+                                                                                        </div>
+                                                                                        <div class="resize-sensor-shrink"
+                                                                                             style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
+                                                                                            <div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div><!-- comment-inner  -->
-                                                                        </div><!-- comment-wrapper  -->
-                                                                    </li>
-                                                                {% endfor %}
+                                                                            </div><!--mvp-post-soc-wrap-->
+                                                                            <div class="mvp-post-soc-in">
+                                                                                <div id="mvp-content-body"
+                                                                                     class="left relative">
+                                                                                    <div id="mvp-content-body-top"
+                                                                                         class="left relative">
+                                                                                        <div id="mvp-content-main"
+                                                                                             class="left relative">
+                                                                                            {% if n.detail|length > 2500 %}
+                                                                                                {{ n.detail|safe|slice:"2500" }}
+                                                                                                ...
+                                                                                                <br>
+                                                                                                <a href="{% url 'haberler:news_detail' n.slug %}">Devamını
+                                                                                                    oku</a>
+                                                                                            {% else %}
+                                                                                                {{ n.detail|safe }}
+                                                                                            {% endif %}
 
-                                                                <!-- #comment-## -->
-                                                            </ol>
-
-                                                            <div id="respond" class="comment-respond">
-                                                                <h3 id="reply-title" class="comment-reply-title"></h3>
-                                                                <h4
-                                                                        class="mvp-widget-home-title"><span
-                                                                        class="mvp-widget-home-title">Yorum Bırakın</span>
-                                                                </h4>
-                                                                <small><a rel="nofollow" id="cancel-comment-reply-link"
-                                                                          href="/zoxnews/emily-ratajkowski-channels-back-to-school-style/#respond"
-                                                                          style="display:none;">Cancel reply</a></small>
-                                                                <form method="post" id="commentform"
-                                                                      class="comment-form">
-                                                                    {% csrf_token %}
-                                                                    <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span>
-                                                                        Required fields are marked <span
-                                                                                class="required">*</span></p>
-                                                                    <p class="comment-form-comment"><label
-                                                                            for="comment">Comment</label> <textarea
-                                                                            id="content" name="content" cols="45"
-                                                                            rows="8" maxlength="65525"
-                                                                            required="required"></textarea></p>
-                                                                    <p class="comment-form-author"><label for="author">Name
-                                                                        <span class="required">*</span></label> <input
-                                                                            id="name" name="name" type="text"
-                                                                            value="" size="30" maxlength="245"
-                                                                            required="required"></p>
-                                                                    <p class="comment-form-email"><label for="email">Email
-                                                                        <span class="required">*</span></label> <input
-                                                                            id="email" name="email" type="text" value=""
-                                                                            size="30" maxlength="100"
-                                                                            aria-describedby="email-notes"
-                                                                            required="required"></p>
-                                                                    <p class="comment-form-url"><label
-                                                                            for="url">Website</label> <input id="url"
-                                                                                                             name="url"
-                                                                                                             type="text"
-                                                                                                             value=""
-                                                                                                             size="30"
-                                                                                                             maxlength="200">
-                                                                    </p>
-                                                                    <p class="form-submit"><input name="submit"
-                                                                                                  type="submit"
-                                                                                                  id="submit"
-                                                                                                  class="submit"
-                                                                                                  value="Post Comment">
-                                                                        <input type="hidden" name="comment_post_ID"
-                                                                               value="374" id="comment_post_ID">
-                                                                        <input type="hidden" name="comment_parent"
-                                                                               id="comment_parent" value="0">
-                                                                    </p>
-                                                                    <p style="display: none;"><input type="hidden"
-                                                                                                     id="akismet_comment_nonce"
-                                                                                                     name="akismet_comment_nonce"
-                                                                                                     value="8425817bde">
-                                                                    </p>
-                                                                    <p style="display: none;"></p>            <input
-                                                                        type="hidden" id="ak_js" name="ak_js"
-                                                                        value="1535976228094"></form>
-                                                            </div><!-- #respond -->
-
-                                                        </div><!--comments-->
-                                                    </div><!--mvp-cont-read-wrap-->
-                                                </div><!--mvp-content-body-->
-                                            </div><!--mvp-post-soc-in-->
-                                        </div><!--mvp-post-soc-out-->
-                                    </div><!--mvp-content-wrap-->
-                                    <div id="mvp-post-add-box">
-                                        {% if similar_news %}
-                                            {% for on in similar_news %}
-                                                <div id="mvp-post-add-wrap" class="left relative">
-                                                <div class="mvp-post-add-story left relative">
-                                                    <div class="mvp-post-add-head left relative">
-                                                        <h3 class="mvp-post-cat left relative"><a
-                                                                class="mvp-post-cat-link"
-                                                                href="{% url 'haberler:news_list' on.category__slug %}"><span
-                                                                class="mvp-post-cat left">{{ on.category__title }}</span></a>
-                                                        </h3>
-                                                        <h1 class="mvp-post-title left">{{ on.title }}</h1>
-                                                        <span class="mvp-post-excerpt left"><p>{{ on.spot }}</p>
-</span>
-                                                        <div class="mvp-author-info-wrap left relative">
-                                                            <div class="mvp-author-info-thumb left relative">
-                                                                {% thumbnail on.user__profile__image "46x46" crop="center" as im %}
-                                                                    <img width="{{ im.width }}" height="{{ im.height }}"
-                                                                         src="{{ im.url }}"
-                                                                         class="avatar avatar-46 photo" height="46"
-                                                                         srcset="{{ im.url }}"
-                                                                         sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
-                                                                {% endthumbnail %}
-                                                            </div><!--mvp-author-info-thumb-->
-                                                            <div class="mvp-author-info-text left relative">
-                                                                <div class="mvp-author-info-date left relative">
-                                                                    <span class="mvp-post-date">{{ on.date | timesince }}</span>
-                                                                    <p>önce </p> <span
-                                                                        class="mvp-post-date">{{ on.date }} yayınlandı</span>
-                                                                </div><!--mvp-author-info-date-->
-                                                                <div class="mvp-author-info-name left relative">
-                                                                    <p>By</p> <span class="author-name vcard fn author"
-                                                                                    itemprop="name"><a
-                                                                        href="{% url 'author_detail' on.user__username %}"
-                                                                        title="{{ on.user__username }} ait gönderiler"
-                                                                        rel="author">{{ on.user__username }}</a></span> <a
-                                                                        href="{{ on.user.profile.twitter }}"
-                                                                        class="mvp-twit-but" target="_blank"><span
-                                                                        class="mvp-author-info-twit-but"><i
-                                                                        class="fa fa-twitter fa-2"></i></span></a></div>
-                                                                <!--mvp-author-info-name-->
-                                                            </div><!--mvp-author-info-text-->
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div id="mvp-content-bot"
+                                                                                         class="left">
+                                                                                        <div class="mvp-post-tags">
+                                                                                            <span class="mvp-post-tags-header">İLGİLİ Konular:</span>
+                                                                                            <span itemprop="keywords">
+                                                                                                {% if  n.tags_split %}
+                                                                                                    {% for key in n.tags_split %}
+                                                                                                        {% if  key != "" and key != ",," %}
+                                                                                                            <a href="{% url 'tags' key|slugify %}"
+                                                                                                               rel="tag">{{ key }}</a>
+                                                                                                        {% endif %}
+                                                                                                    {% endfor %}
+                                                                                                {% endif %}
+                                                                                               </span>
+                                                                                        </div>
+                                                                                        <div id="mvp-author-box-wrap"
+                                                                                             class="left relative">
+                                                                                            <div class="mvp-author-box-out right relative">
+                                                                                                <div id="mvp-author-box-img"
+                                                                                                     class="left relative">
+                                                                                                    {% thumbnail n.user.profile.image "60x60" crop="center" as im %}
+                                                                                                        <img width="{{ im.width }}"
+                                                                                                             height="{{ im.height }}"
+                                                                                                             src="{{ im.url }}"
+                                                                                                             class="avatar avatar-60 photo"
+                                                                                                             height="60"
+                                                                                                             alt=""
+                                                                                                             srcset="{{ im.url }}"
+                                                                                                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
+                                                                                                    {% endthumbnail %}
+                                                                                                </div>
+                                                                                                <!--mvp-author-box-img-->
+                                                                                                <div class="mvp-author-box-in">
+                                                                                                    <div id="mvp-author-box-head"
+                                                                                                         class="left relative">
+                                                                                                            <span class="mvp-author-box-name left relative">
+                                                                                                                <a href="{% url 'author_detail' n.user %}"
+                                                                                                                   title="{{ n.user|title }} ait gönderiler"
+                                                                                                                   rel="author">{{ n.user|title }}</a></span>
+                                                                                                        <div id="mvp-author-box-soc-wrap"
+                                                                                                             class="left relative">
+                                                                                                            <a href="{{ n.user.profile.facebook }}"
+                                                                                                               alt="Facebook"
+                                                                                                               target="_blank"><span
+                                                                                                                    class="mvp-author-box-soc fa fa-facebook-square fa-2"></span></a>
+                                                                                                            <a href="{{ n.user.profile.twitter }}"
+                                                                                                               alt="Twitter"
+                                                                                                               target="_blank">
+                                                                                                                <span class="mvp-author-box-soc fa fa-twitter-square fa-2"></span>
+                                                                                                            </a>
+                                                                                                            <a href="{{ n.user.profile.pinterest }}"
+                                                                                                               alt="Pinterest"
+                                                                                                               target="_blank">
+                                                                                                                <span class="mvp-author-box-soc fa fa-pinterest-square fa-2"></span>
+                                                                                                            </a>
+                                                                                                            <a href="{{ n.user.profile.google_plus }}"
+                                                                                                               alt="Google Plus"
+                                                                                                               target="_blank">
+                                                                                                                <span class="mvp-author-box-soc fa fa-google-plus-square fa-2"></span>
+                                                                                                            </a>
+                                                                                                            <a href="{{ n.user.profile.instagram }}"
+                                                                                                               alt="Instagram"
+                                                                                                               target="_blank">
+                                                                                                                <span class="mvp-author-box-soc fa fa-instagram fa-2"></span>
+                                                                                                            </a>
+                                                                                                            <a href="{{ n.user.profile.linkedin }}"
+                                                                                                               alt="LinkedIn"
+                                                                                                               target="_blank">
+                                                                                                                <span class="mvp-author-box-soc fa fa-linkedin-square fa-2"></span>
+                                                                                                            </a>
+                                                                                                        </div>
+                                                                                                        <!--mvp-author-box-soc-wrap-->
+                                                                                                    </div>
+                                                                                                    <!--mvp-author-box-head-->
+                                                                                                </div>
+                                                                                                <!--mvp-author-box-in-->
+                                                                                            </div>
+                                                                                            <!--mvp-author-box-out-->
+                                                                                            <div id="mvp-author-box-text"
+                                                                                                 class="left relative">
+                                                                                                <p>{{ n.user.profile.bio }}</p>
+                                                                                            </div>
+                                                                                            <!--mvp-author-box-text-->
+                                                                                        </div>
+                                                                                        <!--mvp-author-box-wrap-->
+                                                                                    </div><!--mvp-content-bot-->
+                                                                                </div>
+                                                                                <!--mvp-content-body-top-->
+                                                                                <div class="mvp-cont-read-wrap">
+                                                                                    <div class="mvp-cont-read-but-wrap left relative">
+                                                                                        <span class="mvp-cont-read-but">Continue Reading</span>
+                                                                                    </div>
+                                                                                    {% if reklam %}
+                                                                                        {% with reklam|reklam_getir:3 as rk %}
+                                                                                            {% if rk.0.type == "1" %}
+                                                                                                google adwords
+                                                                                                in here
+                                                                                            {% else %}
+                                                                                                <div class="mvp-post-bot-ad">
+                                                                                                    <span class="mvp-ad-label"></span>
+                                                                                                    <a href="{{ rk.0.link }}"
+                                                                                                       target="_blank">
+                                                                                                        {% if rk.0.image %}
+                                                                                                            {% thumbnail rk.0.image "720x180" crop="center" as im %}
+                                                                                                                <img width="{{ im.width }}"
+                                                                                                                     src="{{ im.url }}">
+                                                                                                            {% endthumbnail %}
+                                                                                                        {% endif %}
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            {% endif %}
+                                                                                        {% endwith %}
+                                                                                    {% endif %}
+                                                                                </div><!--mvp-cont-read-wrap-->
+                                                                            </div><!--mvp-content-body-->
+                                                                        </div>
+                                                                    </div><!--mvp-post-soc-out-->
+                                                                </div><!--mvp-content-wrap-->
+                                                            </div><!--mvp-post-content-->
+                                                            <!--mvp-post-main-out-->
                                                         </div>
-                                                    </div><!--mvp-post-add-head-->
-                                                    <div class="mvp-post-add-body left relative">
-                                                        <div class="mvp-post-add-img left relative">
-                                                            {% thumbnail on.image "1000x600" crop="center" as im %}
-                                                                <img width="{{ im.width }}" height="{{ im.height }}"
-                                                                     src="{{ im.url }}"
-                                                                     class="attachment- size- wp-post-image" alt=""
-                                                                     srcset="{{ im.url }}"
-                                                                     sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
-                                                            {% endthumbnail %}
-                                                            <!--mvp-post-feat-img-->
-                                                            <span class="mvp-feat-caption">Photo: Shutterstock</span>
-                                                            <div class="mvp-post-add-cont left relative">
-                                                                <div class="mvp-post-add-main right relative">
-                                                                    {{ on.detail }}
-                                                                </div><!--mvp-post-add-main-->
-                                                                <div class="mvp-post-add-link">
-                                                                    <a href="{% url "haberler:news_detail" on.slug %}"
-                                                                       rel="bookmark"><span
-                                                                            class="mvp-post-add-link-but">Devamını Oku</span></a>
-                                                                </div><!--mvp-post-add-link-->
-                                                            </div><!--mvp-post-add-cont-->
-                                                        </div><!--mvp-post-add-body-->
-                                                    </div><!--mvp-post-add-story-->
-                                                </div><!--mvp-post-add-wrap-->
-                                            {% endfor %}
-                                        {% endif %}
+                                                        </div>
+                                                    {% endfor %}
+                                            </div>
+                                            {% if numbers.has_next %}
+                                                <a class="infinite-more-link"
+                                                   href="?page={{ numbers.next_page_number }}"></a>
+                                            {% endif %}
+                                            <div class="loading" style="display: none;">
+                                                <center><h1>Sonraki haber yükleniyor</h1></center>
+                                            </div>
+                                            <!---and infinity scroll -->
+                                        </div><!--mvp-post-add-wrap-->
+                                    </div><!--mvp-post-add-box-->
+                                </div><!--mvp-post-content-->
+                            </div><!--mvp-post-main-in-->
+                            {% show_rightbar 10 10 10 %}
+                            <!--mvp-post-main-out-->
+                        </div><!--mvp-post-main-->
 
-                                        </div><!--mvp-post-add-box-->
-                                    </div><!--mvp-post-content-->
-                                </div><!--mvp-post-main-in-->
+                        <div id="mvp-post-more-wrap" class="left relative">
+                            <h4 class="mvp-widget-home-title">
+                                <span class="mvp-widget-home-title">trends</span>
+                            </h4>
+                            <ul class="mvp-post-more-list left relative">
+                                {% if trends %}
+                                    {% for td in trends %}
+                                        <a href="{% url "haberler:news_detail" td.slug %}"
+                                           rel="bookmark">
+                                            <li>
+                                                <div class="mvp-post-more-img left relative">
+                                                    {% thumbnail td.image "400x240" crop="center" as im %}
+                                                        <img width="{{ im.width }}" height="{{ im.height }}"
+                                                             src="{{ im.url }}"
+                                                             class="attachment- size- wp-post-image" alt=""
+                                                             srcset="{{ im.url }}"
+                                                             sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
+                                                    {% endthumbnail %}
+                                                    {% if td.video_url != "0" %}
+                                                        <div class="mvp-vid-box-wrap mvp-vid-box-mid mvp-vid-marg">
+                                                            <i class="fa fa-2 fa-play" aria-hidden="true"></i>
+                                                        </div><!--mvp-vid-box-wrap-->
+                                                    {% endif %}
 
-                            </div><!--mvp-post-main-->
+                                                </div><!--mvp-post-more-img-->
+                                                <div class="mvp-post-more-text left relative">
+                                                    <div class="mvp-cat-date-wrap left relative">
+                                                        <span class="mvp-cd-cat left relative">{{ td.category__title }}</span><span
+                                                            class="mvp-cd-date left relative">{{ td.date | timesince }} Önce</span>
+                                                    </div><!--mvp-cat-date-wrap-->
+                                                    <p>{{ td.title }}</p>
+                                                </div><!--mvp-post-more-text-->
+                                            </li>
+                                        </a>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div><!--mvp-post-more-wrap-->
+                    </div>
+                </div><!--mvp-main-box-->
+            </div>
 
+            </div><!--mvp-article-cont-->
 
-                        </div><!--mvp-main-box-->
+            </article>
+        {% endif %}
+    </div>
+{% endblock %}
+{% block script %}
+   {% compress js %}
+    <script type='text/javascript' src='{% static "wp-content/themes/zox-news/js/jquery.min.js" %}'></script>
+    <script src="{% static 'wp-content/themes/zox-news/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'wp-content/themes/zox-news/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'wp-content/themes/zox-news/js/infinite.min.js' %}"></script>
+    <script>
+        var infinite = new Waypoint.Infinite({
+            element: $('#mvp-content-wrap')[0],
+            onBeforePageLoad: function () {
+                $('.loading').show();
+            },
+            onAfterPageLoad: function ($items) {
+                $('.loading').hide();
+            }
 
-                    </div><!--mvp-article-cont-->
-                    <div id="mvp-post-more-wrap" class="left relative">
-                        <h4 class="mvp-widget-home-title">
-                            <span class="mvp-widget-home-title">Trending</span>
-                        </h4>
-                        <ul class="mvp-post-more-list left relative">
-                            {% if trends %}
-                                {% for td in trends %}
-                                    <a href="{% url "haberler:news_detail" td.slug %}"
-                                       rel="bookmark">
-                                        <li>
-                                            <div class="mvp-post-more-img left relative">
-                                                {% thumbnail td.image "400x240" crop="center" as im %}
-                                                    <img width="{{ im.width }}" height="{{ im.height }}"
-                                                         src="{{ im.url }}"
-                                                         class="attachment- size- wp-post-image" alt=""
-                                                         srcset="{{ im.url }}"
-                                                         sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
-                                                {% endthumbnail %}
-                                                {% if td.video_url != "0" %}
-                                                    <div class="mvp-vid-box-wrap mvp-vid-box-mid mvp-vid-marg">
-                                                        <i class="fa fa-2 fa-play" aria-hidden="true"></i>
-                                                    </div><!--mvp-vid-box-wrap-->
-                                                {% endif %}
-
-                                            </div><!--mvp-post-more-img-->
-                                            <div class="mvp-post-more-text left relative">
-                                                <div class="mvp-cat-date-wrap left relative">
-                                                    <span class="mvp-cd-cat left relative">{{ td.category__title }}</span><span
-                                                        class="mvp-cd-date left relative">{{ td.date | timesince }} Önce</span>
-                                                </div><!--mvp-cat-date-wrap-->
-                                                <p>{{ td.title }}</p>
-                                            </div><!--mvp-post-more-text-->
-                                        </li>
-                                    </a>
-                                {% endfor %}
-                            {% endif %}
-                        </ul>
-                    </div><!--mvp-post-more-wrap-->
-        </article>
-    {% endif %}
-
+        });
+    </script>
+    <script type='text/javascript' src="{% static 'wp-content/themes/zox-news/js/jquery-1.12.4.js' %}"></script>
+    <script type="text/javascript">
+        var c = document.body.className;
+        c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+        document.body.className = c;
+    </script>
+    <script type='text/javascript' src="{% static 'wp-content/themes/zox-news/js/scripts5010_h.js' %}"></script>
+    <script type='text/javascript' src="{% static 'wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min653d.js' %}"></script>
+    <script type='text/javascript' src="{% static 'wp-content/themes/zox-news/js/jquery.infinitescroll.min5010.js'%}"></script>
+    {% endcompress %}
 {% endblock %}

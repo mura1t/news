@@ -1,16 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c89ca0ec-c058-435d-b90c-ed49a4cff489" name="Default Changelist" comment="optimization">
+    <list default="true" id="c89ca0ec-c058-435d-b90c-ed49a4cff489" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ayarlar/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ayarlar/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ayarlar/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ayarlar/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/migrations/0002_subcategory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/migrations/0003_subcategory_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/comments/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/comments/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/migrations/0002_auto_20180906_1832.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/migrations/0003_auto_20180906_1835.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/migrations/0004_remove_news_yeni.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/migrations/0005_news_sub_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/migrations/0006_auto_20180907_1225.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/migrations/0007_auto_20180908_1343.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/migrations/0008_auto_20180910_2114.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haberler/templatetags/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/templatetags/menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/haberler/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/News/datagrip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/News/datagrip_3rI1Hu8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/site/hpsp-bradford-dam_78kcnbZ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/font-awesome/css/font-awesome5010.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/font-awesome/css/font-awesome5010.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/jquery.infinitescroll.min5010.js" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/jquery.infinitescroll.min5010.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010.js" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/haberler/news_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/haberler/news_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/haberler/news_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/haberler/news_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/author/author_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/author/author_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/author/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/author/team.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/leftmenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/leftmenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_four.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_four.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_more_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_more_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_one.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_one.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_zero.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_zero.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/parts/right_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/right_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/site/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/tags.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/haber$settings.coverage" NAME="settings Coverage Results" MODIFIED="1537517634989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/news" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -38,86 +95,114 @@
     <session id="1977367142">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="44" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.13" value="3" />
-          <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.15" value="4" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.17" value="2" />
-          <entry key="project.open.time.18" value="5" />
-          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.13" value="4" />
+          <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.15" value="7" />
+          <entry key="project.open.time.16" value="4" />
+          <entry key="project.open.time.17" value="5" />
+          <entry key="project.open.time.18" value="7" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="2" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.29" value="2" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.31" value="2" />
+          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="6" />
-          <entry key="dummy" value="23" />
-          <entry key="html" value="15572" />
-          <entry key="js" value="14" />
-          <entry key="py" value="18056" />
+          <entry key="css" value="7" />
+          <entry key="dummy" value="32" />
+          <entry key="html" value="32034" />
+          <entry key="js" value="197" />
+          <entry key="py" value="40028" />
           <entry key="sql" value="26" />
           <entry key="txt" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="6" />
-          <entry key="HTML" value="15572" />
-          <entry key="JavaScript" value="14" />
-          <entry key="PLAIN_TEXT" value="63" />
-          <entry key="Python" value="18056" />
+          <entry key="CSS" value="7" />
+          <entry key="DjangoUrlPath" value="1" />
+          <entry key="HTML" value="32034" />
+          <entry key="JavaScript" value="197" />
+          <entry key="PLAIN_TEXT" value="72" />
+          <entry key="Python" value="40027" />
           <entry key="Scratch" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="2" />
-          <entry key="html" value="220" />
-          <entry key="js" value="9" />
-          <entry key="py" value="224" />
+          <entry key="activate" value="1" />
+          <entry key="css" value="6" />
+          <entry key="html" value="401" />
+          <entry key="js" value="22" />
+          <entry key="py" value="433" />
           <entry key="pyi" value="1" />
           <entry key="sql" value="3" />
+          <entry key="wheel" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="2" />
-          <entry key="HTML" value="220" />
-          <entry key="JavaScript" value="9" />
-          <entry key="Python" value="224" />
+          <entry key="CSS" value="6" />
+          <entry key="HTML" value="401" />
+          <entry key="JavaScript" value="22" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="434" />
           <entry key="PythonStub" value="1" />
           <entry key="Scratch" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="haber" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/haberler/news_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="749" column="112" selection-start-line="749" selection-start-column="112" selection-end-line="749" selection-end-column="112" />
+            <state relative-caret-position="19098">
+              <caret line="1061" column="34" selection-start-line="1061" selection-start-column="34" selection-end-line="1061" selection-end-column="34" />
+              <folding>
+                <element signature="e#105064#105086#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/haberler/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="101" column="96" selection-start-line="101" selection-start-column="96" selection-end-line="101" selection-end-column="96" />
+              <folding>
+                <element signature="e#0#76#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/haberler/views.py">
+        <entry file="file://$PROJECT_DIR$/templates/haberler/news_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="68" column="131" selection-start-line="68" selection-start-column="116" selection-end-line="68" selection-end-column="131" />
-              <folding>
-                <element signature="e#0#76#0" expanded="true" />
-                <marker date="1536674486668" expanded="true" signature="4864:4869" ph="..." />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="10" column="44" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -127,45 +212,45 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sub</find>
-      <find>debug</find>
-      <find>secer</find>
-      <find>deneme</find>
-      <find>loader</find>
-      <find>tags</find>
-      <find>news</find>
-      <find>news_list</find>
-      <find>:news</find>
-      <find>{% url</find>
-      <find>categor</find>
-      <find>category.sl</find>
-      <find>in_c</find>
-      <find>cate</find>
-      <find>category</find>
-      <find>zero</find>
-      <find>_one</find>
-      <find>two</find>
-      <find>_two</find>
-      <find>{{</find>
-      <find>title</find>
-      <find>benzerler</find>
-      <find>similar_news</find>
-      <find>category.slug</find>
-      <find>similar_</find>
-      <find>.user</find>
-      <find>mvp-author-info-thumb left relative</find>
-      <find>&lt;h3 class=&quot;mvp-post-cat left relative&quot;&gt;</find>
-      <find>user__profile</find>
-      <find>similar_new</find>
+      <find>yorum</find>
+      <find>show_menu</find>
+      <find>r</find>
+      <find>reklamlar</find>
+      <find>migrate</find>
+      <find>ad</find>
+      <find>facebook</find>
+      <find>embed</find>
+      <find>yoframe</find>
+      <find>mvp-feat1-list</find>
+      <find>scr</find>
+      <find>script</find>
+      <find>mvp-feat1-list-buts</find>
+      <find>mvp-feat1-list-head-wrap</find>
+      <find>mvp-feat1-list-wrap</find>
+      <find>mvp-</find>
+      <find>mvp-feat-col-tab</find>
+      <find>opacity</find>
+      <find>mvp</find>
+      <find>m</find>
+      <find>mvp-post-gallery-t</find>
+      <find>scripts5010</find>
+      <find>post com</find>
+      <find>comment</find>
+      <find>http://schema.</find>
+      <find>http://schema</find>
+      <find>itemtype=&quot;h</find>
+      <find>schema</find>
+      <find>HTML_MINIFY = True</find>
+      <find>loading</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -182,57 +267,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/haberler/templatetags/show_pollquiz.html" />
-        <option value="$PROJECT_DIR$/haberler/templatetags/showpollquiz.py" />
-        <option value="$PROJECT_DIR$/haberler/templatetags/poll_extras.py" />
-        <option value="$PROJECT_DIR$/templates/haberler/last_news.html" />
-        <option value="$PROJECT_DIR$/templates/site/leftmenu.html" />
-        <option value="$PROJECT_DIR$/home/urls.py" />
-        <option value="$PROJECT_DIR$/templates/site/parts/team.html" />
-        <option value="$PROJECT_DIR$/templates/site/footer.html" />
-        <option value="$PROJECT_DIR$/templates/site/parts/left_sidebar.html" />
-        <option value="$PROJECT_DIR$/templates/haberler/addnews.html" />
-        <option value="$PROJECT_DIR$/staticfiles/smart-selects/admin/js/chainedfk.js" />
-        <option value="$PROJECT_DIR$/news/urls.py" />
-        <option value="$PROJECT_DIR$/home/models.py" />
-        <option value="$PROJECT_DIR$/templates/site/author/author_details.html" />
-        <option value="$USER_HOME$/.local/lib/python3.6/site-packages/mathfilters/templatetags/mathfilters.py" />
-        <option value="$PROJECT_DIR$/haberler/admin.py" />
-        <option value="$PROJECT_DIR$/templates/site/search.html" />
-        <option value="$PROJECT_DIR$/templates/site/author/team.html" />
-        <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/css/site.css" />
-        <option value="$PROJECT_DIR$/ayarlar/models.py" />
-        <option value="$PROJECT_DIR$/ayarlar/admin.py" />
-        <option value="$PROJECT_DIR$/templates/site/parts/index/section_zero.html" />
-        <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/style5010.css" />
-        <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js" />
-        <option value="$PROJECT_DIR$/haberler/models.py" />
-        <option value="$PROJECT_DIR$/templates/site/tags.html" />
-        <option value="$PROJECT_DIR$/templates/site/error404.html" />
-        <option value="$PROJECT_DIR$/haberler/urls.py" />
-        <option value="$PROJECT_DIR$/haberler/templates/404.html" />
-        <option value="$PROJECT_DIR$/home/views.py" />
-        <option value="$PROJECT_DIR$/templates/404.html" />
-        <option value="$PROJECT_DIR$/templates/505.html" />
-        <option value="$PROJECT_DIR$/templates/site/base.html" />
-        <option value="$PROJECT_DIR$/category/models.py" />
-        <option value="$PROJECT_DIR$/category/admin.py" />
-        <option value="$PROJECT_DIR$/templates/site/header.html" />
-        <option value="$PROJECT_DIR$/news/settings.py" />
+        <option value="$PROJECT_DIR$/templates/user/login.html" />
+        <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/font-awesome/css/font-awesome5010.css" />
+        <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/css/product_style.css" />
+        <option value="$PROJECT_DIR$/comments/models.py" />
+        <option value="$PROJECT_DIR$/comments/admin.py" />
+        <option value="$PROJECT_DIR$/templates/shop/womessage.html" />
         <option value="$PROJECT_DIR$/templates/haberler/news_list.html" />
-        <option value="$PROJECT_DIR$/templates/site/parts/right_sidebar.html" />
-        <option value="$PROJECT_DIR$/templates/site/parts/index/left_trends_index.html" />
-        <option value="$PROJECT_DIR$/templates/site/parts/index/rightbar_index.html" />
-        <option value="$PROJECT_DIR$/templates/site/index.html" />
-        <option value="$PROJECT_DIR$/templates/site/parts/index/section_four.html" />
+        <option value="$PROJECT_DIR$/templates/shop/last_products.html" />
+        <option value="$PROJECT_DIR$/shop/templatetags/shop_tags.py" />
+        <option value="$PROJECT_DIR$/templates/shop/checkout.html" />
+        <option value="$PROJECT_DIR$/templates/shop/shop_list.html" />
+        <option value="$PROJECT_DIR$/shop/urls.py" />
+        <option value="$PROJECT_DIR$/ayarlar/admin.py" />
+        <option value="$PROJECT_DIR$/haberler/admin.py" />
+        <option value="$PROJECT_DIR$/shop/admin.py" />
+        <option value="$PROJECT_DIR$/shop/models.py" />
+        <option value="$PROJECT_DIR$/templates/shop/sepet.html" />
+        <option value="$PROJECT_DIR$/templates/shop/payment.html" />
+        <option value="$PROJECT_DIR$/templates/shop/threedsecurity.html" />
+        <option value="$PROJECT_DIR$/templates/user/password.html" />
+        <option value="$PROJECT_DIR$/templates/user/settings.html" />
+        <option value="$PROJECT_DIR$/shop/forms.py" />
+        <option value="$PROJECT_DIR$/templates/shop/adres_bilgileri.html" />
+        <option value="$USER_HOME$/.local/lib/python3.6/site-packages/django/contrib/sites/models.py" />
+        <option value="$PROJECT_DIR$/news/wsgi.py" />
+        <option value="$PROJECT_DIR$/news/urls.py" />
+        <option value="$PROJECT_DIR$/ayarlar/models.py" />
+        <option value="$PROJECT_DIR$/news/__init__.py" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_more_post.html" />
-        <option value="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" />
-        <option value="$PROJECT_DIR$/templates/site/parts/index/section_one.html" />
+        <option value="$PROJECT_DIR$/templates/site/parts/index/section_zero.html" />
+        <option value="$PROJECT_DIR$/templates/test.html" />
+        <option value="$PROJECT_DIR$/templates/site/index.html" />
+        <option value="$PROJECT_DIR$/staticfiles/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min653d.js" />
+        <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/jquery.infinitescroll.min5010.js" />
+        <option value="$PROJECT_DIR$/templates/site/parts/index/section_four.html" />
+        <option value="$PROJECT_DIR$/templates/site/parts/right_sidebar.html" />
+        <option value="$PROJECT_DIR$/home/views.py" />
+        <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js" />
         <option value="$PROJECT_DIR$/haberler/templatetags/menu.py" />
-        <option value="$USER_HOME$/.local/lib/python3.6/site-packages/next_prev.py" />
-        <option value="$PROJECT_DIR$/haberler/views.py" />
+        <option value="$PROJECT_DIR$/templates/site/header.html" />
+        <option value="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" />
+        <option value="$PROJECT_DIR$/templates/site/parts/index/section_one.html" />
+        <option value="$PROJECT_DIR$/templates/site/base.html" />
+        <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010.js" />
+        <option value="$PROJECT_DIR$/templates/shop/shop_detail.html" />
+        <option value="$PROJECT_DIR$/shop/views.py" />
+        <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010_h.js" />
+        <option value="$PROJECT_DIR$/news/settings.py" />
         <option value="$PROJECT_DIR$/templates/haberler/news_detail.html" />
+        <option value="$PROJECT_DIR$/haberler/views.py" />
       </list>
     </option>
   </component>
@@ -248,7 +333,9 @@
     <option name="width" value="1750" />
     <option name="height" value="770" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -260,17 +347,6 @@
             <path>
               <item name="haber" type="b2602c69:ProjectViewProjectNode" />
               <item name="haber" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="haber" type="b2602c69:ProjectViewProjectNode" />
-              <item name="haber" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="haber" type="b2602c69:ProjectViewProjectNode" />
-              <item name="haber" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="haberler" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -284,135 +360,25 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Django Projeler/eticaret" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js" />
+      <recent name="$PROJECT_DIR$/templates/shop" />
+      <recent name="$PROJECT_DIR$/shop" />
+      <recent name="$PROJECT_DIR$/haberler/templates" />
+      <recent name="$PROJECT_DIR$/staticfiles" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/templates/site/author" />
       <recent name="$PROJECT_DIR$/templates/site" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/haberler/templates" />
-      <recent name="$PROJECT_DIR$/staticfiles" />
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/static" />
-    </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/templates/site/header.html</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/requirements.txt</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -426,7 +392,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django server.haber">
+    <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="haber" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/news" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/news/settings.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="haber" type="Python.DjangoServer" factoryName="Django server">
       <module name="haber" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -451,6 +439,15 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django server.haber" />
+      <item itemvalue="Python.settings" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.settings" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -470,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536673140221</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="optimization">
+      <created>1536674589661</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1536674589661</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -483,27 +487,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="32" width="1920" height="993" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="32" width="1920" height="995" extended-state="6" />
     <layout>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20922747" />
+      <window_info id="Favorites" order="0" sideWeight="0.5011848" side_tool="true" weight="0.24034335" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49881518" visible="true" weight="0.19849785" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Database Changes" order="0" weight="0.32897863" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.47980997" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32897863" />
-      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32897863" />
+      <window_info anchor="bottom" id="Database Changes" order="0" weight="0.32819906" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.24763033" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50107294" side_tool="true" weight="0.33175355" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32819906" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32897863" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.26365796" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32938388" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32819906" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.49892703" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.39810428" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32897863" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.283848" />
+      <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Database" order="0" weight="0.3299356" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="SciView" order="2" weight="0.3299356" />
@@ -511,24 +514,24 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.20922747" />
+      <window_info id="Favorites" order="0" sideWeight="0.5011848" side_tool="true" weight="0.24034335" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49881518" visible="true" weight="0.19581544" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" weight="0.32897863" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.47980997" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32897863" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32897863" />
-      <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32897863" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.26365796" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" weight="0.32897863" />
-      <window_info anchor="bottom" id="Database Console" order="14" weight="0.283848" />
+      <window_info anchor="bottom" id="Database Changes" order="0" weight="0.32819906" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.24763033" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50107294" side_tool="true" weight="0.33175355" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32819906" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32938388" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32819906" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.49892703" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.39810428" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" weight="0.32897863" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.283848" />
+      <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Database" order="0" weight="0.3299356" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="SciView" order="2" weight="0.3299356" />
@@ -538,6 +541,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -553,377 +566,358 @@
           <url>file://$PROJECT_DIR$/haberler/views.py</url>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ayarlar/admin.py</url>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/haberler/addnews.html">
+    <entry file="file://$PROJECT_DIR$/shop/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="306">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/smart-selects/admin/js/chainedfk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="89" column="33" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/retina5010.js">
+    <entry file="file://$PROJECT_DIR$/ayarlar/views.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/django/contrib/auth/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="363" column="18" selection-start-line="363" selection-start-column="18" selection-end-line="363" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/author/author_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="93" column="50" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/mathfilters/templatetags/mathfilters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/plugins/theia-sticky-sidebar/js/ResizeSensor7d4c.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/news/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/author/team.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/css/site.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="382" column="1" selection-start-line="382" selection-start-column="1" selection-end-line="382" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/django/contrib/sites/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/django/contrib/sites/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ayarlar/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ayarlar/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/style5010.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="2606" selection-start-line="2606" selection-end-line="2606" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/functools.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/tags.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="56" column="92" selection-start-line="56" selection-start-column="92" selection-end-line="56" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="54" column="125" lean-forward="true" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haberler/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/error404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haberler/templates/error404.html" />
-    <entry file="file://$PROJECT_DIR$/templates/505.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/category/views.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        <state relative-caret-position="414">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/haberler/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="624">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/category/admin.py">
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/ckeditor/fields.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/sepet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="267" column="70" selection-start-line="267" selection-start-column="70" selection-end-line="267" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/mathfilters/templatetags/mathfilters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/shop_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="667" column="35" lean-forward="true" selection-start-line="666" selection-start-column="4" selection-end-line="667" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/django/contrib/auth/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="37" column="75" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/threedsecurity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/adres_bilgileri.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4680">
+          <caret line="260" selection-start-line="260" selection-end-line="260" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="66" column="72" selection-start-line="66" selection-start-column="72" selection-end-line="66" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/django/contrib/sites/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/django/contrib/sites/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="82" column="20" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/news/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="60" />
-          <folding>
-            <element signature="e#220#229#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="342">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/django/templatetags/cache.py">
+    <entry file="file://$PROJECT_DIR$/ayarlar/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-236">
-          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+        <state relative-caret-position="236">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haberler/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_zero.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="113" column="14" selection-start-line="3" selection-start-column="4" selection-end-line="113" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_more_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="78" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min653d.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22672" lean-forward="true" selection-start-column="22672" selection-end-column="22672" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="67" selection-start-line="67" selection-end-line="272" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/jquery.infinitescroll.min5010.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="21403" selection-start-line="11" selection-start-column="21403" selection-end-line="11" selection-end-column="21403" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haberler/templatetags/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_two_video.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="105" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_four.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="69" column="110" selection-start-line="69" selection-start-column="110" selection-end-line="69" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/parts/right_sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4987" selection-start-column="4987" selection-end-column="4987" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/site/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2520">
-          <caret line="140" column="13" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
+        <state relative-caret-position="2754">
+          <caret line="153" column="16" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haberler/templatetags/menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="190" column="26" selection-start-line="190" selection-start-column="26" selection-end-line="190" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_tree.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="102" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_one.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="130" column="63" lean-forward="true" selection-start-line="127" selection-start-column="25" selection-end-line="130" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="66229" selection-start-column="66229" selection-end-column="66229" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="135" column="59" lean-forward="true" selection-start-line="135" selection-start-column="59" selection-end-line="135" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/shop_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="306" column="97" selection-start-line="306" selection-start-column="95" selection-end-line="306" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="459" column="63" selection-start-line="459" selection-start-column="63" selection-end-line="459" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="171" column="12" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010_h.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4399" selection-start-column="4390" selection-end-column="4399" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/haberler/news_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19098">
+          <caret line="1061" column="34" selection-start-line="1061" selection-start-column="34" selection-end-line="1061" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#nav#0;n#header#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#105064#105086#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/haberler/news_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="61" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/news/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="154" column="12" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haberler/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/right_sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="68" column="112" selection-start-line="68" selection-start-column="97" selection-end-line="68" selection-end-column="112" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/left_trends_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="31" column="84" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/rightbar_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="91" column="93" selection-start-line="91" selection-start-column="85" selection-end-line="91" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/category/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="13" column="59" lean-forward="true" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_more_post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="119" selection-start-line="41" selection-start-column="119" selection-end-line="41" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_zero.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="81" column="62" selection-start-line="81" selection-start-column="62" selection-end-line="81" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_four.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="113" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_tree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="94" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_one.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="108" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haberler/templatetags/menu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="53" column="10" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_two_video.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="74" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/next_prev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+        <state relative-caret-position="180">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/haberler/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="68" column="131" selection-start-line="68" selection-start-column="116" selection-end-line="68" selection-end-column="131" />
+        <state relative-caret-position="534">
+          <caret line="101" column="96" selection-start-line="101" selection-start-column="96" selection-end-line="101" selection-end-column="96" />
           <folding>
             <element signature="e#0#76#0" expanded="true" />
-            <marker date="1536674486668" expanded="true" signature="4864:4869" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/haberler/news_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="749" column="112" selection-start-line="749" selection-start-column="112" selection-end-line="749" selection-end-column="112" />
         </state>
       </provider>
     </entry>

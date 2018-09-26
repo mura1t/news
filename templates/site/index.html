@@ -2,28 +2,29 @@
 {% load thumbnail %}
 {% load menu %}
 {% load static %}
+{% load compress %}
 {% block meta %}
-{% if site %}
-    <meta property="og:description" content="{{ site.desc }}"/>
-    <title>{{ site.title }}</title>
-    <meta property="og:site_name" content="{{ site.title }}" />
-    <link rel="canonical" href="{{ request.build_absolute_uri }}"/>
-    <link rel='shortlink' href='{{ request.build_absolute_uri }}'/>
-{% endif %}
+    {% if site %}
+        <meta property="og:description" content="{{ site.desc }}"/>
+        <title>{{ site.title }}</title>
+        <meta property="og:site_name" content="{{ site.title }}"/>
+        <link rel="canonical" href="{{ request.build_absolute_uri }}"/>
+        <link rel='shortlink' href='{{ request.build_absolute_uri }}'/>
+    {% endif %}
 {% endblock %}
 {% block body %}
-    <div id="mvp-main-body-wrap" class="left relative" style="transform: none; margin-top: 0px;">
-        {% if category.count > 1 %}
-            <div class="mvp-main-box">
-                {% index_section_zero 3 %}
-            </div><!--mvp-main-box-->
-            <div id="mvp-home-widget-wrap" class="left relative">
-                {% index_section_one category.0.id 6 %}
-                {% index_section_two_video %}
-                {% index_section_tree category.1.id 6 %}
-                {% index_section_four category.2.id 6 %}
-            </div><!--mvp-home-widget-wrap-->
-            {% index_section_morepost 10 %}
-            </div>
-        {% endif %}
+    {% if category.count > 2 %}
+        <div class="mvp-main-box">
+            {% include 'site/parts/index/section_zero.html' %}
+        </div><!--mvp-main-box-->
+        <div id="mvp-home-widget-wrap" class="left relative">
+            {% include 'site/parts/index/section_one.html' %}
+            {% include 'site/parts/index/section_two_video.html' %}
+            {% include 'site/parts/index/section_tree.html' %}
+            {% include 'site/parts/index/section_four.html' %}
+        </div><!--mvp-home-widget-wrap-->
+        {% include 'site/parts/index/section_more_post.html' %}
+        {% else %}
+        <p>en az üç kategoriniz olmalıdır</p>
+    {% endif %}
 {% endblock %}

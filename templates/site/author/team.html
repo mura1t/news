@@ -28,11 +28,9 @@
                                                      class="avatar avatar-150 photo" height="150" width="150"></div>
                                             <!--mvp-authors-list-img-->
                                             <span class="mvp-authors-name"><a
-                                                    href="../author/mvpthemes/index.html">{{ user.username }}</a></span>
-                                            <h2 class="mvp-authors-latest"><a
-                                                    href="../illinois-financial-crisis-could-bring-the-state-to-a-halt/index.html"
-                                                    rel="bookmark">Illinois’ financial crisis could bring the state to a
-                                                halt</a></h2>
+                                                    href="{% url 'author_detail' user.username %}">{{ user.username }}</a></span>
+                                            <h2 class="mvp-authors-latest"><a  href="{% url 'author_detail' user.username %}"
+                                                    rel="bookmark">{{ user.profile.bio }}</a></h2>
                                         </section><!--mvp-authors-page-list-wrap-->
                                     {% endfor %}
                                 </div><!--mvp-authors-wrap-->
@@ -64,4 +62,5 @@
             </div><!--mvp-main-box-->
         </div><!--mvp-article-cont-->
     </div>
+    <br><br><br>
 {% endblock %}

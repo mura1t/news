@@ -1,18 +1,20 @@
 {% load thumbnail %}
-{% if news.count >= 6 %}
-    <section id="mvp_home_feat2_widget-4" class="mvp-widget-home left relative mvp_home_feat2_widget">
+{% load menu %}
+{% if news|get_news:category.1.id|length >= 3 %}
+    {% with news|get_news:category.1.id as snews %}
+        <section id="mvp_home_feat2_widget-4" class="mvp-widget-home left relative mvp_home_feat2_widget">
         <div class="mvp-main-box">
-            <div class="mvp-widget-home-head"><a href="{% url 'haberler:news_list' news.0.category__slug %}"><h4 class="mvp-widget-home-title"><span
-                    class="mvp-widget-home-title">{{ news.0.category__title }}</span></h4></a></div>
+            <div class="mvp-widget-home-head"><a href="{% url 'haberler:news_list' snews.0.category__slug %}"><h4 class="mvp-widget-home-title"><span
+                    class="mvp-widget-home-title">{{ snews.0.category__title }}</span></h4></a></div>
             <div class="mvp-widget-feat2-wrap left relative">
                 <div class="mvp-widget-feat2-out left relative">
                     <div class="mvp-widget-feat2-in">
                         <div class="mvp-widget-feat2-main left relative">
                             <div class="mvp-widget-feat2-left left relative mvp-widget-feat2-left-alt">
-                                <a href="{% url 'haberler:news_detail' news.0.slug %}" rel="bookmark">
+                                <a href="{% url 'haberler:news_detail' snews.0.slug %}" rel="bookmark">
                                     <div class="mvp-widget-feat2-left-cont left relative">
                                         <div class="mvp-feat1-feat-img left relative">
-                                            {% thumbnail news.0.image "560x600" crop="center" as im %}
+                                            {% thumbnail snews.0.image "560x600" crop="center" as im %}
                                                 <img width="{{ im.width }}"
                                                      height="{{ im.height }}"
                                                      src="{{ im.url }}"
@@ -23,20 +25,20 @@
                                             {% endthumbnail %}</div><!--mvp-feat1-feat-img-->
                                         <div class="mvp-feat1-feat-text left relative">
                                             <div class="mvp-cat-date-wrap left relative">
-                                                <span class="mvp-cd-cat left relative">{{ news.0.category__title }}</span><span
-                                                    class="mvp-cd-date left relative">{{ news.0.date |timesince }} önce</span>
+                                                <span class="mvp-cd-cat left relative">{{ snews.0.category__title }}</span><span
+                                                    class="mvp-cd-date left relative">{{ snews.0.date |timesince }} önce</span>
                                             </div><!--mvp-cat-date-wrap-->
-                                            <h2>{{ news.0.title }}</h2>
-                                            <p>{{ news.0.spot }}</p>
+                                            <h2>{{ snews.0.title }}</h2>
+                                            <p>{{ snews.0.spot }}</p>
                                         </div><!--mvp-feat1-feat-text-->
                                     </div><!--mvp-widget-feat2-left-cont-->
                                 </a>
                             </div><!--mvp-widget-feat2-left-->
                             <div class="mvp-widget-feat2-right left relative">
-                                <a href="{% url 'haberler:news_detail' news.1.slug %}" rel="bookmark">
+                                <a href="{% url 'haberler:news_detail' snews.1.slug %}" rel="bookmark">
                                     <div class="mvp-widget-feat2-right-cont left relative">
                                         <div class="mvp-widget-feat2-right-img left relative">
-                                            {% thumbnail news.1.image "400x240" crop="center" as im %}
+                                            {% thumbnail snews.1.image "400x240" crop="center" as im %}
                                                 <img width="{{ im.width }}"
                                                      height="{{ im.height }}"
                                                      src="{{ im.url }}"
@@ -45,27 +47,27 @@
                                                      srcset="{{ im.url }}"
                                                      sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
                                             {% endthumbnail %}
-                                            {% thumbnail news.1.image "400x240" crop="center" as im %}
+                                            {% thumbnail snews.1.image "400x240" crop="center" as im %}
                                                 <img width="{{ im.width }}" height="{{ im.height }}"
                                                      src="{{ im.url }}"
-                                                     class="mvp-mob-img wp-post-image" alt="{{ news.1.title }}"
+                                                     class="mvp-mob-img wp-post-image" alt="{{ snews.1.title }}"
                                                      srcset="{{ im.url }}"
                                                      sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
                                             {% endthumbnail %}
                                         </div><!--mvp-widget-feat2-right-img-->
                                         <div class="mvp-widget-feat2-right-text left relative">
                                             <div class="mvp-cat-date-wrap left relative">
-                                                <span class="mvp-cd-cat left relative">{{ news.1.category__title }}</span><span
-                                                    class="mvp-cd-date left relative">{{ news.1.date |timesince }} önce</span>
+                                                <span class="mvp-cd-cat left relative">{{ snews.1.category__title }}</span><span
+                                                    class="mvp-cd-date left relative">{{ snews.1.date |timesince }} önce</span>
                                             </div><!--mvp-cat-date-wrap-->
-                                            <h2>{{ news.1.title }}</h2>
+                                            <h2>{{ snews.1.title }}</h2>
                                         </div><!--mvp-widget-feat2-right-text-->
                                     </div><!--mvp-widget-feat2-right-cont-->
                                 </a>
-                                <a href="{% url 'haberler:news_detail' news.2.slug %}" rel="bookmark">
+                                <a href="{% url 'haberler:news_detail' snews.2.slug %}" rel="bookmark">
                                     <div class="mvp-widget-feat2-right-cont left relative">
                                         <div class="mvp-widget-feat2-right-img left relative">
-                                            {% thumbnail news.2.image "400x240" crop="center" as im %}
+                                            {% thumbnail snews.2.image "400x240" crop="center" as im %}
                                                 <img width="{{ im.width }}"
                                                      height="{{ im.height }}"
                                                      src="{{ im.url }}"
@@ -74,20 +76,20 @@
                                                      srcset="{{ im.url }}"
                                                      sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}px">
                                             {% endthumbnail %}
-                                            {% thumbnail news.2.image "400x240" crop="center" as im %}
+                                            {% thumbnail snews.2.image "400x240" crop="center" as im %}
                                                 <img width="{{ im.width }}" height="{{ im.height }}"
                                                      src="{{ im.url }}"
-                                                     class="mvp-mob-img wp-post-image" alt="{{ news.2.title }}"
+                                                     class="mvp-mob-img wp-post-image" alt="{{ snews.2.title }}"
                                                      srcset="{{ im.url }}"
                                                      sizes="(max-width: {{ im.width }}) 100vw, {{ im.width }}">
                                             {% endthumbnail %}
                                         </div><!--mvp-widget-feat2-right-img-->
                                         <div class="mvp-widget-feat2-right-text left relative">
                                             <div class="mvp-cat-date-wrap left relative">
-                                                <span class="mvp-cd-cat left relative">{{ news.2.category__title }}</span><span
-                                                    class="mvp-cd-date left relative">{{ news.2.date |timesince }} önce</span>
+                                                <span class="mvp-cd-cat left relative">{{ snews.2.category__title }}</span><span
+                                                    class="mvp-cd-date left relative">{{ snews.2.date |timesince }} önce</span>
                                             </div><!--mvp-cat-date-wrap-->
-                                            <h2>{{ news.2.title }}</h2>
+                                            <h2>{{ snews.2.title }}</h2>
                                         </div><!--mvp-widget-feat2-right-text-->
                                     </div><!--mvp-widget-feat2-right-cont-->
                                 </a>
@@ -95,13 +97,13 @@
                         </div><!--mvp-widget-feat2-main-->
                     </div><!--mvp-widget-feat2-in-->
                     <div class="mvp-widget-feat2-side left relative">
-                        <div class="mvp-widget-feat2-side-ad left relative">
-                            <span class="mvp-ad-label">Advertisement</span>
-                            <img src="http://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox300.png">
-                        </div><!--mvp-widget-feat2-side-ad-->
+{#                        <div class="mvp-widget-feat2-side-ad left relative">#}
+{#                            <span class="mvp-ad-label">Advertisement</span>#}
+{#                            <img src="http://www.mvpthemes.com/zoxsnews/wp-content/uploads/2017/07/zox300.png">#}
+{#                        </div><!--mvp-widget-feat2-side-ad-->#}
                         <div class="mvp-widget-feat2-side-list left relative">
                             <div class="mvp-feat1-list left relative">
-                                {% for n in news %}
+                                {% for n in snews %}
                                     {% if forloop.counter > 3 and forloop.counter <= 6 %}
                                         <a href="{% url 'haberler:news_detail' n.slug %}"
                                            rel="bookmark">
@@ -132,9 +134,9 @@
 
                                 {% endfor %}
                             </div><!--mvp-feat1-list-->
-                            <a href="{% url 'haberler:news_list' news.0.category__slug %}">
+                            <a href="{% url 'haberler:news_list' snews.0.category__slug %}">
                                 <div class="mvp-widget-feat2-side-more-but left relative">
-                                    <span class="mvp-widget-feat2-side-more">{{ news.0.category__title }}</span><i
+                                    <span class="mvp-widget-feat2-side-more">{{ snews.0.category__title }}</span><i
                                         class="fa fa-long-arrow-right" aria-hidden="true"></i>
                                 </div><!--mvp-widget-feat2-side-more-but-->
                             </a>
@@ -145,4 +147,8 @@
 
         </div>
     </section>
+    {% endwith %}
+    {% else %}
+    <hr>
+    <p>[section3]bu section için henüz 6 haber yok şuan :{{ news|get_news:"2,5"|length }}</p>
 {% endif %}

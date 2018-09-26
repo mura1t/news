@@ -1,4 +1,6 @@
 {% load static %}
+{% load cache %}
+{% cache 10000 footercache %}
 <footer id="mvp-foot-wrap" class="left relative">
     <div id="mvp-foot-top" class="left relative">
         <div class="mvp-main-box">
@@ -44,3 +46,4 @@
         </div><!--mvp-main-box-->
     </div><!--mvp-foot-bot-->
 </footer>
+{% endcache %}

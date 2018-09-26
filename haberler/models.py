@@ -1,5 +1,4 @@
 from django.db import models
-from category.models import *
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
@@ -18,8 +17,8 @@ class News(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to="News")
     user = models.ForeignKey(User, on_delete=None)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    sub_category = ChainedForeignKey(SubCategory, chained_field='category', chained_model_field='parent')
+    category = models.ForeignKey("Category", on_delete=models.CASCADE)
+    sub_category = ChainedForeignKey("SubCategory", chained_field='category', chained_model_field='parent')
     video_url = models.CharField(max_length=200, default="0",
                                  help_text="Eğer video eklemek istemiyorsanız burası 0 olarak kalmalı")
     active = models.BooleanField(default=True)
@@ -66,3 +65,36 @@ class NewsGallery(models.Model):
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to="NewsGallery")
     active = models.BooleanField(default=True)
+
+
+class Category(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, null=True, blank=True)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_unique_slug(self):
+        unique_slug = slugify(self.title.replace('ı', 'i'))
+        return unique_slug
+
+    def save(self, *args, **kwargs):
+        self.slug = self.get_unique_slug()
+        return super(Category, self).save(*args, **kwargs)
+
+
+class SubCategory(models.Model):
+    parent = models.ForeignKey('Category', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="subcategory")
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, null=True, blank=True)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.parent.slug + "-" + self.title.replace('ı', 'i'))
+        return super(SubCategory, self).save(*args, **kwargs)
+
