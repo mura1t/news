@@ -2,63 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c89ca0ec-c058-435d-b90c-ed49a4cff489" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gittignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gittignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ayarlar/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ayarlar/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ayarlar/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ayarlar/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0002_subcategory.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0003_subcategory_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comments/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/comments/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comments/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/comments/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/migrations/0002_auto_20180906_1832.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/migrations/0003_auto_20180906_1835.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/migrations/0004_remove_news_yeni.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/migrations/0005_news_sub_category.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/migrations/0006_auto_20180907_1225.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/migrations/0007_auto_20180908_1343.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/migrations/0008_auto_20180910_2114.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/templatetags/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/templatetags/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/haberler/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/haberler/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/News/datagrip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/News/datagrip_3rI1Hu8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/site/hpsp-bradford-dam_78kcnbZ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/font-awesome/css/font-awesome5010.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/font-awesome/css/font-awesome5010.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/jquery.infinitescroll.min5010.js" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/jquery.infinitescroll.min5010.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010.js" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/haberler/news_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/haberler/news_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/haberler/news_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/haberler/news_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/author/author_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/author/author_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/author/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/author/team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/leftmenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/leftmenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_four.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_four.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_more_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_more_post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_one.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_one.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/index/section_zero.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/index/section_zero.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/parts/right_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/parts/right_sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/tags.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,9 +72,9 @@
         <counts>
           <entry key="css" value="7" />
           <entry key="dummy" value="32" />
-          <entry key="html" value="32034" />
+          <entry key="html" value="32189" />
           <entry key="js" value="197" />
-          <entry key="py" value="40028" />
+          <entry key="py" value="40188" />
           <entry key="sql" value="26" />
           <entry key="txt" value="40" />
         </counts>
@@ -137,10 +83,10 @@
         <counts>
           <entry key="CSS" value="7" />
           <entry key="DjangoUrlPath" value="1" />
-          <entry key="HTML" value="32034" />
+          <entry key="HTML" value="32189" />
           <entry key="JavaScript" value="197" />
           <entry key="PLAIN_TEXT" value="72" />
-          <entry key="Python" value="40027" />
+          <entry key="Python" value="40187" />
           <entry key="Scratch" value="26" />
         </counts>
       </usages-collector>
@@ -148,9 +94,10 @@
         <counts>
           <entry key="activate" value="1" />
           <entry key="css" value="6" />
-          <entry key="html" value="401" />
+          <entry key="gittignore" value="1" />
+          <entry key="html" value="411" />
           <entry key="js" value="22" />
-          <entry key="py" value="433" />
+          <entry key="py" value="435" />
           <entry key="pyi" value="1" />
           <entry key="sql" value="3" />
           <entry key="wheel" value="1" />
@@ -159,10 +106,10 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="6" />
-          <entry key="HTML" value="401" />
+          <entry key="HTML" value="411" />
           <entry key="JavaScript" value="22" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="434" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="436" />
           <entry key="PythonStub" value="1" />
           <entry key="Scratch" value="3" />
         </counts>
@@ -175,34 +122,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/haberler/news_detail.html">
+        <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_two_video.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19098">
-              <caret line="1061" column="34" selection-start-line="1061" selection-start-column="34" selection-end-line="1061" selection-end-column="34" />
-              <folding>
-                <element signature="e#105064#105086#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="54">
+              <caret line="12" column="40" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/haberler/views.py">
+        <entry file="file://$PROJECT_DIR$/.gittignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="101" column="96" selection-start-line="101" selection-start-column="96" selection-end-line="101" selection-end-column="96" />
-              <folding>
-                <element signature="e#0#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/haberler/news_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="44" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="44" />
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -221,15 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>yorum</find>
-      <find>show_menu</find>
-      <find>r</find>
-      <find>reklamlar</find>
-      <find>migrate</find>
-      <find>ad</find>
-      <find>facebook</find>
-      <find>embed</find>
-      <find>yoframe</find>
       <find>mvp-feat1-list</find>
       <find>scr</find>
       <find>script</find>
@@ -251,6 +174,15 @@
       <find>schema</find>
       <find>HTML_MINIFY = True</find>
       <find>loading</find>
+      <find>mvp-nav-top-right</find>
+      <find>SIT</find>
+      <find>ID</find>
+      <find>SITE_ID</find>
+      <find>mail</find>
+      <find>-ad</find>
+      <find>messages</find>
+      <find>ödeme</find>
+      <find>button class=&quot;pswp__button pswp__butt</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -267,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/user/login.html" />
         <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/font-awesome/css/font-awesome5010.css" />
         <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/css/product_style.css" />
         <option value="$PROJECT_DIR$/comments/models.py" />
@@ -276,27 +207,22 @@
         <option value="$PROJECT_DIR$/templates/haberler/news_list.html" />
         <option value="$PROJECT_DIR$/templates/shop/last_products.html" />
         <option value="$PROJECT_DIR$/shop/templatetags/shop_tags.py" />
-        <option value="$PROJECT_DIR$/templates/shop/checkout.html" />
-        <option value="$PROJECT_DIR$/templates/shop/shop_list.html" />
         <option value="$PROJECT_DIR$/shop/urls.py" />
         <option value="$PROJECT_DIR$/ayarlar/admin.py" />
         <option value="$PROJECT_DIR$/haberler/admin.py" />
         <option value="$PROJECT_DIR$/shop/admin.py" />
         <option value="$PROJECT_DIR$/shop/models.py" />
-        <option value="$PROJECT_DIR$/templates/shop/sepet.html" />
         <option value="$PROJECT_DIR$/templates/shop/payment.html" />
         <option value="$PROJECT_DIR$/templates/shop/threedsecurity.html" />
         <option value="$PROJECT_DIR$/templates/user/password.html" />
         <option value="$PROJECT_DIR$/templates/user/settings.html" />
         <option value="$PROJECT_DIR$/shop/forms.py" />
-        <option value="$PROJECT_DIR$/templates/shop/adres_bilgileri.html" />
         <option value="$USER_HOME$/.local/lib/python3.6/site-packages/django/contrib/sites/models.py" />
         <option value="$PROJECT_DIR$/news/wsgi.py" />
         <option value="$PROJECT_DIR$/news/urls.py" />
         <option value="$PROJECT_DIR$/ayarlar/models.py" />
         <option value="$PROJECT_DIR$/news/__init__.py" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_more_post.html" />
-        <option value="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_zero.html" />
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/templates/site/index.html" />
@@ -307,17 +233,23 @@
         <option value="$PROJECT_DIR$/home/views.py" />
         <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/site.js" />
         <option value="$PROJECT_DIR$/haberler/templatetags/menu.py" />
-        <option value="$PROJECT_DIR$/templates/site/header.html" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_tree.html" />
         <option value="$PROJECT_DIR$/templates/site/parts/index/section_one.html" />
         <option value="$PROJECT_DIR$/templates/site/base.html" />
         <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010.js" />
-        <option value="$PROJECT_DIR$/templates/shop/shop_detail.html" />
-        <option value="$PROJECT_DIR$/shop/views.py" />
         <option value="$PROJECT_DIR$/staticfiles/wp-content/themes/zox-news/js/scripts5010_h.js" />
-        <option value="$PROJECT_DIR$/news/settings.py" />
         <option value="$PROJECT_DIR$/templates/haberler/news_detail.html" />
         <option value="$PROJECT_DIR$/haberler/views.py" />
+        <option value="$PROJECT_DIR$/templates/site/header.html" />
+        <option value="$PROJECT_DIR$/news/settings.py" />
+        <option value="$PROJECT_DIR$/templates/shop/adres_bilgileri.html" />
+        <option value="$PROJECT_DIR$/templates/shop/checkout.html" />
+        <option value="$PROJECT_DIR$/shop/views.py" />
+        <option value="$PROJECT_DIR$/templates/shop/sepet.html" />
+        <option value="$PROJECT_DIR$/templates/shop/shop_list.html" />
+        <option value="$PROJECT_DIR$/templates/shop/shop_detail.html" />
+        <option value="$PROJECT_DIR$/templates/site/parts/index/section_two_video.html" />
+        <option value="$PROJECT_DIR$/.gittignore" />
       </list>
     </option>
   </component>
@@ -474,7 +406,21 @@
       <option name="project" value="LOCAL" />
       <updated>1536674589661</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="optimization">
+      <created>1537973501642</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1537973501642</updated>
+    </task>
+    <task id="LOCAL-00004" summary="optimization">
+      <created>1537978042581</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1537978042581</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -488,9 +434,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="995" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5011848" side_tool="true" weight="0.24034335" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49881518" visible="true" weight="0.19849785" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49881518" visible="true" weight="0.19849785" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" weight="0.32819906" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.24763033" />
@@ -500,7 +447,7 @@
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32938388" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32819906" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.49892703" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49892703" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39810428" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -515,7 +462,7 @@
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" sideWeight="0.5011848" side_tool="true" weight="0.24034335" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49881518" visible="true" weight="0.19581544" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49881518" visible="true" weight="0.19849785" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" weight="0.32819906" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.24763033" />
@@ -525,7 +472,7 @@
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32938388" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32819906" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.49892703" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49892703" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39810428" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -570,13 +517,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/shop/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ayarlar/views.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -615,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shop/sepet.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="267" column="70" selection-start-line="267" selection-start-column="70" selection-end-line="267" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/messages.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -636,38 +569,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shop/shop_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="667" column="35" lean-forward="true" selection-start-line="666" selection-start-column="4" selection-end-line="667" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/django/contrib/auth/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="37" column="75" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shop/checkout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shop/payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shop/threedsecurity.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -682,13 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shop/adres_bilgileri.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4680">
-          <caret line="260" selection-start-line="260" selection-end-line="260" />
         </state>
       </provider>
     </entry>
@@ -775,13 +673,6 @@
     <entry file="file://$PROJECT_DIR$/haberler/templatetags/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_two_video.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="105" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_four.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
@@ -807,13 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="31" column="10" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/site/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2754">
-          <caret line="153" column="16" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -859,31 +743,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shop/shop_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="306" column="97" selection-start-line="306" selection-start-column="95" selection-end-line="306" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="459" column="63" selection-start-line="459" selection-start-column="63" selection-end-line="459" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/news/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/news/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="171" column="12" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -913,11 +776,109 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/haberler/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
+        <state relative-caret-position="169">
           <caret line="101" column="96" selection-start-line="101" selection-start-column="96" selection-end-line="101" selection-end-column="96" />
           <folding>
             <element signature="e#0#76#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="79" column="203" selection-start-line="79" selection-start-column="203" selection-end-line="79" selection-end-column="203" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="151" column="11" selection-start-line="151" selection-start-column="11" selection-end-line="151" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/adres_bilgileri.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="300" column="91" selection-start-line="300" selection-start-column="91" selection-end-line="300" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/threedsecurity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/sepet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="216" column="31" selection-start-line="216" selection-start-column="31" selection-end-line="216" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="e#0#96#0" expanded="true" />
+            <element signature="e#4118#4401#0" />
+            <element signature="e#4435#6068#0" />
+            <element signature="e#9937#15061#0" />
+            <element signature="e#15090#15464#0" />
+            <element signature="e#15500#16684#0" />
+            <element signature="e#16724#18903#0" />
+            <element signature="e#18942#21704#0" />
+            <element signature="e#21740#22486#0" />
+            <marker date="1537976058563" expanded="true" signature="1014:1019" ph="..." />
+            <marker date="1537976058563" expanded="false" signature="2690:2695" ph="..." />
+            <marker date="1537976058563" expanded="true" signature="9885:9886" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/shop_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="468" column="90" selection-start-line="468" selection-start-column="90" selection-end-line="468" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop/shop_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="487" column="113" selection-start-line="487" selection-start-column="113" selection-end-line="487" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/parts/index/section_two_video.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gittignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
